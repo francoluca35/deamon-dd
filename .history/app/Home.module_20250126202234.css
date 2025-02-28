@@ -1,0 +1,41 @@
+.imagesContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .imageWrapper {
+    position: absolute;
+  }
+  
+  .image1 {
+    transform: rotate(-10deg);
+    z-index: 3;
+    left: 10%;
+  }
+  
+  .image2 {
+    transform: rotate(-20deg);
+    z-index: 5;
+    left: 50%;
+    width: 30%;
+    margin-left: 12%;
+    margin-top: -18%;
+}
+.image2 img{
+    border-radius: 30%;
+}
+
+  
+  .image3 {
+    transform: rotate(10deg);
+    z-index: 1;
+    left: 50%;
+    margin-top: 35%;
+    transform: scaleX(-1);
+  }
+  
