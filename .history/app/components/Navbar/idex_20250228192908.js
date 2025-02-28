@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; 
 import Image from "next/image";
 
-function Navdesarrollo() {
+function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState("/");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Estado para dropdown
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function Navdesarrollo() {
 
   useEffect(() => {
     const updateText = () => {
-      setButtonText(window.innerWidth <= 820 ? "Reunite" : "Reunite con nosotros");
+      setButtonText(window.innerWidth <= 768 ? "Reunite" : "Reunite con nosotros");
     };
 
     updateText();
@@ -33,10 +34,11 @@ function Navdesarrollo() {
   }, []);
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#vision", label: "Visión" },
-    { href: "#trabajos", label: "Trabajos" },
-    { href: "#Servicio", label: "Nuestro Servicio" },
+    { href: "/", label: "Inicio" },
+    { href: "#equipo", label: "Equipo" },
+    { href: "#desarrollo", label: "Desarrollo Web", isRoute: true }, 
+    { href: "#diseno-grafico", label: "Diseño Gráfico" },
+    { href: "#contacto", label: "Contactos" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -52,52 +54,79 @@ function Navdesarrollo() {
     <nav className={`${isScrolled ? "bg-black shadow-md" : "bg-transparent"} fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <button onClick={() => router.push("/")} className="flex items-center">
-          <Image src="/assets/deamon-icon-B-desarrollo.png" width={200} height={200} alt="Deamon Icon" />
+          <Image src="/assets/deamon-icon-B-s.png" width={200} height={200} alt="Deamon Icon" />
         </button>
 
         {/* Menú hamburguesa */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
-           onClick={() => setIsModalOpen(true)}
+            onClick={() => setIsModalOpen(true)}
             type="button"
-            className="text-white hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-900 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
+            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center"
           >
             {buttonText}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-[#36203a] dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
           >
-            <span className="sr-only"></span>
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
         </div>
 
-        <div className={` items-center justify-between ${isOpen ? "block" : "hidden"} w-full md:flex md:w-auto md:order-1 z-50`} id="navbar-sticky">
-          <ul className="flex flex-col  p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 z-50">
+        <div className={`items-center justify-between ${isOpen ? "block" : "hidden"} w-full md:flex md:w-auto md:order-1 z-50`} id="navbar-sticky">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 z-50">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className={`block py-2 px-3 rounded-sm md:p-0  ${
+                  className={`block py-2 px-3 rounded-sm md:p-0 ${
                     activeLink === link.href
-                      ? " text-[#4b49bd] font-bold "
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent hover:text-[#673372] md:hover:text-[#36203a] dark:text-white dark:hover:text-white"
+                      ? "text-[#673372] font-bold"
+                      : "text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#36203a]"
                   }`}
                 >
                   {link.label}
                 </button>
               </li>
             ))}
+            {/* Dropdown Trabajos */}
+            <li className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#36203a]"
+              >
+                Trabajos ▾
+              </button>
+              {isDropdownOpen && (
+                <ul className="absolute left-0 mt-2 bg-white shadow-md rounded-md overflow-hidden w-48">
+                  <li>
+                    <button
+                      onClick={() => router.push("/desarrolloweb?#trabajosy")}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200 w-full text-left"
+                    >
+                      Trabajos de Desarrollo
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => router.push("/graphic")}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200 w-full text-left"
+                    >
+                      Trabajos de Diseño
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </li>
           </ul>
         </div>
-      </div>
-      {isModalOpen && (
+        {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md relative w-full md:w-[500px]">
             <button
@@ -120,13 +149,13 @@ function Navdesarrollo() {
 
                 {/* Video de YouTube */}
                 <div className="relative w-full h-0 pb-[56.25%] mt-4">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/cnYXkbUHKeo"
-                    title="Video de presentación"
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
+                <iframe
+    className="absolute top-0 left-0 w-full h-full"
+    src="https://youtu.be/cnYXkbUHKeo"
+    title="Video de presentación"
+    frameBorder="0"
+    allowFullScreen
+  ></iframe>
                 </div>
 
                 {/* Botón para abrir Calendly */}
@@ -158,8 +187,9 @@ function Navdesarrollo() {
           </div>
         </div>
       )}
+      </div>
     </nav>
   );
 }
 
-export default Navdesarrollo;
+export default Navbar2;

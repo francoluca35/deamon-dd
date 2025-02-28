@@ -181,7 +181,7 @@ function Navbar2() {
                   <div className="relative w-full h-0 pb-[56.25%] mt-4">
                     <iframe
                       className="absolute top-0 left-0 w-full h-full"
-                      src="https://www.youtube.com/embed/cnYXkbUHKeo"
+                      src="https://www.youtube.com/watch?v=cnYXkbUHKeo"
                       title="Video de presentación"
                       frameBorder="0"
                       allowFullScreen
