@@ -20,8 +20,7 @@ const Contacto = () => {
     setLoading(true);
   
     try {
-      await axios.post("/api/enviar-correo", formData);
-
+      const response = await axios.post("/api/enviar-correo", formData);
   
       if (response.status === 200) {
         setSuccess(true);
