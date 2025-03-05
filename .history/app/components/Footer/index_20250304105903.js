@@ -33,7 +33,7 @@ const Footer = () => {
   };
 
   const phone = "+541131199882";
-  const message = "Hola!, Quisiera mas información acerca de los servicios ofrecidos de deamonDD.";
+  const message = "Hola!, Quisiera mas información acerca de los servicios ofrecidos de deamonDD.😃";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -125,7 +125,7 @@ const Footer = () => {
                 <FaWhatsapp className="text-2xl" />
               </a>
               <a
-                href="https://www.instagram.com/deamon.dd?igsh=MTFtZGNhNTl3ODFsYg=="
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -133,7 +133,7 @@ const Footer = () => {
                 <FaInstagram className="text-2xl" />
               </a>
               <a
-                href="https://www.linkedin.com/in/deamon-company-129808354/"
+                href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -141,7 +141,7 @@ const Footer = () => {
                 <FaLinkedin className="text-2xl" />
               </a>
               <a
-                href="mailto:deamoncompany18@gmail.com"
+                href="mailto:example@gmail.com"
                 className="text-gray-400 hover:text-white"
               >
                 <FaEnvelope className="text-2xl" />
@@ -152,7 +152,7 @@ const Footer = () => {
 
         {/* Línea de separación y créditos */}
         <div className="mt-10 border-t border-purple-950 pt-4 text-center text-sm text-gray-400">
-          Created by <span className="text-purple-800">@Deamon Company.</span>
+          Created by @Deamon Company.
         </div>
       </div>
     </footer>

@@ -152,7 +152,7 @@ const Footer = () => {
 
         {/* Línea de separación y créditos */}
         <div className="mt-10 border-t border-purple-950 pt-4 text-center text-sm text-gray-400">
-          Created by <span className="text-purple-800">@Deamon Company.</span>
+          Created by @<span className="text-purple-800">Deamon Company.</span>
         </div>
       </div>
     </footer>

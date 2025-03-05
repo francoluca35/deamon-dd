@@ -14,7 +14,7 @@ const teamMembers = [
     name: "Joaquin L.",
     role: "Diseñador",
     image: "/assets/equipo/joaco.jpg",
-    hoverImage: "/assets/equipo/joaco-hover.jpg",
+    hoverImage: "/images/joaco-hover.jpg",
   },
   {
     name: "Markito P.",
