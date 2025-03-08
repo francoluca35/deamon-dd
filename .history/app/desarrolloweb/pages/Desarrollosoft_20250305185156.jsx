@@ -44,16 +44,14 @@ const projects = [
   {
     id: 1,
     title: "JLA Tecnico",
-    dominio: "Páginas Web Industrial",
-    category: "Páginas Web",
+    category: "Páginas Web Industrial",
     image: "/assets/Proyectos/jla.jpg",
     url: "https://website-jobs.com",
   },
   {
     id: 2,
     title: "TorinoCars",
-    dominio:"Páginas Web Taller Mecanico",
-    category: "Páginas Web",
+    category: "Páginas Web Taller Mecanico",
     image: "/assets/Proyectos/torinocar.jpg",
     url: "https://c24129-torinocars.netlify.app",
   },
@@ -61,7 +59,6 @@ const projects = [
     id: 3,
     title: "Generador de PDF semanal",
     category: "App Web",
-    dominio:"App Web industiral",
     image: "/assets/Proyectos/bioapp.jpg",
     url: "https://bioapp-bernabo.vercel.app",
   },
@@ -69,7 +66,6 @@ const projects = [
     id: 4,
     title: "Aplicación del clima",
     category: "App Web",
-    dominio:"App Web industiral",
     image: "/assets/Proyectos/app-clima.jpg",
     url: "https://weather-app.com",
   },
@@ -77,7 +73,6 @@ const projects = [
     id: 5,
     title: "Panel de inventario",
     category: "Programas Desktop",
-    dominio:"Programas Desktop",
     image: "/assets/Proyectos/panel.jpg",
     url: "https://inventory-panel.com",
   },
@@ -85,7 +80,6 @@ const projects = [
     id: 6,
     title: "Stock Software",
     category: "Programas Desktop",
-    dominio:"Programas Desktop",
     image: "/assets/Proyectos/stock.jpg",
     url: "https://stock-software.com",
   },
@@ -113,7 +107,7 @@ export default function TrabajosSection() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {filteredProjects.map((project) => (
-          <Card key={project.id} title={project.title} category={project.dominio} image={project.image} url={project.url} />
+          <Card key={project.id} title={project.title} category={project.category} image={project.image} url={project.url} />
         ))}
       </div>
     </div>

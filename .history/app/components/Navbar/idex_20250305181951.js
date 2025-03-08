@@ -111,7 +111,11 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className={`block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300`}
+                  className={`block py-2 px-3 rounded-sm md:p-0 ${
+                    activeLink === link.href
+                      ? "text-[#673372] font-bold"
+                      : "text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#36203a]"
+                  }`}
                 >
                   {link.label}
                 </button>
@@ -121,16 +125,16 @@ function Navbar2() {
             <li className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#36203a]"
               >
                 Trabajos ▾
               </button>
               {isDropdownOpen && (
-                <ul className="absolute left-0 mt-2 bg-[#673372a8] shadow-md rounded-md overflow-hidden w-48 text-white">
+                <ul className="absolute left-0 mt-2 bg-white shadow-md rounded-md overflow-hidden w-48">
                   <li>
                     <button
-                      onClick={() => router.push("/desarrolloweb?#trabajos")}
-                      className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
+                      onClick={() => router.push("/desarrolloweb?#trabajosy")}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200 w-full text-left"
                     >
                       Trabajos de Desarrollo
                     </button>
@@ -138,7 +142,7 @@ function Navbar2() {
                   <li>
                     <button
                       onClick={() => router.push("/graphic")}
-                      className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200 w-full text-left"
                     >
                       Trabajos de Diseño
                     </button>
@@ -148,6 +152,73 @@ function Navbar2() {
             </li>
           </ul>
         </div>
+        {isModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg max-w-md relative w-full md:w-[500px]">
+              <button
+                onClick={() => {
+                  setIsModalOpen(false);
+                  setShowCalendly(false); // Resetea el modal al cerrarlo
+                }}
+                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+              >
+                ✖
+              </button>
+
+              {/* Contenido condicional */}
+              {!showCalendly ? (
+                <>
+                  <h2 className="text-xl font-bold mb-4 text-center text-[#2f1f75]">
+                    ¿Por qué elegirnos?
+                  </h2>
+                  <p className="text-gray-700 text-center">
+                    Nuestro equipo ofrece soluciones personalizadas en
+                    desarrollo web y software, como tambien en diseno. Nos
+                    enfocamos en calidad, innovación y satisfacción del cliente.
+                  </p>
+
+                  {/* Video de YouTube */}
+                  <div className="relative w-full h-0 pb-[56.25%] mt-4">
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/cnYXkbUHKeo"
+                      title="Video de presentación"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+
+                  {/* Botón para abrir Calendly */}
+                  <div className="flex justify-center mt-4">
+                    <button
+                      onClick={() => setShowCalendly(true)}
+                      className="bg-[#1d2568] text-white px-4 py-2 rounded-lg hover:bg-[#20203a]"
+                    >
+                      Agendar reunión
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-xl font-bold mb-4 text-center text-[#100f42]">
+                    Agenda tu reunión
+                  </h2>
+
+                  {/* Calendly embebido */}
+                  <div className="w-full h-[700px]">
+                    <iframe
+                      src="https://calendly.com/deamoncompany18/30min"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -30,7 +30,7 @@ export default function ArrowUp() {
       {isVisible && (
         <button 
           onClick={scrollToTop} 
-          className="fixed z-50 bottom-0 left-14  mr-4 bg-purple-900 p-3  shadow-lg hover:bg-purple-950 transition-all flex items-center justify-center"
+          className="fixed z-50 bottom-0 left-14  mr-4 bg-purple-900 p-3  shadow-lg hover:bg-gray-800 transition-all flex items-center justify-center"
           style={{ width: '45px', height: '45px' }}
         >
           <FaArrowUp className="text-white text-lg" />

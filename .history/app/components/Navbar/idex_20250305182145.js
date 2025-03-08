@@ -129,7 +129,7 @@ function Navbar2() {
                 <ul className="absolute left-0 mt-2 bg-[#673372a8] shadow-md rounded-md overflow-hidden w-48 text-white">
                   <li>
                     <button
-                      onClick={() => router.push("/desarrolloweb?#trabajos")}
+                      onClick={() => router.push("/desarrolloweb?#trabajosy")}
                       className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
                     >
                       Trabajos de Desarrollo

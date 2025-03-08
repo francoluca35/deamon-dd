@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 // Componente personalizado de botón
 function Button({ children, onClick, isActive }) {
@@ -18,6 +19,8 @@ function Button({ children, onClick, isActive }) {
 
 // Componente personalizado de tarjeta con hover interactivo
 function Card({ title, category, image, url }) {
+  const router = useRouter();
+
   return (
     <div className="relative group overflow-hidden shadow-lg mb-10">
       <img
@@ -26,14 +29,12 @@ function Card({ title, category, image, url }) {
         className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => router.push(url)}
           className="text-white text-xl font-semibold text-center px-4 underline hover:text-gray-300 transition-colors duration-200"
         >
           {title}
-        </a>
+        </button>
         <p className="text-gray-300 text-center px-4">{category}</p>
       </div>
     </div>
@@ -43,25 +44,22 @@ function Card({ title, category, image, url }) {
 const projects = [
   {
     id: 1,
-    title: "JLA Tecnico",
-    dominio: "Páginas Web Industrial",
-    category: "Páginas Web",
+    title: "JLA Tecnicos",
+    category: "Páginas Web Industrial",
     image: "/assets/Proyectos/jla.jpg",
-    url: "https://website-jobs.com",
+    url: "https://jlatecnicos.com",
   },
   {
     id: 2,
-    title: "TorinoCars",
-    dominio:"Páginas Web Taller Mecanico",
+    title: "Portfolio Personal",
     category: "Páginas Web",
-    image: "/assets/Proyectos/torinocar.jpg",
-    url: "https://c24129-torinocars.netlify.app",
+    image: "/assets/Proyectos/portfolio.jpg",
+    url: "https://francoluca35.github.io/portfolio/",
   },
   {
     id: 3,
     title: "Generador de PDF semanal",
     category: "App Web",
-    dominio:"App Web industiral",
     image: "/assets/Proyectos/bioapp.jpg",
     url: "https://bioapp-bernabo.vercel.app",
   },
@@ -69,7 +67,6 @@ const projects = [
     id: 4,
     title: "Aplicación del clima",
     category: "App Web",
-    dominio:"App Web industiral",
     image: "/assets/Proyectos/app-clima.jpg",
     url: "https://weather-app.com",
   },
@@ -77,7 +74,6 @@ const projects = [
     id: 5,
     title: "Panel de inventario",
     category: "Programas Desktop",
-    dominio:"Programas Desktop",
     image: "/assets/Proyectos/panel.jpg",
     url: "https://inventory-panel.com",
   },
@@ -85,7 +81,6 @@ const projects = [
     id: 6,
     title: "Stock Software",
     category: "Programas Desktop",
-    dominio:"Programas Desktop",
     image: "/assets/Proyectos/stock.jpg",
     url: "https://stock-software.com",
   },
@@ -113,7 +108,7 @@ export default function TrabajosSection() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {filteredProjects.map((project) => (
-          <Card key={project.id} title={project.title} category={project.dominio} image={project.image} url={project.url} />
+          <Card key={project.id} title={project.title} category={project.category} image={project.image} url={project.url} />
         ))}
       </div>
     </div>
