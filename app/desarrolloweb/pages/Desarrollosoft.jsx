@@ -47,7 +47,7 @@ const projects = [
     dominio: "Páginas Web Industrial",
     category: "Páginas Web",
     image: "/assets/Proyectos/jla.jpg",
-    url: "https://website-jobs.com",
+    url: "https://jlatecnicos.com",
   },
   {
     id: 2,
