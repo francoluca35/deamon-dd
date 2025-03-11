@@ -1,1 +1,0 @@
-deamon-2-N.png
