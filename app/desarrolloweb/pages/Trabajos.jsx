@@ -34,7 +34,7 @@ const plans = [
     name: "Profesional",
     price: "$2500.00",
     features: [
-      "Paginas Ilimitadas",
+      "6 Paginas Web",
       "Diseño personalizado desde cero",
       "SEO avanzado",
       "Integración de comercio electrónico",
