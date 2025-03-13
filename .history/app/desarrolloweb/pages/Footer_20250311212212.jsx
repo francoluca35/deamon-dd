@@ -7,7 +7,7 @@ export default function Footer() {
    
       className="w-full py-6 px-4 bg-black text-center text-white"
     >
-      &copy; Created by <span className="text-purple-800">Deamon Company.</span>
+      &copy; 
        </footer>
   );
 }

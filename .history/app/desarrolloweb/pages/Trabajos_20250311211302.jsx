@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Clock, RefreshCw, X } from "lucide-react";
+import { Clock, RefreshCw } from "lucide-react"; 
 
 const plans = [
   {
@@ -45,25 +45,13 @@ const plans = [
 ];
 
 const calendlyLinks = {
-  static: "https://calendly.com/deamoncompany18/paquete-estatico",
-  standard: "https://calendly.com/deamoncompany18/paquete-estandar",
-  premium: "https://calendly.com/deamoncompany18/paquete-profesional",
+  static: "https://calendly.com/deamoncompany18/30min-static",
+  standard: "https://calendly.com/deamoncompany18/30min-standard",
+  premium: "https://calendly.com/deamoncompany18/30min-premium",
 };
 
 const Pricing = () => {
-  const [selectedPlan, setSelectedPlan] = useState(plans[1]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
- 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    window.location.reload(); 
-  };
+  const [selectedPlan, setSelectedPlan] = useState(plans[1]); 
 
   return (
     <section id="Servicio">
@@ -104,12 +92,14 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <button
-              onClick={openModal}
-              className="mt-6 px-6 py-3 w-full bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-lg"
+            <a 
+              href={calendlyLinks[selectedPlan.id]} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-6 block text-center px-6 py-3 w-full bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-lg"
             >
               ORDENAR
-            </button>
+            </a>
           </div>
 
           <div className="flex justify-center items-center space-x-8 mt-6">
@@ -124,35 +114,6 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-
-   
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-6 max-w-2xl w-full relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <h2 className="text-xl font-semibold mb-4 text-center">Reserva tu cita</h2>
-            <iframe
-              src={calendlyLinks[selectedPlan.id]}
-              className="w-full h-[500px] rounded-md"
-              frameBorder="0"
-              onLoad={() => console.log("Calendly cargado")}
-            ></iframe>
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={closeModal}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-              >
-                Aceptar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

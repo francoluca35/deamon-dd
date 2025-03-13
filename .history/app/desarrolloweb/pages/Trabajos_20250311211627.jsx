@@ -54,15 +54,15 @@ const Pricing = () => {
   const [selectedPlan, setSelectedPlan] = useState(plans[1]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
- 
+  // Función para abrir el modal
   const openModal = () => {
     setIsModalOpen(true);
   };
 
-
+  // Función para cerrar el modal y refrescar la página
   const closeModal = () => {
     setIsModalOpen(false);
-    window.location.reload(); 
+    window.location.reload(); // Refresca la página al cerrar
   };
 
   return (
@@ -125,7 +125,7 @@ const Pricing = () => {
         </div>
       </div>
 
-   
+      {/* MODAL DE CALENDLY */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-6 max-w-2xl w-full relative">
