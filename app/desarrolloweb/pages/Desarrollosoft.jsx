@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 
-
 function Button({ children, onClick, isActive }) {
   return (
     <button
       className={`px-5 py-2 rounded-md transition-all ${
-        isActive ? "bg-black text-white" : "bg-gray-200 text-black hover:bg-gray-300"
+        isActive
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black hover:bg-gray-300"
       }`}
       onClick={onClick}
     >
@@ -15,7 +16,6 @@ function Button({ children, onClick, isActive }) {
     </button>
   );
 }
-
 
 function Card({ title, category, image, url }) {
   return (
@@ -52,49 +52,57 @@ const projects = [
   {
     id: 2,
     title: "TorinoCars",
-    dominio:"Páginas Web Taller Mecanico",
+    dominio: "Páginas Web Taller Mecanico",
     category: "Páginas Web",
     image: "/assets/Proyectos/torinocar.jpg",
     url: "https://c24129-torinocars.netlify.app",
   },
   {
     id: 3,
-    title: "Generador de PDF semanal",
-    category: "App Web",
-    dominio:"App Web industiral",
-    image: "/assets/Proyectos/bioapp.jpg",
-    url: "https://bioapp-bernabo.vercel.app",
+    title: "Empresa De Viajes",
+    category: "Páginas Web",
+    dominio: "Página Web Para Viajes",
+    image: "/assets/Proyectos/maurello-web.png",
+    url: "https://empresacolectivo.vercel.app",
   },
   {
     id: 4,
-    title: "Aplicación del clima",
+    title: "Yael App",
     category: "App Web",
-    dominio:"App Web industiral",
-    image: "/assets/Proyectos/app-clima.jpg",
-    url: "https://weather-app.com",
+    dominio: "Aplicación para reserva de canchas",
+    image: "/assets/Proyectos/yael-app.png",
+    url: "https://yael-app.vercel.app",
   },
   {
     id: 5,
-    title: "Panel de inventario",
-    category: "Programas Desktop",
-    dominio:"Programas Desktop",
-    image: "/assets/Proyectos/panel.jpg",
-    url: "https://inventory-panel.com",
+    title: "Transportes App",
+    category: "App Web",
+    dominio:
+      "Aplicación para control administrador de reservas, pagos, y viajes.",
+    image: "/assets/Proyectos/maurello-app.png",
+    url: "https://appcolectivos.vercel.app/",
   },
   {
     id: 6,
     title: "Stock Software",
     category: "Programas Desktop",
-    dominio:"Programas Desktop",
+    dominio: "Programas Desktop",
     image: "/assets/Proyectos/stock.jpg",
     url: "https://stock-software.com",
   },
 ];
 
-const categories = ["Todos los Proyectos", "Páginas Web", "App Web", "Programas Desktop"];
+const categories = [
+  "Todos los Proyectos",
+  "Páginas Web",
+  "App Web",
+  "Programas Desktop",
+];
 
 export default function TrabajosSection() {
-  const [selectedCategory, setSelectedCategory] = useState("Todos los Proyectos");
+  const [selectedCategory, setSelectedCategory] = useState(
+    "Todos los Proyectos"
+  );
 
   const filteredProjects =
     selectedCategory === "Todos los Proyectos"
@@ -106,14 +114,24 @@ export default function TrabajosSection() {
       <h2 className="text-3xl font-bold mb-6 text-center">Nuestros Trabajos</h2>
       <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
         {categories.map((category) => (
-          <Button key={category} isActive={selectedCategory === category} onClick={() => setSelectedCategory(category)}>
+          <Button
+            key={category}
+            isActive={selectedCategory === category}
+            onClick={() => setSelectedCategory(category)}
+          >
             {category}
           </Button>
         ))}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {filteredProjects.map((project) => (
-          <Card key={project.id} title={project.title} category={project.dominio} image={project.image} url={project.url} />
+          <Card
+            key={project.id}
+            title={project.title}
+            category={project.dominio}
+            image={project.image}
+            url={project.url}
+          />
         ))}
       </div>
     </div>

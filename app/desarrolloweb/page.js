@@ -1,6 +1,5 @@
 "use client";
 
-
 import Navdesarrollo from "../components/Navbar/navbardesarrollo";
 import Home from "./pages/Home";
 import Vision from "./pages/Vision";
@@ -16,9 +15,9 @@ const Website = () => {
 
       <Home />
       <Vision />
-      <TrabajosSection/>
+      <TrabajosSection />
       <Pricing />
-      <ArrowUp/>
+      <ArrowUp />
       <Footer />
     </div>
   );

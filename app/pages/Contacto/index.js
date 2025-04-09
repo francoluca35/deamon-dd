@@ -18,13 +18,13 @@ const Contacto = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/enviar-correo`, 
+        `${process.env.NEXT_PUBLIC_API_URL}/enviar-correo`,
         formData
       );
-  
+
       if (response.status === 200) {
         setSuccess(true);
         setError("");
@@ -44,7 +44,6 @@ const Contacto = () => {
       setLoading(false);
     }
   };
-  
 
   return (
     <div
@@ -59,7 +58,7 @@ const Contacto = () => {
     >
       <div className="bg-black bg-opacity-60 p-8 rounded-lg shadow-lg ">
         <h1 className="text-white text-2xl font-bold text-center mb-6">
-          Si Quieres Cumplir Tu Sueño, Contáctanos...
+          Contactate con nosotros y asesórate con un experto.
         </h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -84,9 +83,8 @@ const Contacto = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, [id]: e.target.value })
                   }
-                  className={`bg-transparent w-full p-2 border-b rounded-md focus:outline-none transition-transform duration-300 ${
-                    activeField === id ? "scale-105" : "scale-95"
-                  }`}
+                  placeholder={label}
+                  className="w-full bg-transparent text-white border-b-2 border-violet-500 focus:border-violet-900 placeholder-gray-400 p-2 focus:outline-none transition-colors duration-300"
                 ></textarea>
               ) : (
                 <input
@@ -98,9 +96,8 @@ const Contacto = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, [id]: e.target.value })
                   }
-                  className={`w-full bg-transparent p-2 border-b rounded-md focus:outline-none transition-transform duration-300 ${
-                    activeField === id ? "scale-105" : "scale-95"
-                  }`}
+                  placeholder={label}
+                  className="w-full bg-transparent text-white border-b-2 border-violet-500 focus:border-violet-900 placeholder-gray-400 p-2 focus:outline-none transition-colors duration-300"
                 />
               )}
             </div>

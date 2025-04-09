@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import ArrowUptow from "@/app/components/ArrowUp";
 
 export default function Home() {
   return (
-    <div id="inicio" className="h-screen flex flex-col items-center justify-center text-center">
-      <ArrowUptow />
+    <div
+      id="inicio"
+      className="h-screen flex flex-col items-center justify-center text-center"
+    >
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
