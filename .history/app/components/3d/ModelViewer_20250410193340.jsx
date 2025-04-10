@@ -10,7 +10,7 @@ export default function ModelViewClient() {
       auto-rotate
       camera-controls
       interaction-prompt="none"
-      loading="lazy"
+      loading="lazy" {/* ← ACA VA */}
       reveal="auto"
       className="w-auto h-[300px] max-w-full object-contain"
       style={{ background: "transparent" }}
