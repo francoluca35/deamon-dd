@@ -1,15 +1,26 @@
 "use client";
+import { useRef, useState } from "react";
+
 import { Pencil, Building } from "lucide-react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-const ModelViewClient = dynamic(
-  () => import("../../components/3d/ModelViewer"),
-  {
-    ssr: false,
-  }
-);
 const PCompetition = () => {
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const container = containerRef.current;
+    const { left, top, width, height } = container.getBoundingClientRect();
+    const x = ((e.clientX - left) / width - 0.5) * 20; // rango de rotación
+    const y = ((e.clientY - top) / height - 0.5) * 20;
+
+    container.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+  };
+
+  const handleMouseLeave = () => {
+    const container = containerRef.current;
+    container.style.transform = "rotateX(0deg) rotateY(0deg)";
+  };
   return (
     <div className="relative w-full py-12 px-4 sm:px-6 bg-gradient-to-br from-black via-purple-900 to-black">
       <div className="max-w-screen-lg mx-auto">
@@ -49,9 +60,22 @@ const PCompetition = () => {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
-            <div className="w-full max-w-[1000px] overflow-hidden">
-              <ModelViewClient />
+          <div className="flex justify-center md:justify-end perspective-1000">
+            <div
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="transition-transform duration-200 ease-out rounded-2xl"
+              style={{
+                transformStyle: "preserve-3d",
+                perspective: "1000px",
+              }}
+            >
+              <img
+                src="/assets/diseno/tc2024.jpg"
+                className="rounded-2xl w-full h-auto select-none pointer-events-none"
+                draggable={false}
+              />
             </div>
           </div>
         </div>
