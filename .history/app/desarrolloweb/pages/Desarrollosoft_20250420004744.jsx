@@ -87,8 +87,8 @@ const projects = [
     title: "JLA App",
     category: "App Web",
     dominio: "Aplicación de control para clientes y ganacias",
-    image: "/assets/Proyectos/app-jla.png",
-    url: "https://jlatecnicos.online",
+    image: "/assets/Proyectos/stock.jpg",
+    url: "https://stock-software.com",
   },
 ];
 
