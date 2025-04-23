@@ -15,19 +15,23 @@ import ArrowUp from "./components/ArrowUp";
 import { GridLoader, PacmanLoader } from "react-spinners";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false); // Start with false
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true); // Set loading to true after mount
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setLoading(false);
-    }, 3000); // Wait for 3 seconds before hiding preloader
-    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    }, 3000); // El tiempo de espera del preloader (en milisegundos)
   }, []);
 
   if (loading) {
     return (
-      <div className="h-screen flex flex-col justify-center items-center bg-cover bg-center sm:bg-[url('/assets/mobile-fondo.png')] lg:bg-[url('/assets/background-loader.png')]">
+      <div
+        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/assets/background-loader.png)", // Imagen de fondo para el preloader
+          backgroundSize: "cover",
+        }}
+      >
         <div className="flex flex-col items-center">
           <GridLoader size={30} color="#3e085d" />
           <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
@@ -40,20 +44,28 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar2 />
-      <Inicio />
-      <div id="equipo">
-        <Equipo />
+      <div
+        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/assets/background-desktop.png)", // Imagen de fondo para la página después de cargar
+          backgroundSize: "cover",
+        }}
+      >
+        <Navbar2 />
+        <Inicio />
+        <div id="equipo">
+          <Equipo />
+        </div>
+        <ArrowUp />
+        <div id="desarrollo">
+          <Desarrollo />
+        </div>
+        <Diseño />
+        <PCompetition />
+        <Contacto />
+        <Footer />
+        <FloatingWhatsApp />
       </div>
-      <ArrowUp />
-      <div id="desarrollo">
-        <Desarrollo />
-      </div>
-      <Diseño />
-      <PCompetition />
-      <Contacto />
-      <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

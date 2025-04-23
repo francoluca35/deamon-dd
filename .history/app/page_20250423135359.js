@@ -27,7 +27,13 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="h-screen flex flex-col justify-center items-center bg-cover bg-center sm:bg-[url('/assets/mobile-fondo.png')] lg:bg-[url('/assets/background-loader.png')]">
+      <div
+        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/assets/background-loader.png)", // Image for loading screen
+          backgroundSize: "cover",
+        }}
+      >
         <div className="flex flex-col items-center">
           <GridLoader size={30} color="#3e085d" />
           <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
@@ -40,20 +46,28 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar2 />
-      <Inicio />
-      <div id="equipo">
-        <Equipo />
+      <div
+        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/assets/background-desktop.png)", // Image after loading
+          backgroundSize: "cover",
+        }}
+      >
+        <Navbar2 />
+        <Inicio />
+        <div id="equipo">
+          <Equipo />
+        </div>
+        <ArrowUp />
+        <div id="desarrollo">
+          <Desarrollo />
+        </div>
+        <Diseño />
+        <PCompetition />
+        <Contacto />
+        <Footer />
+        <FloatingWhatsApp />
       </div>
-      <ArrowUp />
-      <div id="desarrollo">
-        <Desarrollo />
-      </div>
-      <Diseño />
-      <PCompetition />
-      <Contacto />
-      <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }
