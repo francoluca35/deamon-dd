@@ -12,32 +12,23 @@ import FloatingWhatsApp from "./components/WhatsApp";
 import Navbar2 from "./components/Navbar/idex";
 import ArrowUp from "./components/ArrowUp";
 
-import { GridLoader, PacmanLoader } from "react-spinners";
+// Puedes utilizar cualquier componente de carga, como PacmanLoader de 'react-spinners'
+import { PacmanLoader } from "react-spinners"; // Asegúrate de instalar react-spinners si no lo tienes
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Simulamos una carga de 2 segundos antes de mostrar el contenido
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000); // Puedes ajustar el tiempo según lo necesites
   }, []);
 
   if (loading) {
     return (
-      <div
-        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
-        style={{
-          backgroundImage: "url(/Assets/background-loader.png)",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="flex flex-col items-center">
-          <GridLoader size={30} color="#3e085d" />
-          <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
-            Cargando...
-          </p>
-        </div>
+      <div className="h-screen flex justify-center items-center bg-black">
+        <PacmanLoader size={50} color="#ffffff" />
       </div>
     );
   }

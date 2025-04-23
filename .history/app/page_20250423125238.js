@@ -26,17 +26,15 @@ export default function Home() {
   if (loading) {
     return (
       <div
-        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
+        className="h-screen flex justify-center items-center bg-cover bg-center"
         style={{
           backgroundImage: "url(/Assets/background-loader.png)",
           backgroundSize: "cover",
         }}
       >
         <div className="flex flex-col items-center">
-          <GridLoader size={30} color="#3e085d" />
-          <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
-            Cargando...
-          </p>
+          <PacmanLoader size={30} color="#3e085d" />
+          <p className="mt-4 text-white text-xl">Cargando...</p>
         </div>
       </div>
     );

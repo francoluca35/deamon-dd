@@ -27,17 +27,10 @@ export default function Home() {
     return (
       <div
         className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
-        style={{
-          backgroundImage: "url(/Assets/background-loader.png)",
-          backgroundSize: "cover",
-        }}
+        style={{ backgroundImage: "url(/Assets/background-loader.png)" }}
       >
-        <div className="flex flex-col items-center">
-          <GridLoader size={30} color="#3e085d" />
-          <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
-            Cargando...
-          </p>
-        </div>
+        <GridLoader size={50} color="#3e085d" />
+        <p className="mt-4 text-white">Cargando...</p>
       </div>
     );
   }

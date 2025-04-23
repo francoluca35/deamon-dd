@@ -12,7 +12,7 @@ import FloatingWhatsApp from "./components/WhatsApp";
 import Navbar2 from "./components/Navbar/idex";
 import ArrowUp from "./components/ArrowUp";
 
-import { GridLoader, PacmanLoader } from "react-spinners";
+import { PacmanLoader } from "react-spinners";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -25,19 +25,8 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div
-        className="h-screen flex flex-col justify-center items-center bg-cover bg-center"
-        style={{
-          backgroundImage: "url(/Assets/background-loader.png)",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="flex flex-col items-center">
-          <GridLoader size={30} color="#3e085d" />
-          <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
-            Cargando...
-          </p>
-        </div>
+      <div className="h-screen flex justify-center items-center bg-black">
+        <PacmanLoader size={50} color="#3e085d" />
       </div>
     );
   }

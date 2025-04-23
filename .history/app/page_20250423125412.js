@@ -34,7 +34,7 @@ export default function Home() {
       >
         <div className="flex flex-col items-center">
           <GridLoader size={30} color="#3e085d" />
-          <p className="mt-4 text-purple-600 text-3xl font-bold shadow-lg">
+          <p className="mt-4 text-white text-3xl font-bold shadow-lg">
             Cargando...
           </p>
         </div>
