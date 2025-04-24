@@ -58,7 +58,7 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group w-full max-w-[350px] rounded-xl mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
+              className="relative group w-full  mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
             >
               <img
                 src={member.img}

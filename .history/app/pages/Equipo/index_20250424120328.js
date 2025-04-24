@@ -26,6 +26,12 @@ export default function TeamSection() {
       role: 'Diseñador \n <span class="font-light normal-case">Diseñador Grafico con conocimientos en Photoshop, Ilustrator, Canva, y Figma. \n Diseñador Automovilístico para autos de competición virtual y TC Pista.</span>',
       linkedin: "https://www.linkedin.com/in/markitos-parera/",
     },
+    {
+      img: "/assets/equipo/joaco.jpg",
+      name: "Joaquin I. Lazara",
+      role: 'Diseñador Gráfico \n <span class="font-light  normal-case">Diseñador para autos de competición. \n Estudiante en la UBA en la carrera de diseño gráfico.\n Apasionado por los autos de carrera, su mayor virtud es el diseño de los autos del TC.</span>',
+      linkedin: "https://www.linkedin.com/in/joaquin-lazara-3727a8353/",
+    },
   ];
 
   return (
@@ -53,12 +59,11 @@ export default function TeamSection() {
         ref={teamRef}
         className="w-full justify-center mt-10 pb-20 px-4 md:px-0"
       >
-        {/* Grid ajustado para dispositivos móviles y escritorio */}
-        <div className="grid grid-cols-1 md:grid-cols-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group w-full max-w-[350px] rounded-xl mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
+              className="relative group w-full max-w-[350px] mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
             >
               <img
                 src={member.img}

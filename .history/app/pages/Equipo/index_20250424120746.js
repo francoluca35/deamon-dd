@@ -53,12 +53,12 @@ export default function TeamSection() {
         ref={teamRef}
         className="w-full justify-center mt-10 pb-20 px-4 md:px-0"
       >
-        {/* Grid ajustado para dispositivos móviles y escritorio */}
-        <div className="grid grid-cols-1 md:grid-cols-2 ">
+        {/* Grid con un gap más pequeño */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group w-full max-w-[350px] rounded-xl mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
+              className="relative group w-full max-w-[350px] mx-auto min-h-[400px] md:h-[500px] overflow-hidden mb-10"
             >
               <img
                 src={member.img}
