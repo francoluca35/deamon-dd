@@ -77,9 +77,9 @@ const Footer = () => {
           </div>
 
           {/* Diseño Gráfico */}
-          <div className="w-full sm:w-1/2 md:w-1/4 ">
+          <div className="w-full sm:w-1/2 md:w-1/4 cursor-pointer">
             <h2 className="text-lg font-bold mb-4">Diseño Gráfico</h2>
-            <ul className="space-y-2 text-sm cursor-pointer">
+            <ul className="space-y-2 text-sm">
               <li>
                 <a
                   className="text-gray-400 hover:text-white"
