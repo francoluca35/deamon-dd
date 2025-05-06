@@ -13,17 +13,25 @@ export default {
       },
       animation: {
         "float-slow": "float 3s ease-in-out infinite",
-        loadingBar: "loadingBar 1.5s ease-in-out forwards", // 🔧 Aquí va bien
       },
       keyframes: {
         float: {
-          "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-          "100%": { transform: "translateY(0)" },
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
         },
         loadingBar: {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
+        },
+        animation: {
+          loadingBar: "loadingBar 1.5s ease-in-out forwards",
         },
       },
     },

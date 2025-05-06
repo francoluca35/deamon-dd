@@ -58,12 +58,8 @@ function Navbar2() {
 
   return (
     <nav
-      className={`${
-        isMobile
-          ? "bg-black"
-          : isScrolled
-          ? "bg-black"
-          : "bg-black bg-opacity-40"
+      className={`$${
+        isMobile || isScrolled ? "bg-black shadow-md" : "bg-transparent"
       } fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

@@ -13,7 +13,7 @@ const Contacto = () => {
 
   const phone = "+541131199882";
   const message =
-    "Hola!, Quisiera mas información acerca de los servicios ofrecidos de deamonDD.💻";
+    "Hola!, Quisiera mas información acerca de los servicios ofrecidos de deamonDD.😃";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
     message
   )}`;
@@ -103,19 +103,9 @@ const Contacto = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full relative overflow-hidden text-white font-semibold py-2 rounded-full transition ${
-                loading ? "bg-purple-600" : "bg-purple-800 hover:bg-purple-600"
-              }`}
+              className="w-full bg-purple-800 hover:bg-purple-600 text-white font-semibold py-2 rounded-full transition"
             >
-              {loading && (
-                <span
-                  className="absolute inset-0 bg-purple-800 animate-loadingBar"
-                  style={{ zIndex: 0 }}
-                ></span>
-              )}
-              <span className="relative z-10">
-                {loading ? "Enviando..." : "Enviar"}
-              </span>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
 
             {success && (
@@ -130,30 +120,19 @@ const Contacto = () => {
         </div>
 
         {/* Datos de contacto */}
-
         <div className="w-full lg:w-1/3 bg-purple-900 text-white p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-semibold mb-4">Información</h3>
           <p className="text-sm mb-2 hover:text-purple-200 hover:text-base">
             <a href="mailto:francolucap1@gmail.com">francolucap1@gmail.com</a>
           </p>
-          <p className="text-sm mb-4 hover:text-purple-200 hover:text-base">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              +54 11 3119-9882
-            </a>
+          <p className="text-sm mb-4">+54 11-3119-9882</p>
+
+          <h4 className="text-lg font-medium mt-4">Deamon Company</h4>
+          <p className="text-sm">
+            Av. Siempre Viva 742 <br />
+            San Miguel, Buenos Aires <br />
+            Argentina
           </p>
-
-          <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
-          <p className="text-sm">Diseño & Desarrollo</p>
-
-          <div className="mt-3 text-left">
-            <img
-              src="/assets/firma3.png"
-              alt="Firma de Parera Franco"
-              className="w-32 h-auto  mb-1"
-            />
-
-            <p className="text-xs ml-1 font-light">Fundador Deamon DD</p>
-          </div>
         </div>
       </div>
     </div>

@@ -11,14 +11,6 @@ function Navbar2() {
   const [activeLink, setActiveLink] = useState("/");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +37,7 @@ function Navbar2() {
     { href: "#equipo", label: "Equipo" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
     { href: "#diseno-grafico", label: "Diseño Gráfico" },
+    { href: "#contacto", label: "Contactos" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -59,11 +52,7 @@ function Navbar2() {
   return (
     <nav
       className={`${
-        isMobile
-          ? "bg-black"
-          : isScrolled
-          ? "bg-black"
-          : "bg-black bg-opacity-40"
+        isScrolled ? "bg-black shadow-md" : "bg-transparent"
       } fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -76,6 +65,7 @@ function Navbar2() {
           />
         </button>
 
+        {/* Menú hamburguesa */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={() => setIsModalOpen(true)}
@@ -123,7 +113,6 @@ function Navbar2() {
                 </button>
               </li>
             ))}
-
             <li className="relative">
               <div
                 onMouseEnter={() => {
@@ -169,19 +158,11 @@ function Navbar2() {
                 </div>
               </div>
             </li>
-
-            <li>
-              <button
-                onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
-              >
-                Contactos
-              </button>
-            </li>
           </ul>
         </div>
       </div>
 
+      {/* MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md relative w-full md:w-[500px]">
