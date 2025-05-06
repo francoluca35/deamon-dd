@@ -48,4 +48,58 @@ npm run dev        # Modo desarrollo con Turbopack
 npm run build      # Compilación optimizada
 npm run start      # Ejecución en producción
 npm run lint       # Revisión del código con ESLint
+```
+
+---
+
+## 📁 Estructura destacada
+
+```
+├── pages/              # Rutas y vistas principales
+├── components/         # Componentes reutilizables
+├── public/             # Recursos estáticos (logos, imágenes, etc)
+├── styles/             # Archivos de Tailwind y CSS personalizados
+├── lib/                # Configuraciones Firebase y backend
+├── .github/workflows/  # CI/CD con GitHub Actions
+```
+
+---
+
+## 🛠️ Instalación
+
+```bash
+git clone https://github.com/francoluca35/deamon-dd.git
+cd deamon-dd
+npm install
+npm run dev
+```
+
+---
+
+## 📦 Despliegue
+
+- **Vercel**: ya viene configurado con `vercel.json`
+- **Firebase Hosting**: usa `firebase.json` y `.firebaserc`
+- **IONOS Deployment**: incluye workflows específicos para CI/CD
+
+---
+
+## 🧑‍💻 Autor
+
+**Franco L. Parera**  
+> Director & Programador en Deamon DD  
+> [LinkedIn](https://www.linkedin.com/in/franco-parera/)
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
+
+---
+
+## ❤️ ¿Te gustó este proyecto?
+
+¡Dale una ⭐ en GitHub y ayudanos a crecer!
+
 
