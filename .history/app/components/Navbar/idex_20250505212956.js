@@ -9,32 +9,27 @@ function Navbar2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Estado para dropdown
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const [buttonText, setButtonText] = useState("Reunite con nosotros");
+
   useEffect(() => {
     const updateText = () => {
       setButtonText(
         window.innerWidth <= 768 ? "Reunite" : "Reunite con nosotros"
       );
     };
+
     updateText();
     window.addEventListener("resize", updateText);
     return () => window.removeEventListener("resize", updateText);
@@ -45,6 +40,7 @@ function Navbar2() {
     { href: "#equipo", label: "Equipo" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
     { href: "#diseno-grafico", label: "Diseño Gráfico" },
+    { href: "#contacto", label: "Contactos" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -59,11 +55,7 @@ function Navbar2() {
   return (
     <nav
       className={`${
-        isMobile
-          ? "bg-black"
-          : isScrolled
-          ? "bg-black"
-          : "bg-black bg-opacity-40"
+        isScrolled ? "bg-black shadow-md" : "bg-transparent"
       } fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -76,31 +68,35 @@ function Navbar2() {
           />
         </button>
 
+        {/* Menú hamburguesa */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={() => setIsModalOpen(true)}
+            type="button"
             className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center"
           >
             {buttonText}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
+            type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
           >
             <svg
               className="w-5 h-5"
-              viewBox="0 0 17 14"
-              fill="none"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
             >
               <path
-                d="M1 1h15M1 7h15M1 13h15"
                 stroke="currentColor"
-                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
           </button>
@@ -112,76 +108,67 @@ function Navbar2() {
           } w-full md:flex md:w-auto md:order-1 z-50`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 z-50">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 z-50">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
+                  className={`block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300`}
                 >
                   {link.label}
                 </button>
               </li>
             ))}
+            {/* Dropdown Trabajos */}
+            <li
+              className="relative group"
+              onMouseEnter={() => {
+                if (window.innerWidth >= 768) setIsDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth >= 768) setIsDropdownOpen(false);
+              }}
+            >
+              <button
+                onClick={() => {
+                  if (window.innerWidth < 768)
+                    setIsDropdownOpen(!isDropdownOpen);
+                }}
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
+              >
+                Trabajos ▾
+              </button>
 
-            <li className="relative">
               <div
-                onMouseEnter={() => {
-                  if (window.innerWidth >= 768) setIsDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  if (window.innerWidth >= 768) setIsDropdownOpen(false);
-                }}
-                className="relative"
+                className={`absolute left-0 mt-2 bg-[#673372a8] shadow-md rounded-md overflow-hidden w-48 text-white z-50 transition-all duration-300 ${
+                  isDropdownOpen ? "block" : "hidden"
+                }`}
               >
                 <button
                   onClick={() => {
-                    if (window.innerWidth < 768)
-                      setIsDropdownOpen(!isDropdownOpen);
+                    setIsDropdownOpen(false);
+                    router.push("/desarrolloweb?#trabajos");
                   }}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
+                  className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
                 >
-                  Trabajos ▾
+                  Trabajos de Desarrollo
                 </button>
-                <div
-                  className={`absolute left-0 mt-1 bg-[#673372a8] shadow-md rounded-md overflow-hidden w-48 text-white z-50 transition-all duration-300 ${
-                    isDropdownOpen ? "block" : "hidden"
-                  }`}
+                <button
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    router.push("/graphic");
+                  }}
+                  className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
                 >
-                  <button
-                    onClick={() => {
-                      setIsDropdownOpen(false);
-                      router.push("/desarrolloweb?#trabajos");
-                    }}
-                    className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
-                  >
-                    Trabajos de Desarrollo
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsDropdownOpen(false);
-                      router.push("/graphic");
-                    }}
-                    className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300"
-                  >
-                    Trabajos de Diseño
-                  </button>
-                </div>
+                  Trabajos de Diseño
+                </button>
               </div>
-            </li>
-
-            <li>
-              <button
-                onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300"
-              >
-                Contactos
-              </button>
             </li>
           </ul>
         </div>
       </div>
 
+      {/* MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md relative w-full md:w-[500px]">
@@ -194,6 +181,7 @@ function Navbar2() {
             >
               ✖
             </button>
+
             {!showCalendly ? (
               <>
                 <h2 className="text-xl font-bold mb-4 text-center text-purple-800">

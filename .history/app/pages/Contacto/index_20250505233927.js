@@ -103,19 +103,9 @@ const Contacto = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full relative overflow-hidden text-white font-semibold py-2 rounded-full transition ${
-                loading ? "bg-purple-600" : "bg-purple-800 hover:bg-purple-600"
-              }`}
+              className="w-full bg-purple-800 hover:bg-purple-600 text-white font-semibold py-2 rounded-full transition"
             >
-              {loading && (
-                <span
-                  className="absolute inset-0 bg-purple-800 animate-loadingBar"
-                  style={{ zIndex: 0 }}
-                ></span>
-              )}
-              <span className="relative z-10">
-                {loading ? "Enviando..." : "Enviar"}
-              </span>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
 
             {success && (

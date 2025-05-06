@@ -10,14 +10,6 @@ const Contacto = () => {
     email: "",
     mensaje: "",
   });
-
-  const phone = "+541131199882";
-  const message =
-    "Hola!, Quisiera mas información acerca de los servicios ofrecidos de deamonDD.💻";
-  const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
-    message
-  )}`;
-
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -67,7 +59,7 @@ const Contacto = () => {
           <h2 className="text-3xl font-extrabold text-white uppercase drop-shadow-lg tracking-wide">
             Contactate con nosotros
           </h2>
-          <p className="text-white text-base mb-6 mt-2 drop-shadow-sm">
+          <p className="text-white text-base mb-6 drop-shadow-md">
             Dejanos tu mensaje y nos comunicaremos con vos.
           </p>
 
@@ -103,19 +95,9 @@ const Contacto = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full relative overflow-hidden text-white font-semibold py-2 rounded-full transition ${
-                loading ? "bg-purple-600" : "bg-purple-800 hover:bg-purple-600"
-              }`}
+              className="w-full bg-purple-800 hover:bg-purple-600 text-white font-semibold py-2 rounded-full transition"
             >
-              {loading && (
-                <span
-                  className="absolute inset-0 bg-purple-800 animate-loadingBar"
-                  style={{ zIndex: 0 }}
-                ></span>
-              )}
-              <span className="relative z-10">
-                {loading ? "Enviando..." : "Enviar"}
-              </span>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
 
             {success && (
@@ -130,30 +112,17 @@ const Contacto = () => {
         </div>
 
         {/* Datos de contacto */}
+        <div className="w-full lg:w-1/3 bg-blue-900 text-white p-8 flex flex-col justify-center">
+          <h3 className="text-xl font-semibold mb-4">Información</h3>
+          <p className="text-sm mb-2">email@example.com</p>
+          <p className="text-sm mb-4">+00 123 4567890</p>
 
-        <div className="w-full lg:w-1/3 bg-purple-900 text-white p-8 flex flex-col justify-center">
-          <h3 className="text-2xl font-semibold mb-4">Información</h3>
-          <p className="text-sm mb-2 hover:text-purple-200 hover:text-base">
-            <a href="mailto:francolucap1@gmail.com">francolucap1@gmail.com</a>
+          <h4 className="text-lg font-medium mt-4">Deamon Company</h4>
+          <p className="text-sm">
+            Av. Siempre Viva 742 <br />
+            San Miguel, Buenos Aires <br />
+            Argentina
           </p>
-          <p className="text-sm mb-4 hover:text-purple-200 hover:text-base">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              +54 11 3119-9882
-            </a>
-          </p>
-
-          <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
-          <p className="text-sm">Diseño & Desarrollo</p>
-
-          <div className="mt-3 text-left">
-            <img
-              src="/assets/firma3.png"
-              alt="Firma de Parera Franco"
-              className="w-32 h-auto  mb-1"
-            />
-
-            <p className="text-xs ml-1 font-light">Fundador Deamon DD</p>
-          </div>
         </div>
       </div>
     </div>

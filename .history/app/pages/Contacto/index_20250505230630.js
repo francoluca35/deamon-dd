@@ -103,19 +103,9 @@ const Contacto = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full relative overflow-hidden text-white font-semibold py-2 rounded-full transition ${
-                loading ? "bg-purple-600" : "bg-purple-800 hover:bg-purple-600"
-              }`}
+              className="w-full bg-purple-800 hover:bg-purple-600 text-white font-semibold py-2 rounded-full transition"
             >
-              {loading && (
-                <span
-                  className="absolute inset-0 bg-purple-800 animate-loadingBar"
-                  style={{ zIndex: 0 }}
-                ></span>
-              )}
-              <span className="relative z-10">
-                {loading ? "Enviando..." : "Enviar"}
-              </span>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
 
             {success && (
@@ -130,7 +120,7 @@ const Contacto = () => {
         </div>
 
         {/* Datos de contacto */}
-
+        {/* Datos de contacto */}
         <div className="w-full lg:w-1/3 bg-purple-900 text-white p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-semibold mb-4">Información</h3>
           <p className="text-sm mb-2 hover:text-purple-200 hover:text-base">
@@ -145,14 +135,15 @@ const Contacto = () => {
           <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
           <p className="text-sm">Diseño & Desarrollo</p>
 
-          <div className="mt-3 text-left">
+          {/* Firma */}
+          <div className="mt-6 text-center">
             <img
-              src="/assets/firma3.png"
+              src="/firma.png"
               alt="Firma de Parera Franco"
-              className="w-32 h-auto  mb-1"
+              className="mx-auto w-24 h-auto opacity-90"
             />
-
-            <p className="text-xs ml-1 font-light">Fundador Deamon DD</p>
+            <p className="mt-2 text-xs font-light">Parera Franco</p>
+            <p className="text-xs font-light">Fundador</p>
           </div>
         </div>
       </div>
