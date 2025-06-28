@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 
-// Componente personalizado de botón
 function Button({ children, onClick, isActive }) {
   return (
     <button
       className={`px-5 py-2 rounded-md transition-all ${
-        isActive ? "bg-black text-white" : "bg-gray-200 text-black hover:bg-gray-300"
+        isActive
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black hover:bg-gray-300"
       }`}
       onClick={onClick}
     >
@@ -16,7 +17,6 @@ function Button({ children, onClick, isActive }) {
   );
 }
 
-// Componente personalizado de tarjeta con hover interactivo
 function Card({ title, category, image, url }) {
   return (
     <div className="relative group overflow-hidden shadow-lg mb-10">
@@ -43,52 +43,66 @@ function Card({ title, category, image, url }) {
 const projects = [
   {
     id: 1,
-    title: "Website Jobs",
+    title: "JLA Tecnico",
+    dominio: "Páginas Web Industrial",
     category: "Páginas Web",
     image: "/assets/Proyectos/jla.jpg",
-    url: "https://website-jobs.com",
+    url: "https://jlatecnicos.com",
   },
   {
     id: 2,
-    title: "Portfolio Website",
+    title: "TorinoCars",
+    dominio: "Páginas Web Taller Mecanico",
     category: "Páginas Web",
-    image: "/assets/Proyectos/portfolio.jpg",
-    url: "https://portfolio-example.com",
+    image: "/assets/Proyectos/torinocar.jpg",
+    url: "https://c24129-torinocars.netlify.app",
   },
   {
     id: 3,
-    title: "Generador de PDF rutinaro",
-    category: "App Web",
-    image: "/assets/Proyectos/bioapp.jpg",
-    url: "https://pdf-generator.com",
+    title: "Empresa De Viajes",
+    category: "Páginas Web",
+    dominio: "Página Web Para Viajes",
+    image: "/assets/Proyectos/maurello-web.png",
+    url: "https://empresacolectivo.vercel.app",
   },
   {
     id: 4,
-    title: "Aplicación del clima",
+    title: "Caruso App",
     category: "App Web",
-    image: "/assets/Proyectos/app-clima.jpg",
-    url: "https://weather-app.com",
+    dominio: "Aplicación para reserva de canchas",
+    image: "/assets/Proyectos/yael-app.png",
+    url: "https://caruso-app.vercel.app",
   },
   {
     id: 5,
-    title: "Panel de inventario",
-    category: "Programas Desktop",
-    image: "/assets/Proyectos/panel.jpg",
-    url: "https://inventory-panel.com",
+    title: "Transportes App",
+    category: "App Web",
+    dominio:
+      "Aplicación para control administrador de reservas, pagos, y viajes.",
+    image: "/assets/Proyectos/maurello-app.png",
+    url: "https://appcolectivos.vercel.app/",
   },
   {
     id: 6,
-    title: "Stock Software",
-    category: "Programas Desktop",
-    image: "/assets/Proyectos/stock.jpg",
-    url: "https://stock-software.com",
+    title: "JLA App",
+    category: "App Web",
+    dominio: "Aplicación de control para clientes y ganacias",
+    image: "/assets/Proyectos/app-jla.png",
+    url: "https://jlatecnicos.online",
   },
 ];
 
-const categories = ["Todos los Proyectos", "Páginas Web", "App Web", "Programas Desktop"];
+const categories = [
+  "Todos los Proyectos",
+  "Páginas Web",
+  "App Web",
+  "Programas Desktop",
+];
 
 export default function TrabajosSection() {
-  const [selectedCategory, setSelectedCategory] = useState("Todos los Proyectos");
+  const [selectedCategory, setSelectedCategory] = useState(
+    "Todos los Proyectos"
+  );
 
   const filteredProjects =
     selectedCategory === "Todos los Proyectos"
@@ -100,14 +114,24 @@ export default function TrabajosSection() {
       <h2 className="text-3xl font-bold mb-6 text-center">Nuestros Trabajos</h2>
       <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
         {categories.map((category) => (
-          <Button key={category} isActive={selectedCategory === category} onClick={() => setSelectedCategory(category)}>
+          <Button
+            key={category}
+            isActive={selectedCategory === category}
+            onClick={() => setSelectedCategory(category)}
+          >
             {category}
           </Button>
         ))}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {filteredProjects.map((project) => (
-          <Card key={project.id} title={project.title} category={project.category} image={project.image} url={project.url} />
+          <Card
+            key={project.id}
+            title={project.title}
+            category={project.dominio}
+            image={project.image}
+            url={project.url}
+          />
         ))}
       </div>
     </div>

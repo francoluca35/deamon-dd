@@ -67,11 +67,11 @@ const projects = [
   },
   {
     id: 4,
-    title: "Yael App",
+    title: "Caruso App",
     category: "App Web",
     dominio: "Aplicación para reserva de canchas",
     image: "/assets/Proyectos/yael-app.png",
-    url: "https://yael-app.vercel.app",
+    url: "https://caruso-app.vercel.app",
   },
   {
     id: 5,
