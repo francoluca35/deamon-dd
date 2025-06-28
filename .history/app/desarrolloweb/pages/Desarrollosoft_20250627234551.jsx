@@ -213,7 +213,7 @@ export default function TrabajosSection() {
 
   return (
     <div id="trabajos" className="pt-24 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold mb-10 text-center text-gray-300">
+      <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">
         Nuestros Trabajos
       </h2>
 

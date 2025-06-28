@@ -149,11 +149,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "PeruMar App",
-    dominio: "App Comandas",
-    category: "App Web",
+    title: "TorinoCars",
+    dominio: "Web Taller",
+    category: "Páginas Web",
     image: "/assets/Proyectos/torinocar.jpg",
-    repo: "https://github.com/francoluca35/comandas",
+    url: "https://c24129-torinocars.netlify.app",
+    repo: "https://github.com/francoluca35/TorinoCars",
     galeria: ["/assets/Proyectos/torinocar.jpg"],
   },
   {
@@ -168,16 +169,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "JLA App",
-    category: "App Web",
-    dominio: "Control de clientes",
-    image: "/assets/Proyectos/JLA.png",
-    url: "https://jlatecnicos.online",
-    repo: "https://github.com/francoluca35/jla-app",
-    galeria: [],
-  },
-  {
-    id: 5,
     title: "Caruso App",
     category: "App Web",
     dominio: "Reserva de canchas",
@@ -187,17 +178,33 @@ const projects = [
     galeria: ["/assets/Proyectos/yael-app.png"],
   },
   {
-    id: 6,
+    id: 5,
     title: "Transportes App",
     category: "App Web",
     dominio: "Reservas y viajes",
     image: "/assets/Proyectos/maurello-web.png",
+    url: "https://appcolectivos.vercel.app/",
     repo: "https://github.com/francoluca35/appcolectivos",
+    galeria: [],
+  },
+  {
+    id: 6,
+    title: "JLA App",
+    category: "App Web",
+    dominio: "Control de clientes",
+    image: "/assets/Proyectos/JLA.png",
+    url: "https://jlatecnicos.online",
+    repo: "https://github.com/francoluca35/jla-app",
     galeria: [],
   },
 ];
 
-const categories = ["Todos los Proyectos", "Páginas Web", "App Web", ,];
+const categories = [
+  "Todos los Proyectos",
+  "Páginas Web",
+  "App Web",
+  "Programas Desktop",
+];
 
 // Componente principal
 export default function TrabajosSection() {
@@ -213,7 +220,7 @@ export default function TrabajosSection() {
 
   return (
     <div id="trabajos" className="pt-24 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold mb-10 text-center text-gray-300">
+      <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">
         Nuestros Trabajos
       </h2>
 

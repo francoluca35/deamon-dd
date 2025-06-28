@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const scrollToVision = () => {
-    const target = document.getElementById("vision");
+  const scrollToTrabajos = () => {
+    const target = document.getElementById("trabajos");
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
@@ -33,7 +33,7 @@ export default function Home() {
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onClick={scrollToVision}
+        onClick={scrollToTrabajos}
         className="mt-6 px-6 py-2 bg-transparent border-2 border-gray-600 text-gray-200 rounded-full shadow-lg"
       >
         Descubrir Más

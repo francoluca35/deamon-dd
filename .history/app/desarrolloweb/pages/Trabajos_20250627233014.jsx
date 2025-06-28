@@ -5,8 +5,8 @@ import { Clock, RefreshCw, X } from "lucide-react";
 const plans = [
   {
     id: "static",
-    name: "Pagina Web",
-    price: "$300 ~ 600",
+    name: "Estatico",
+    price: "$999.99",
     features: [
       "1 página con Next.js",
       "Personalización de diseño",
@@ -19,20 +19,20 @@ const plans = [
   {
     id: "standard",
     name: "Estandar",
-    price: "$1000 ~ 1400",
+    price: "$1200.00",
     features: [
-      "1 páginas con Next.js",
-      "1 Aplicación Web PWA",
-      "Diseño completo responsivo",
-      "Alijamiento y base de datos",
+      "3 páginas con Next.js",
+      "Personalización avanzada",
+      "Diseño completo receptivo",
+      "Figma a html",
       "Optimización de SEO",
       "6 complementos/extensiones",
     ],
   },
   {
     id: "Aplicación",
-    name: "Aplicaciónes Web",
-    price: "$ 500 ~ 1000",
+    name: "Profesional",
+    price: "$ 500~1000",
     features: [
       "Aplicación Web PWA",
       "Diseño personalizado desde cero",

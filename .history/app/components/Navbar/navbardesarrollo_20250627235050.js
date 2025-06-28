@@ -45,12 +45,12 @@ function Navdesarrollo() {
     setActiveLink(href);
 
     if (href.startsWith("#")) {
-      const id = href.slice(1);
+      const id = href.slice(1); // Remueve el "#"
       const target = document.getElementById(id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
-      setIsOpen(false);
+      setIsOpen(false); // Cierra el menú en mobile
     } else if (isRoute) {
       router.push(href);
     } else {
