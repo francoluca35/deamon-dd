@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { FiExternalLink, FiGithub, FiImage, FiX } from "react-icons/fi";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
+import { FiXCircle, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+// Botón de categoría
 function Button({ children, onClick, isActive }) {
   return (
     <button
@@ -37,6 +37,7 @@ function GaleriaModal({ images, onClose }) {
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex justify-center items-center p-4">
       <div className="bg-black/40 p-6 rounded-xl max-w-4xl w-full relative shadow-xl">
+        {/* Cerrar */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white hover:text-gray-400 text-2xl font-black"
@@ -44,6 +45,7 @@ function GaleriaModal({ images, onClose }) {
           X
         </button>
 
+        {/* Imagen principal con flechas */}
         <div className="relative flex justify-center items-center">
           <button
             onClick={handlePrev}
@@ -55,7 +57,7 @@ function GaleriaModal({ images, onClose }) {
           <img
             src={images[activeIndex]}
             alt={`image-${activeIndex}`}
-            className="w-full max-h-[320px] object-contain rounded"
+            className="w-full max-h-[350px] object-contain rounded"
           />
 
           <button
@@ -66,6 +68,7 @@ function GaleriaModal({ images, onClose }) {
           </button>
         </div>
 
+        {/* Miniaturas */}
         <div className="mt-4 flex gap-2 justify-center overflow-x-auto">
           {images.map((src, index) => (
             <img
@@ -82,7 +85,7 @@ function GaleriaModal({ images, onClose }) {
     </div>
   );
 }
-
+// Card de proyecto
 function Card({ title, category, image, url, repo, galeria, onOpenGaleria }) {
   return (
     <div className="relative group overflow-hidden rounded-xl shadow-md mb-10 bg-white">
@@ -132,6 +135,7 @@ function Card({ title, category, image, url, repo, galeria, onOpenGaleria }) {
   );
 }
 
+// Proyectos
 const projects = [
   {
     id: 1,
@@ -225,6 +229,7 @@ const projects = [
 
 const categories = ["Todos los Proyectos", "Páginas Web", "App Web", ,];
 
+// Componente principal
 export default function TrabajosSection() {
   const [selectedCategory, setSelectedCategory] = useState(
     "Todos los Proyectos"

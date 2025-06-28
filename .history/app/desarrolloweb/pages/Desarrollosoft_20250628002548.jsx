@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FiExternalLink, FiGithub, FiImage, FiX } from "react-icons/fi";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { , FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 function Button({ children, onClick, isActive }) {
   return (

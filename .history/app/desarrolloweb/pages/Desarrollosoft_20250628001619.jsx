@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { FiExternalLink, FiGithub, FiImage, FiX } from "react-icons/fi";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
+import { FiXCircle, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+// Botón de categoría
 function Button({ children, onClick, isActive }) {
   return (
     <button
@@ -37,6 +37,7 @@ function GaleriaModal({ images, onClose }) {
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex justify-center items-center p-4">
       <div className="bg-black/40 p-6 rounded-xl max-w-4xl w-full relative shadow-xl">
+        {/* Cerrar */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white hover:text-gray-400 text-2xl font-black"
@@ -44,6 +45,7 @@ function GaleriaModal({ images, onClose }) {
           X
         </button>
 
+        {/* Imagen principal con flechas */}
         <div className="relative flex justify-center items-center">
           <button
             onClick={handlePrev}
@@ -55,7 +57,7 @@ function GaleriaModal({ images, onClose }) {
           <img
             src={images[activeIndex]}
             alt={`image-${activeIndex}`}
-            className="w-full max-h-[320px] object-contain rounded"
+            className="w-full max-h-[400px] object-contain rounded"
           />
 
           <button
@@ -66,6 +68,7 @@ function GaleriaModal({ images, onClose }) {
           </button>
         </div>
 
+        {/* Miniaturas */}
         <div className="mt-4 flex gap-2 justify-center overflow-x-auto">
           {images.map((src, index) => (
             <img
@@ -82,7 +85,7 @@ function GaleriaModal({ images, onClose }) {
     </div>
   );
 }
-
+// Card de proyecto
 function Card({ title, category, image, url, repo, galeria, onOpenGaleria }) {
   return (
     <div className="relative group overflow-hidden rounded-xl shadow-md mb-10 bg-white">
@@ -132,6 +135,7 @@ function Card({ title, category, image, url, repo, galeria, onOpenGaleria }) {
   );
 }
 
+// Proyectos
 const projects = [
   {
     id: 1,
@@ -170,12 +174,7 @@ const projects = [
     image: "/assets/Proyectos/maurello-web.png",
     url: "https://empresacolectivo.vercel.app",
     repo: "https://github.com/francoluca35/empresacolectivo",
-
-    galeria: [
-      "/assets/Proyectos/app-web/maurello-web.png",
-      "/assets/Proyectos/app-web/maurello-web-2.png",
-      "/assets/Proyectos/app-web/maurello-web-3.png",
-    ],
+    galeria: [],
   },
   {
     id: 4,
@@ -185,13 +184,7 @@ const projects = [
     image: "/assets/Proyectos/JLA.png",
     url: "https://jlatecnicos.online",
     repo: "https://github.com/francoluca35/jla-app",
-
-    galeria: [
-      "/assets/Proyectos/app-web/app-jla-2.png",
-      "/assets/Proyectos/app-web/app-jla.png",
-      "/assets/Proyectos/app-web/app-jla-3.png",
-      "/assets/Proyectos/app-web/app-jla-4.png",
-    ],
+    galeria: [],
   },
   {
     id: 5,
@@ -201,11 +194,7 @@ const projects = [
     image: "/assets/Proyectos/yael-app.png",
     url: "https://caruso-app.vercel.app",
     repo: "https://github.com/francoluca35/yael-app/",
-    galeria: [
-      "/assets/Proyectos/app-web/caruso-app.png",
-      "/assets/Proyectos/app-web/caruso-app-2.png",
-      "/assets/Proyectos/app-web/caruso-app-3.png",
-    ],
+    galeria: ["/assets/Proyectos/yael-app.png"],
   },
   {
     id: 6,
@@ -214,17 +203,13 @@ const projects = [
     dominio: "Reservas y viajes",
     image: "/assets/Proyectos/maurello-web.png",
     repo: "https://github.com/francoluca35/appcolectivos",
-    galeria: [
-      "/assets/Proyectos/app-web/maurello-app.png",
-      "/assets/Proyectos/app-web/maurello-app-2.png",
-      "/assets/Proyectos/app-web/maurello-app-3.png",
-      "/assets/Proyectos/app-web/maurello-app-4.png",
-    ],
+    galeria: [],
   },
 ];
 
 const categories = ["Todos los Proyectos", "Páginas Web", "App Web", ,];
 
+// Componente principal
 export default function TrabajosSection() {
   const [selectedCategory, setSelectedCategory] = useState(
     "Todos los Proyectos"
