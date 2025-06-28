@@ -168,6 +168,17 @@ const projects = [
   },
   {
     id: 4,
+    title: "Caruso App",
+    category: "App Web",
+    dominio: "Reserva de canchas",
+    image: "/assets/Proyectos/yael-app.png",
+    url: "https://caruso-app.vercel.app",
+    repo: "https://github.com/francoluca35/yael-app/",
+    galeria: ["/assets/Proyectos/yael-app.png"],
+  },
+
+  {
+    id: 5,
     title: "JLA App",
     category: "App Web",
     dominio: "Control de clientes",
@@ -177,27 +188,23 @@ const projects = [
     galeria: [],
   },
   {
-    id: 5,
-    title: "Caruso App",
-    category: "App Web",
-    dominio: "Reserva de canchas",
-    image: "/assets/Proyectos/yael-app.png",
-    url: "https://caruso-app.vercel.app",
-    repo: "https://github.com/francoluca35/yael-app/",
-    galeria: ["/assets/Proyectos/yael-app.png"],
-  },
-  {
     id: 6,
     title: "Transportes App",
     category: "App Web",
     dominio: "Reservas y viajes",
     image: "/assets/Proyectos/maurello-web.png",
+
     repo: "https://github.com/francoluca35/appcolectivos",
     galeria: [],
   },
 ];
 
-const categories = ["Todos los Proyectos", "Páginas Web", "App Web", ,];
+const categories = [
+  "Todos los Proyectos",
+  "Páginas Web",
+  "App Web",
+  "Programas Desktop",
+];
 
 // Componente principal
 export default function TrabajosSection() {
@@ -213,7 +220,7 @@ export default function TrabajosSection() {
 
   return (
     <div id="trabajos" className="pt-24 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold mb-10 text-center text-gray-300">
+      <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">
         Nuestros Trabajos
       </h2>
 

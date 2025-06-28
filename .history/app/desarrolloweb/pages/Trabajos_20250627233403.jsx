@@ -19,7 +19,7 @@ const plans = [
   {
     id: "standard",
     name: "Estandar",
-    price: "$1000 ~ 1400",
+    price: "$1000 ~ 1400.00",
     features: [
       "1 páginas con Next.js",
       "1 Aplicación Web PWA",
