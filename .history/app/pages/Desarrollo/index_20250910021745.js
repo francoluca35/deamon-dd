@@ -40,7 +40,7 @@ const Desarrollo = () => {
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-center z-0"
         style={{
-          backgroundImage: `url('/assets/fondo.jpg')`,
+          backgroundImage: `url('/assets/desarollo-s.avif')`,
           backgroundSize: "contain",
           backgroundPosition: "center",
           opacity: ".2",
@@ -71,7 +71,7 @@ const Desarrollo = () => {
               de expertos en <a href="/desarrolloweb" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>elaboración de sistemas especializados</a>.
             </p>
             <Image
-              src="/assets/desarrollo-2.avif"
+              src="/assets/desarrollo-2.png"
               className="rounded-lg"
               alt="Elaboración de sistemas especializados con experiencia de usuario optimizada"
               width={400}
@@ -93,7 +93,7 @@ const Desarrollo = () => {
               para conocer más sobre nuestras <a href="/graphic" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>soluciones creativas</a>.
             </p>
             <Image
-              src="/assets/desarrollo.avif"
+              src="/assets/desarrollo.png"
               className="rounded-lg"
               alt="Entornos escalables y de alto rendimiento"
               width={400}

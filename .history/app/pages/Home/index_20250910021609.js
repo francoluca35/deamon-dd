@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <motion.div
       className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4"
-      style={{ backgroundImage: "url(/assets/fondo2.avif)" }}
+      style={{ backgroundImage: "url(/assets/fondo.png)" }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
