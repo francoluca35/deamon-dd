@@ -38,20 +38,23 @@ export default function Home() {
     // Iniciar monitoreo de performance
     startMonitoring();
 
-    // Preload no bloqueante
+    // Preload crítico optimizado para móvil
     const preloadCritical = async () => {
-      // Cargar inmediatamente sin esperar
-      setIsLoaded(true);
+      // Detectar si es móvil
+      const isMobile = window.innerWidth < 768;
+      const criticalImage = isMobile ? '/assets/deamon-icon-B-s.avif' : '/assets/imagen-ilu.avif';
       
-      // Preload en background sin bloquear
-      requestIdleCallback(() => {
-        const isMobile = window.innerWidth < 768;
-        const criticalImage = isMobile ? '/assets/deamon-icon-B-s.avif' : '/assets/imagen-ilu.avif';
-        
-        const img = new Image();
-        img.src = criticalImage;
-        img.loading = 'lazy';
-      });
+      const img = new Image();
+      img.src = criticalImage;
+      img.loading = 'eager';
+      img.fetchPriority = 'high';
+      
+      // No esperar a que cargue completamente, solo iniciar la carga
+      img.onload = () => setIsLoaded(true);
+      img.onerror = () => setIsLoaded(true);
+      
+      // Timeout de seguridad más corto para móvil
+      setTimeout(() => setIsLoaded(true), isMobile ? 300 : 500);
     };
 
     preloadCritical().catch(error => {

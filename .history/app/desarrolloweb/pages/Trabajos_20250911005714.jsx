@@ -65,7 +65,7 @@ const Pricing = () => {
 
   return (
     <section id="Servicio">
-      <div className=" bg-gradient-to-b from-black to-cyan-900 min-h-screen flex items-center">
+      <div className=" bg-gradient-to-b from-black to-gray-900 min-h-screen flex items-center">
         <div className="bg-gray-900 text-white px-12 py-8 rounded-lg w-11/12 lg:w-10/12 max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-6">Servicios</h2>
 
