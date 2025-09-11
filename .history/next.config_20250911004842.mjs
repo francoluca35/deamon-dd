@@ -13,6 +13,8 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
     loader: 'default',
+    quality: 85,
+    priority: true,
   },
   
   // Headers de seguridad y rendimiento

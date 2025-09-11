@@ -13,6 +13,8 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
     loader: 'default',
+    quality: 85,
+    priority: true,
   },
   
   // Headers de seguridad y rendimiento
@@ -59,20 +61,19 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   
-  // Webpack optimizations mejoradas para móvil
+  // Webpack optimizations mejoradas
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 15000,
-        maxSize: 200000,
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
             priority: 10,
-            maxSize: 150000,
           },
           common: {
             name: 'common',
@@ -80,14 +81,6 @@ const nextConfig = {
             chunks: 'all',
             priority: 5,
             reuseExistingChunk: true,
-            maxSize: 100000,
-          },
-          critical: {
-            name: 'critical',
-            test: /[\\/](framer-motion|react-icons)[\\/]/,
-            chunks: 'all',
-            priority: 15,
-            maxSize: 50000,
           },
         },
       };
