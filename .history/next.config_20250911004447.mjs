@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
   
-  // Optimización de imágenes mejorada para móvil
+  // Optimización de imágenes mejorada
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -59,20 +59,19 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   
-  // Webpack optimizations mejoradas para móvil
+  // Webpack optimizations mejoradas
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 15000,
-        maxSize: 200000,
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
             priority: 10,
-            maxSize: 150000,
           },
           common: {
             name: 'common',
@@ -80,14 +79,6 @@ const nextConfig = {
             chunks: 'all',
             priority: 5,
             reuseExistingChunk: true,
-            maxSize: 100000,
-          },
-          critical: {
-            name: 'critical',
-            test: /[\\/](framer-motion|react-icons)[\\/]/,
-            chunks: 'all',
-            priority: 15,
-            maxSize: 50000,
           },
         },
       };
