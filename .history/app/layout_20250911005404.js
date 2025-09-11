@@ -92,14 +92,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* CSS Crítico Ultra Optimizado */}
+        {/* CSS Crítico Inline Optimizado */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            :root{--bg:#fff;--fg:#171717;--p:#673372}
+            :root{--bg:#fff;--fg:#171717;--p:#673372;--pd:#36203a;--a:#3e085d}
             *{box-sizing:border-box}
             html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
             body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg)}
-            .loading-spinner{display:flex;justify-content:center;align-items:center;height:100vh;background:#673372}
+            .loading-spinner{display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#673372 0%,#3e085d 100%)}
             .spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);border-top:4px solid #fff;border-radius:50%;animation:spin 1s linear infinite}
             @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
           `

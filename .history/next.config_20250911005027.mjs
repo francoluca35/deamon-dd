@@ -59,41 +59,20 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   
-  // Webpack optimizations ultra agresivas para móvil
+  // Webpack optimizations mejoradas para móvil
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 10000,
-        maxSize: 100000,
+        minSize: 15000,
+        maxSize: 200000,
         cacheGroups: {
-          react: {
-            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-            name: 'react',
-            chunks: 'all',
-            priority: 20,
-            maxSize: 50000,
-          },
-          framer: {
-            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-            name: 'framer',
-            chunks: 'all',
-            priority: 15,
-            maxSize: 30000,
-          },
-          icons: {
-            test: /[\\/]node_modules[\\/]react-icons[\\/]/,
-            name: 'icons',
-            chunks: 'all',
-            priority: 15,
-            maxSize: 20000,
-          },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
             priority: 10,
-            maxSize: 80000,
+            maxSize: 150000,
           },
           common: {
             name: 'common',
@@ -101,6 +80,13 @@ const nextConfig = {
             chunks: 'all',
             priority: 5,
             reuseExistingChunk: true,
+            maxSize: 100000,
+          },
+          critical: {
+            name: 'critical',
+            test: /[\\/](framer-motion|react-icons)[\\/]/,
+            chunks: 'all',
+            priority: 15,
             maxSize: 50000,
           },
         },
