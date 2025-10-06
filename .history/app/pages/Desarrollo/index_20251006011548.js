@@ -68,9 +68,9 @@ const Desarrollo = () => {
               intuitivas y atractivas que faciliten la navegación y hagan que
               los usuarios interactúen de manera más efectiva con el entorno online.
               <br />
-              <a href="#equipo" className=" hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
+              <a href="#equipo" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
                 Conoce nuestro equipo </a> 
-              de expertos en <a href="/desarrolloweb" className=" hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>elaboración de sistemas especializados</a>.
+              de expertos en <a href="/desarrolloweb" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>elaboración de sistemas especializados</a>.
             </p>
             <Image
               src="/assets/desarrollo-2.avif"
@@ -91,9 +91,8 @@ const Desarrollo = () => {
               fácilmente al crecimiento futuro. Innovación y diferenciación
               donde generamos soluciones que se destaquen de la competencia, bien
               sea por una identidad visual única, funciones novedosas o tecnologías
-              innovadoras. <br />    <a href="#contacto" className=" hover:text-white  transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
-                Contacta con nosotros </a> 
-              para conocer más sobre nuestras <a href="/graphic" className=" hover:text-white  transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>soluciones creativas</a>.
+              innovadoras.               <a href="#contacto" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>Contacta con nosotros</a> 
+              para conocer más sobre nuestras <a href="/graphic" className="text-purple-300 hover:text-white underline transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>soluciones creativas</a>.
             </p>
             <Image
               src="/assets/diseño-web.avif"

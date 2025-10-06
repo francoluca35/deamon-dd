@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ErrorBoundary from "./components/ErrorBoundary";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,20 +118,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/assets/deamon-icon-B-desarrollo.avif" type="image/avif" />
         <link rel="apple-touch-icon" href="/assets/deamon-icon-B-desarrollo.avif" />
-        
-        {/* Google Analytics - Código directo */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4FTP8BS4C"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-W4FTP8BS4C');
-            `,
-          }}
-        />
-        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -174,6 +161,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <ErrorBoundary>
           {children}
         </ErrorBoundary>

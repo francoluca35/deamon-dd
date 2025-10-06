@@ -39,17 +39,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  content-visibility: auto;
-}
-
-/* Optimización de imágenes */
-img[loading="lazy"] {
-  content-visibility: auto;
-}
-
-/* Preload crítico */
-.preload-critical {
-  font-display: swap;
 }
 
 /* Mejoras de accesibilidad */
@@ -125,19 +114,6 @@ img[loading="lazy"] {
   }
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float-slow {
-  animation: float-slow 3s ease-in-out infinite;
-}
-
 /* Optimización de fuentes */
 .font-display {
   font-display: swap;
@@ -194,52 +170,5 @@ img[loading="lazy"] {
   .mobile-safe-area {
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
-  }
-  
-  /* WhatsApp button mobile fixes */
-  .whatsapp-mobile {
-    bottom: 16px !important;
-    right: 16px !important;
-    width: 48px !important;
-    height: 48px !important;
-  }
-}
-
-/* WhatsApp button positioning fixes */
-@media screen and (max-width: 480px) {
-  .whatsapp-mobile {
-    bottom: 12px !important;
-    right: 12px !important;
-    width: 44px !important;
-    height: 44px !important;
-  }
-}
-
-/* Mobile Home section improvements */
-@media screen and (max-width: 768px) {
-  .mobile-home-extended {
-    min-height: 140vh !important;
-  }
-  
-  .mobile-home-content {
-    gap: 2rem !important;
-    padding: 2rem 0 !important;
-  }
-  
-  .mobile-home-image {
-    max-width: 90vw !important;
-    margin: 1rem 0 !important;
-  }
-  
-  .mobile-home-text {
-    font-size: 1.125rem !important;
-    line-height: 1.7 !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  .mobile-home-title {
-    font-size: 2.25rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1.5rem !important;
   }
 }

@@ -42,14 +42,14 @@ export default function Home() {
             propósito es ayudarte a potenciar tu identidad. Conoce nuestros 
             <a 
               href="/desarrolloweb" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300 hover:text-purple-200 underline mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de creación de plataformas"
             >soluciones de programación</a>
             y 
             <a 
               href="/graphic" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300 hover:text-purple-200 underline mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de identidad visual"
             >creatividad visual</a>
@@ -85,7 +85,7 @@ export default function Home() {
 
         {/* IMAGEN */}
         <div className="w-full md:w-[45%] max-w-[900px] flex justify-center md:justify-end px-4 order-1 md:order-2">
-          <div className="relative w-full h-auto max-w-[500px] md:max-w-none mobile-home-image">
+          <div className="relative w-full h-auto max-w-[500px] md:max-w-none">
             <Image
               src="/assets/imagen-ilu.avif"
               width={900}
@@ -96,7 +96,7 @@ export default function Home() {
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              quality={90}
+              quality={85}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />

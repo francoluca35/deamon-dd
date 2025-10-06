@@ -239,8 +239,8 @@ const Contacto = () => {
           <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
           <p className="text-sm">Composición & Construcción</p>
           <p className="text-xs mt-2">
-            Especialistas en <a href="/desarrolloweb" className=" hover:text-white  transition-colors">construcción de sistemas </a> 
-             y <a href="/graphic" className=" hover:text-white  transition-colors">identidad visual</a> en Buenos Aires.
+            Especialistas en <a href="/desarrolloweb" className="text-purple-300 hover:text-white underline transition-colors">construcción de sistemas</a> 
+            y <a href="/graphic" className="text-purple-300 hover:text-white underline transition-colors">identidad visual</a> en Buenos Aires.
           </p>
 
           <div className="mt-3 text-left">

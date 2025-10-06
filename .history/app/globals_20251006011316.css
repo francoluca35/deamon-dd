@@ -39,17 +39,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  content-visibility: auto;
-}
-
-/* Optimización de imágenes */
-img[loading="lazy"] {
-  content-visibility: auto;
-}
-
-/* Preload crítico */
-.preload-critical {
-  font-display: swap;
 }
 
 /* Mejoras de accesibilidad */

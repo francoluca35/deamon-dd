@@ -12,12 +12,12 @@ const FloatingWhatsApp = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-30 rounded-full shadow-lg transition duration-200 ease-in-out animate-float-slow focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 hover:scale-110 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 whatsapp-mobile"
+      className="fixed bottom-6 right-6 z-30 rounded-full p-2 shadow-lg transition duration-200 ease-in-out animate-float-slow focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 hover:scale-110 w-14 h-14 sm:w-16 sm:h-16"
       aria-label="Contactar por WhatsApp"
       tabIndex={0}
       style={{
-        marginBottom: 'max(env(safe-area-inset-bottom, 0px), 16px)',
-        marginRight: 'max(env(safe-area-inset-right, 0px), 16px)'
+        marginBottom: 'env(safe-area-inset-bottom, 0px)',
+        marginRight: 'env(safe-area-inset-right, 0px)'
       }}
     >
       <Image

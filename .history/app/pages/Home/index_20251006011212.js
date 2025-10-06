@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className="relative w-full min-h-screen ios-viewport-fix mobile-viewport mobile-home-extended flex items-center justify-center bg-cover bg-center bg-no-repeat px-4"
+      className="relative w-full min-h-screen ios-viewport-fix mobile-viewport flex items-center justify-center bg-cover bg-center bg-no-repeat px-4"
       style={{ 
         backgroundImage: "url(/assets/fondo2.avif)",
         backgroundAttachment: "fixed",
@@ -31,25 +31,25 @@ export default function Home() {
     >
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-      <div className="relative z-10 w-full max-w-screen-xl flex flex-col md:flex-row items-center justify-between gap-12 py-16 ios-safe-area mobile-safe-area mobile-home-content">
+      <div className="relative z-10 w-full max-w-screen-xl flex flex-col md:flex-row items-center justify-between gap-12 py-16 ios-safe-area mobile-safe-area">
         {/* TEXTO */}
         <div className="text-white w-full md:w-1/2 text-center md:text-left px-4 order-2 md:order-1">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] mobile-home-title">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
             HACEMOS DE TU IDENTIDAD ALGO ÚNICO
           </h1>
-          <p className="text-sm sm:text-base md:text-xl mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] leading-relaxed mobile-home-text">
+          <p className="text-sm sm:text-base md:text-xl mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] leading-relaxed">
             Somos una organización creativa especializada en soluciones tecnológicas, nuestro único
             propósito es ayudarte a potenciar tu identidad. Conoce nuestros 
             <a 
               href="/desarrolloweb" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300 hover:text-purple-200 underline mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de creación de plataformas"
             >soluciones de programación</a>
             y 
             <a 
               href="/graphic" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300 hover:text-purple-200 underline mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de identidad visual"
             >creatividad visual</a>
@@ -85,7 +85,7 @@ export default function Home() {
 
         {/* IMAGEN */}
         <div className="w-full md:w-[45%] max-w-[900px] flex justify-center md:justify-end px-4 order-1 md:order-2">
-          <div className="relative w-full h-auto max-w-[500px] md:max-w-none mobile-home-image">
+          <div className="relative w-full h-auto max-w-[500px] md:max-w-none">
             <Image
               src="/assets/imagen-ilu.avif"
               width={900}
@@ -96,7 +96,7 @@ export default function Home() {
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              quality={90}
+              quality={85}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />

@@ -54,7 +54,7 @@ export default function TeamSection() {
 
       <div
         ref={teamRef}
-        className="w-full justify-center mt-10 pb-32 px-4 md:px-0"
+        className="w-full justify-center mt-10 pb-20 px-4 md:px-0"
       >
         {/* Grid ajustado para dispositivos móviles y escritorio */}
         <div className="grid grid-cols-1 md:grid-cols-2 ">

@@ -12,7 +12,7 @@ const FloatingWhatsApp = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-30 rounded-full shadow-lg transition duration-200 ease-in-out animate-float-slow focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 hover:scale-110 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 whatsapp-mobile"
+      className="fixed bottom-4 right-4 z-30 rounded-full shadow-lg transition duration-200 ease-in-out animate-float-slow focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 hover:scale-110 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
       aria-label="Contactar por WhatsApp"
       tabIndex={0}
       style={{

@@ -42,14 +42,14 @@ export default function Home() {
             propósito es ayudarte a potenciar tu identidad. Conoce nuestros 
             <a 
               href="/desarrolloweb" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300  hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de creación de plataformas"
             >soluciones de programación</a>
             y 
             <a 
               href="/graphic" 
-              className=" hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
+              className="text-purple-300 hover:text-purple-200  mx-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded transition-colors duration-200"
               tabIndex={0}
               aria-label="Ver soluciones de identidad visual"
             >creatividad visual</a>
@@ -96,7 +96,7 @@ export default function Home() {
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              quality={90}
+              quality={85}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
