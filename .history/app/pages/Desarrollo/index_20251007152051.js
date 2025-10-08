@@ -14,9 +14,49 @@ const Desarrollo = () => {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    // Simplemente establecer la opacidad a 1 para que siempre sea visible
-    setOpacity(1);
-  }, []);
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const section = document.getElementById("desarrollo");
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Solo actualizar si hay un cambio significativo
+            const newOpacity = rect.top < windowHeight && rect.bottom >= 0 
+              ? Math.min(1, Math.max(0, (windowHeight - rect.top) / 300))
+              : 0;
+            
+            // Solo actualizar el estado si el valor ha cambiado significativamente
+            if (Math.abs(newOpacity - opacity) > 0.01) {
+              setOpacity(newOpacity);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Throttle del scroll para evitar bucles
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    
+    // Llamamos una vez al cargar
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+    };
+  }, [opacity]);
 
   return (
     <div

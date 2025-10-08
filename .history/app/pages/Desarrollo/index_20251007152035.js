@@ -14,9 +14,49 @@ const Desarrollo = () => {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    // Simplemente establecer la opacidad a 1 para que siempre sea visible
-    setOpacity(1);
-  }, []);
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const section = document.getElementById("desarrollo");
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Solo actualizar si hay un cambio significativo
+            const newOpacity = rect.top < windowHeight && rect.bottom >= 0 
+              ? Math.min(1, Math.max(0, (windowHeight - rect.top) / 300))
+              : 0;
+            
+            // Solo actualizar el estado si el valor ha cambiado significativamente
+            if (Math.abs(newOpacity - opacity) > 0.01) {
+              setOpacity(newOpacity);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Throttle del scroll para evitar bucles
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    
+    // Llamamos una vez al cargar
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+    };
+  }, [opacity]);
 
   return (
     <div
@@ -35,14 +75,14 @@ const Desarrollo = () => {
 
       <div className="relative z-10 w-full max-w-7xl text-center p-6 rounded-lg">
         <h2
-          className="text-sm uppercase"
-          style={{ opacity, transition: "opacity 0.3s ease-in-out" }}
+          className="text-sm uppercase text-gray-700"
+          style={{ opacity: Math.max(opacity, 0.8), transition: "opacity 0.3s ease-in-out" }}
         >
           Potencia tu presencia digital
         </h2>
         <h2
-          className="text-center text-2xl sm:text-5xl md:text-5xl uppercase font-bold mb-8"
-          style={{ opacity, transition: "opacity 0.3s ease-in-out" }}
+          className="text-center text-2xl sm:text-5xl md:text-5xl uppercase font-bold mb-8 text-gray-900"
+          style={{ opacity: Math.max(opacity, 0.9), transition: "opacity 0.3s ease-in-out" }}
         >
           Construcción de Sistemas de Alto Impacto
         </h2>

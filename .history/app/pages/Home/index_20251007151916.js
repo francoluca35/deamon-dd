@@ -6,7 +6,22 @@ import { motion } from "framer-motion";
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
-  // Eliminado el scroll listener que causaba conflictos
+  useEffect(() => {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const opacity = Math.max(1 - scrollY / 500, 0);
 

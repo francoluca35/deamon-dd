@@ -14,8 +14,22 @@ const Desarrollo = () => {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    // Simplemente establecer la opacidad a 1 para que siempre sea visible
-    setOpacity(1);
+    const handleScroll = () => {
+      const section = document.getElementById("desarrollo");
+      const rect = section.getBoundingClientRect();
+      // Calculamos la opacidad dependiendo de la posición de la sección
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        setOpacity(Math.min(1, (window.innerHeight - rect.top) / 300)); // Ajusta el valor de 300 para controlar el desvanecimiento
+      } else {
+        setOpacity(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Llamamos una vez al cargar para asegurar que la opacidad inicial sea correcta
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -47,13 +61,13 @@ const Desarrollo = () => {
           Construcción de Sistemas de Alto Impacto
         </h2>
 
-        <div className="flex flex-col items-center gap-10 mt-10">
+        <div className="flex flex-col items-center gap-10 mt-10 pb-20">
           <div className="flex flex-col md:flex-row items-center gap-6 w-full max-w-4xl">
-            <p className="w-full md:w-1/2 bg-purple-900/90 text-white p-4 rounded-lg">
+            <p className="w-full md:w-1/2 bg-purple-900/90 text-white p-4 sm:p-6 rounded-lg leading-relaxed">
               Mejoramos la experiencia del usuario (UX), creando interfaces
               intuitivas y atractivas que faciliten la navegación y hagan que
               los usuarios interactúen de manera más efectiva con el entorno online.
-              <br />
+              <br /><br />
               <a href="#equipo" className=" hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
                 Conoce nuestro equipo </a> 
               de expertos en <a href="/desarrolloweb" className=" hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>elaboración de sistemas especializados</a>.
@@ -71,13 +85,14 @@ const Desarrollo = () => {
           </div>
 
           <div className="flex flex-col md:flex-row-reverse items-center gap-6 w-full max-w-4xl">
-            <p className="w-full md:w-1/2 bg-purple-900/90 text-white p-4 rounded-lg">
+            <p className="w-full md:w-1/2 bg-purple-900/90 text-white p-4 sm:p-6 rounded-lg leading-relaxed">
               Creamos entornos que puedan manejar un alto volumen de
               tráfico o usuarios sin perder rendimiento, y que se puedan adaptar
               fácilmente al crecimiento futuro. Innovación y diferenciación
               donde generamos soluciones que se destaquen de la competencia, bien
               sea por una identidad visual única, funciones novedosas o tecnologías
-              innovadoras. <br />    <a href="#contacto" className=" hover:text-white  transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
+              innovadoras. <br /><br />
+              <a href="#contacto" className=" hover:text-white  transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>
                 Contacta con nosotros </a> 
               para conocer más sobre nuestras <a href="/graphic" className=" hover:text-white  transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded" tabIndex={0}>soluciones creativas</a>.
             </p>

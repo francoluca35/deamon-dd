@@ -6,8 +6,16 @@ export default function ArrowUp() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Mostrar siempre el botón para evitar conflictos de scroll
-    setIsVisible(true);
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   const scrollToTop = () => {

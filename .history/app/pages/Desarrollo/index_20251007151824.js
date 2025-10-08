@@ -14,8 +14,22 @@ const Desarrollo = () => {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    // Simplemente establecer la opacidad a 1 para que siempre sea visible
-    setOpacity(1);
+    const handleScroll = () => {
+      const section = document.getElementById("desarrollo");
+      const rect = section.getBoundingClientRect();
+      // Calculamos la opacidad dependiendo de la posición de la sección
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        setOpacity(Math.min(1, (window.innerHeight - rect.top) / 300)); // Ajusta el valor de 300 para controlar el desvanecimiento
+      } else {
+        setOpacity(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Llamamos una vez al cargar para asegurar que la opacidad inicial sea correcta
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
