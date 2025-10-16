@@ -62,6 +62,21 @@ img[loading="lazy"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  
+  /* Desactivar animaciones del fondo dinámico */
+  .dynamic-gradient-bg {
+    animation: none !important;
+  }
+  
+  .dynamic-gradient-bg::before,
+  .dynamic-gradient-bg::after {
+    animation: none !important;
+  }
+  
+  .floating-particles::before,
+  .floating-particles::after {
+    animation: none !important;
+  }
 }
 
 /* Focus visible para mejor accesibilidad */
@@ -241,5 +256,501 @@ img[loading="lazy"] {
     font-size: 2.25rem !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Gradiente radial personalizado para efectos de luz */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Fondo dinámico con gradientes y efectos de luz */
+.dynamic-gradient-bg {
+  position: relative;
+  background: 
+    /* Gradiente principal horizontal */
+    linear-gradient(90deg, 
+      #4a0e4e 0%,     /* Violeta muy oscuro */
+      #6b2c91 15%,    /* Violeta oscuro */
+      #8e44ad 25%,    /* Violeta medio oscuro */
+      #9b59b6 35%,    /* Violeta medio */
+      #bb8fce 50%,    /* Violeta claro */
+      #d2b4de 70%,    /* Violeta medio claro */
+      #e8daef 85%,    /* Violeta muy claro */
+      #f4ecf7 100%    /* Violeta casi blanco */
+    );
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease-in-out infinite;
+  overflow: hidden;
+  /* Optimizaciones de rendimiento */
+  will-change: background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Rayos de luz animados */
+.dynamic-gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Rayos de luz en la zona violeta claro */
+    radial-gradient(ellipse 800px 600px at 80% 20%, 
+      rgba(187, 143, 206, 0.4) 0%, 
+      rgba(210, 180, 222, 0.3) 20%, 
+      transparent 60%
+    ),
+    radial-gradient(ellipse 600px 400px at 85% 40%, 
+      rgba(155, 89, 182, 0.3) 0%, 
+      transparent 50%
+    ),
+    radial-gradient(ellipse 400px 300px at 90% 60%, 
+      rgba(187, 143, 206, 0.5) 0%, 
+      transparent 40%
+    );
+  animation: lightRays 6s ease-in-out infinite alternate;
+  /* Optimizaciones de rendimiento */
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Líneas onduladas verticales */
+.dynamic-gradient-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Múltiples líneas onduladas con diferentes opacidades */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      85deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.02) 3px,
+      rgba(255, 255, 255, 0.02) 6px
+    ),
+    repeating-linear-gradient(
+      95deg,
+      transparent 0px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.015) 4px,
+      rgba(255, 255, 255, 0.015) 8px
+    );
+  animation: waveLines 10s linear infinite;
+  /* Optimizaciones de rendimiento */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Animación del gradiente principal */
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+}
+
+/* Animación de rayos de luz */
+@keyframes lightRays {
+  0% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.98) rotate(-1deg);
+  }
+}
+
+/* Animación de líneas onduladas */
+@keyframes waveLines {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-20px) translateY(0);
+  }
+  75% {
+    transform: translateX(-10px) translateY(5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Versión simplificada para mejor rendimiento */
+.dynamic-gradient-simple {
+  background: linear-gradient(90deg, 
+    #4a0e4e 0%,     /* Violeta muy oscuro */
+    #6b2c91 20%,    /* Violeta oscuro */
+    #9b59b6 40%,    /* Violeta medio */
+    #bb8fce 60%,    /* Violeta claro */
+    #d2b4de 80%,    /* Violeta medio claro */
+    #f4ecf7 100%    /* Violeta casi blanco */
+  );
+  background-size: 200% 100%;
+  animation: gradientFlow 8s ease-in-out infinite;
+}
+
+/* Efecto de partículas flotantes mejorado */
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-particles::before,
+.floating-particles::after,
+.floating-particles::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+/* Partícula 1 - Pequeña */
+.floating-particles::before {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  top: 10%;
+  left: 15%;
+  animation-delay: -2s;
+  animation-duration: 12s;
+}
+
+/* Partícula 2 - Mediana */
+.floating-particles::after {
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  top: 70%;
+  right: 20%;
+  animation-delay: -8s;
+  animation-duration: 18s;
+}
+
+/* Partículas adicionales - Muchísimas más */
+.floating-particles .particle-3,
+.floating-particles .particle-4,
+.floating-particles .particle-5,
+.floating-particles .particle-6,
+.floating-particles .particle-7,
+.floating-particles .particle-8,
+.floating-particles .particle-9,
+.floating-particles .particle-10,
+.floating-particles .particle-11,
+.floating-particles .particle-12,
+.floating-particles .particle-13,
+.floating-particles .particle-14,
+.floating-particles .particle-15,
+.floating-particles .particle-16,
+.floating-particles .particle-17,
+.floating-particles .particle-18,
+.floating-particles .particle-19,
+.floating-particles .particle-20 {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+
+/* Partícula 3 */
+.floating-particles .particle-3 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  top: 30%;
+  left: 70%;
+  animation-delay: -5s;
+  animation-duration: 14s;
+}
+
+/* Partícula 4 */
+.floating-particles .particle-4 {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  top: 80%;
+  left: 30%;
+  animation-delay: -12s;
+  animation-duration: 16s;
+}
+
+/* Partícula 5 */
+.floating-particles .particle-5 {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  top: 40%;
+  right: 40%;
+  animation-delay: -7s;
+  animation-duration: 13s;
+}
+
+/* Partícula 6 */
+.floating-particles .particle-6 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  top: 60%;
+  left: 50%;
+  animation-delay: -15s;
+  animation-duration: 17s;
+}
+
+/* Partícula 7 */
+.floating-particles .particle-7 {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  top: 25%;
+  left: 45%;
+  animation-delay: -3s;
+  animation-duration: 11s;
+}
+
+/* Partícula 8 */
+.floating-particles .particle-8 {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.09);
+  top: 85%;
+  right: 60%;
+  animation-delay: -9s;
+  animation-duration: 19s;
+}
+
+/* Partícula 9 */
+.floating-particles .particle-9 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.16);
+  top: 15%;
+  right: 25%;
+  animation-delay: -11s;
+  animation-duration: 15s;
+}
+
+/* Partícula 10 */
+.floating-particles .particle-10 {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  top: 55%;
+  left: 80%;
+  animation-delay: -6s;
+  animation-duration: 12s;
+}
+
+/* Partícula 11 */
+.floating-particles .particle-11 {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  top: 35%;
+  left: 25%;
+  animation-delay: -14s;
+  animation-duration: 18s;
+}
+
+/* Partícula 12 */
+.floating-particles .particle-12 {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.11);
+  top: 75%;
+  right: 35%;
+  animation-delay: -8s;
+  animation-duration: 14s;
+}
+
+/* Partícula 13 */
+.floating-particles .particle-13 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.19);
+  top: 45%;
+  left: 60%;
+  animation-delay: -13s;
+  animation-duration: 16s;
+}
+
+/* Partícula 14 */
+.floating-particles .particle-14 {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.24);
+  top: 65%;
+  right: 70%;
+  animation-delay: -4s;
+  animation-duration: 10s;
+}
+
+/* Partícula 15 */
+.floating-particles .particle-15 {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  top: 20%;
+  left: 90%;
+  animation-delay: -10s;
+  animation-duration: 20s;
+}
+
+/* Partícula 16 */
+.floating-particles .particle-16 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.17);
+  top: 90%;
+  left: 40%;
+  animation-delay: -7s;
+  animation-duration: 13s;
+}
+
+/* Partícula 17 */
+.floating-particles .particle-17 {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.23);
+  top: 50%;
+  right: 15%;
+  animation-delay: -12s;
+  animation-duration: 15s;
+}
+
+/* Partícula 18 */
+.floating-particles .particle-18 {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.10);
+  top: 10%;
+  left: 70%;
+  animation-delay: -5s;
+  animation-duration: 17s;
+}
+
+/* Partícula 19 */
+.floating-particles .particle-19 {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  top: 80%;
+  right: 80%;
+  animation-delay: -9s;
+  animation-duration: 12s;
+}
+
+/* Partícula 20 */
+.floating-particles .particle-20 {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.21);
+  top: 5%;
+  left: 50%;
+  animation-delay: -16s;
+  animation-duration: 19s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Animaciones para lamparones en movimiento */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50px) scale(1);
+  }
+  50% {
+    transform: translateX(50px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50px) scale(1);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-30px) scale(1);
+  }
+  50% {
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    transform: translateY(-30px) scale(1);
+  }
+}
+
+@keyframes moveDiagonal {
+  0% {
+    transform: translate(-40px, -40px) scale(1);
+  }
+  50% {
+    transform: translate(40px, 40px) scale(1.2);
+  }
+  100% {
+    transform: translate(-40px, -40px) scale(1);
+  }
+}
+
+@keyframes moveCircular {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(0, -60px) rotate(180deg) scale(0.8);
+  }
+  75% {
+    transform: translate(-30px, -30px) rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
   }
 }

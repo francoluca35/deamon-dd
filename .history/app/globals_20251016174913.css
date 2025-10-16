@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #673372;
+  --primary-dark: #36203a;
+  --accent: #3e085d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Optimizaciones de rendimiento */
+img {
+  max-width: 100%;
+  height: auto;
+  content-visibility: auto;
+}
+
+/* Optimización de imágenes */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Preload crítico */
+.preload-critical {
+  font-display: swap;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible para mejor accesibilidad */
+.focus-visible:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  }
+  
+  .shadow-purple {
+    box-shadow: 0 4px 14px 0 rgba(103, 51, 114, 0.25);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 3s ease-in-out infinite;
+}
+
+/* Optimización de fuentes */
+.font-display {
+  font-display: swap;
+}
+
+/* Mejoras para contraste */
+.text-high-contrast {
+  color: #000000;
+}
+
+@media (prefers-contrast: high) {
+  .text-high-contrast {
+    color: #000000;
+  }
+}
+
+/* iOS fixes for address bar overlap */
+@supports (-webkit-touch-callout: none) {
+  .ios-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .ios-viewport-fix {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix for iOS 26+ address bar overlap */
+  .ios-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: max(env(safe-area-inset-bottom), 20px);
+    z-index: 1000;
+  }
+}
+
+/* Mobile viewport fixes */
+@media screen and (max-width: 768px) {
+  .mobile-viewport {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Fix for mobile address bar */
+  .mobile-safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* WhatsApp button mobile fixes */
+  .whatsapp-mobile {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* WhatsApp button positioning fixes */
+@media screen and (max-width: 480px) {
+  .whatsapp-mobile {
+    bottom: 12px !important;
+    right: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* Mobile Home section improvements */
+@media screen and (max-width: 768px) {
+  .mobile-home-extended {
+    min-height: 140vh !important;
+  }
+  
+  .mobile-home-content {
+    gap: 2rem !important;
+    padding: 2rem 0 !important;
+  }
+  
+  .mobile-home-image {
+    max-width: 90vw !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .mobile-home-text {
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .mobile-home-title {
+    font-size: 2.25rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Gradiente radial personalizado para efectos de luz */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Animaciones de gradiente para simular video de fondo */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%, 100% 0%, 0% 100%, 0% 50%, 100% 50%, 0% 50%; }
+  25% { background-position: 100% 0%, 0% 100%, 100% 0%, 25% 75%, 75% 25%, 25% 75%; }
+  50% { background-position: 100% 50%, 0% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%; }
+  75% { background-position: 0% 100%, 100% 0%, 0% 0%, 75% 25%, 25% 75%, 75% 25%; }
+  100% { background-position: 0% 50%, 100% 0%, 0% 100%, 100% 0%, 0% 100%, 100% 0%; }
+}
+
+@keyframes gradientShift2 {
+  0% { background-position: 100% 0%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 50%; }
+  33% { background-position: 0% 100%, 100% 0%, 0% 100%, 33% 67%, 67% 33%, 33% 67%; }
+  66% { background-position: 100% 0%, 0% 100%, 100% 0%, 66% 34%, 34% 66%, 66% 34%; }
+  100% { background-position: 100% 0%, 0% 100%, 100% 0%, 100% 0%, 0% 100%, 100% 0%; }
+}
+
+@keyframes gradientShift3 {
+  0% { background-position: 0% 100%, 100% 0%, 0% 0%, 0% 50%, 100% 50%, 0% 50%; }
+  20% { background-position: 20% 80%, 80% 20%, 20% 20%, 20% 80%, 80% 20%, 20% 80%; }
+  40% { background-position: 40% 60%, 60% 40%, 40% 40%, 40% 60%, 60% 40%, 40% 60%; }
+  60% { background-position: 60% 40%, 40% 60%, 60% 60%, 60% 40%, 40% 60%, 60% 40%; }
+  80% { background-position: 80% 20%, 20% 80%, 80% 80%, 80% 20%, 20% 80%, 80% 20%; }
+  100% { background-position: 100% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 100%, 100% 0%; }
+}
