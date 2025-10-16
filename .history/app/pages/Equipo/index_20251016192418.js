@@ -50,10 +50,10 @@ export default function TeamSection() {
             &lt;/div&gt;
           </div>
           <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
-            function improveClient() {"{"}
+            function createBrand() {"{"}
           </div>
           <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
-            return creativeResults;
+            return uniqueIdentity;
           </div>
           <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
             {"}"}
@@ -65,7 +65,7 @@ export default function TeamSection() {
             designSystem.branding();
           </div>
           <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
-            agency.improveClient();
+            marketing.digitalCampaign();
           </div>
         </div>
 
@@ -77,18 +77,18 @@ export default function TeamSection() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <motion.h2 
+            <motion.h1 
               className="text-5xl lg:text-6xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Somos una{" "}
+              Somos un equipo de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
-                agencia digital
+                creativos digitales
               </span>{" "}
-              comprometida con tu éxito
-            </motion.h2>
+              apasionados
+            </motion.h1>
             
             <motion.p 
               className="text-xl text-gray-300 leading-relaxed"
@@ -96,10 +96,11 @@ export default function TeamSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              En Deamon DD, nos especializamos en marketing digital, branding, desarrollo 
-              de aplicaciones móviles y páginas web. Brindamos mejoras significativas en la 
-              presencia digital de nuestros clientes, transformando sus ideas en experiencias 
-              únicas que generan resultados reales y duraderos para su crecimiento.
+              En Deamon DD, nos especializamos en marketing digital, branding,
+              desarrollo de aplicaciones móviles y páginas web que ayudan a las
+              empresas a prosperar en la era digital. Nuestro equipo multidisciplinario
+              trabaja en estrecha colaboración con los clientes para crear experiencias
+              digitales únicas que superan las expectativas.
             </motion.p>
 
             <motion.div 
@@ -108,17 +109,17 @@ export default function TeamSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 rounded-full border border-cyan-400/40 shadow-lg shadow-cyan-500/20">
-                <FaCode className="text-cyan-300" />
-                <span className="text-sm font-semibold text-white">Desarrollo Web & Apps</span>
+              <div className="flex items-center space-x-2 bg-purple-900/30 px-4 py-2 rounded-full">
+                <FaCode className="text-purple-400" />
+                <span className="text-sm">Desarrollo Web & Apps</span>
               </div>
-              <div className="flex items-center space-x-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 px-4 py-2 rounded-full border border-pink-400/40 shadow-lg shadow-pink-500/20">
-                <FaPalette className="text-pink-300" />
-                <span className="text-sm font-semibold text-white">Branding & Diseño</span>
+              <div className="flex items-center space-x-2 bg-violet-900/30 px-4 py-2 rounded-full">
+                <FaPalette className="text-violet-400" />
+                <span className="text-sm">Branding & Diseño</span>
               </div>
-              <div className="flex items-center space-x-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 px-4 py-2 rounded-full border border-orange-400/40 shadow-lg shadow-orange-500/20">
-                <FaRocket className="text-orange-300" />
-                <span className="text-sm font-semibold text-white">Marketing Digital</span>
+              <div className="flex items-center space-x-2 bg-purple-900/30 px-4 py-2 rounded-full">
+                <FaRocket className="text-purple-400" />
+                <span className="text-sm">Marketing Digital</span>
               </div>
             </motion.div>
           </motion.div>
@@ -139,16 +140,16 @@ export default function TeamSection() {
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div className="space-y-2 font-mono text-sm">
-                    <div className="text-purple-400">const deamonDD = {"{"}</div>
-                    <div className="text-violet-400 ml-4">services: [</div>
+                    <div className="text-teal-400">const deamonDD = {"{"}</div>
+                    <div className="text-blue-400 ml-4">services: [</div>
                     <div className="text-green-400 ml-8">&quot;Marketing Digital&quot;,</div>
                     <div className="text-green-400 ml-8">&quot;Branding & Diseño&quot;,</div>
                     <div className="text-green-400 ml-8">&quot;Desarrollo Web&quot;,</div>
                     <div className="text-green-400 ml-8">&quot;Apps Móviles&quot;</div>
-                    <div className="text-purple-400 ml-4">],</div>
-                    <div className="text-orange-400 ml-4">mission: &quot;mejorar a cada cliente&quot;,</div>
-                    <div className="text-orange-400 ml-4">passion: &quot;creatividad & resultados&quot;</div>
-                    <div className="text-purple-400">{"}"}</div>
+                    <div className="text-blue-400 ml-4">],</div>
+                    <div className="text-blue-400 ml-4">mission: &quot;transformación digital&quot;,</div>
+                    <div className="text-blue-400 ml-4">passion: &quot;creatividad & tecnología&quot;</div>
+                    <div className="text-teal-400">{"}"}</div>
                   </div>
                 </div>
               </div>
@@ -157,8 +158,6 @@ export default function TeamSection() {
         </div>
       </div>
 
-
-    
     </div>
   );
 }

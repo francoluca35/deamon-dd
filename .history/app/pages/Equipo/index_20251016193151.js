@@ -50,10 +50,10 @@ export default function TeamSection() {
             &lt;/div&gt;
           </div>
           <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
-            function improveClient() {"{"}
+            function createBrand() {"{"}
           </div>
           <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
-            return creativeResults;
+            return uniqueIdentity;
           </div>
           <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
             {"}"}
@@ -65,7 +65,7 @@ export default function TeamSection() {
             designSystem.branding();
           </div>
           <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
-            agency.improveClient();
+            marketing.digitalCampaign();
           </div>
         </div>
 
@@ -77,18 +77,18 @@ export default function TeamSection() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <motion.h2 
+            <motion.h1 
               className="text-5xl lg:text-6xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Somos una{" "}
+              Somos un equipo de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
-                agencia digital
+                creativos digitales
               </span>{" "}
-              comprometida con tu éxito
-            </motion.h2>
+              apasionados
+            </motion.h1>
             
             <motion.p 
               className="text-xl text-gray-300 leading-relaxed"
@@ -96,10 +96,11 @@ export default function TeamSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              En Deamon DD, nos especializamos en marketing digital, branding, desarrollo 
-              de aplicaciones móviles y páginas web. Brindamos mejoras significativas en la 
-              presencia digital de nuestros clientes, transformando sus ideas en experiencias 
-              únicas que generan resultados reales y duraderos para su crecimiento.
+              En Deamon DD, somos una agencia creativa especializada en marketing digital, 
+              branding, desarrollo de aplicaciones móviles y páginas web. Nuestro propósito 
+              es brindarle a cada cliente una mejora significativa en su presencia digital, 
+              trabajando con pasión para transformar sus ideas en experiencias únicas que 
+              generen resultados reales y duraderos.
             </motion.p>
 
             <motion.div 
@@ -146,8 +147,8 @@ export default function TeamSection() {
                     <div className="text-green-400 ml-8">&quot;Desarrollo Web&quot;,</div>
                     <div className="text-green-400 ml-8">&quot;Apps Móviles&quot;</div>
                     <div className="text-purple-400 ml-4">],</div>
-                    <div className="text-orange-400 ml-4">mission: &quot;mejorar a cada cliente&quot;,</div>
-                    <div className="text-orange-400 ml-4">passion: &quot;creatividad & resultados&quot;</div>
+                    <div className="text-orange-400 ml-4">mission: &quot;transformación digital&quot;,</div>
+                    <div className="text-orange-400 ml-4">passion: &quot;creatividad & tecnología&quot;</div>
                     <div className="text-purple-400">{"}"}</div>
                   </div>
                 </div>
