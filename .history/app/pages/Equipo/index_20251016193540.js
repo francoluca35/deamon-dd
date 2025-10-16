@@ -88,7 +88,7 @@ export default function TeamSection() {
                 agencia digital
               </span>{" "}
               comprometida con tu éxito
-            </motion.h2>
+            </motion.h>
             
             <motion.p 
               className="text-xl text-gray-300 leading-relaxed"

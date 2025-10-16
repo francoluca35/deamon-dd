@@ -77,18 +77,18 @@ export default function TeamSection() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <motion.h2 
+            <motion.h1 
               className="text-5xl lg:text-6xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Somos una{" "}
+              Somos un equipo de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
-                agencia digital
+                creativos digitales
               </span>{" "}
-              comprometida con tu éxito
-            </motion.h2>
+              apasionados
+            </motion.h1>
             
             <motion.p 
               className="text-xl text-gray-300 leading-relaxed"
@@ -96,10 +96,11 @@ export default function TeamSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              En Deamon DD, nos especializamos en marketing digital, branding, desarrollo 
-              de aplicaciones móviles y páginas web. Brindamos mejoras significativas en la 
-              presencia digital de nuestros clientes, transformando sus ideas en experiencias 
-              únicas que generan resultados reales y duraderos para su crecimiento.
+              En Deamon DD, somos una agencia creativa especializada en marketing digital, 
+              branding, desarrollo de aplicaciones móviles y páginas web. Nuestro propósito 
+              es brindarle a cada cliente una mejora significativa en su presencia digital, 
+              trabajando con pasión para transformar sus ideas en experiencias únicas que 
+              generen resultados reales y duraderos.
             </motion.p>
 
             <motion.div 
