@@ -123,20 +123,14 @@ function Navbar2() {
           tabIndex={0}
         >
           <div className="relative w-[200px] h-[60px] flex items-center justify-center">
-            {logos.map((logo, index) => (
-              <Image
-                key={`${logo.src}-${index}`}
-                src={logo.src}
-                width={logo.width}
-                height={logo.height}
-                alt="Deamon DD - Agencia de Desarrollo Web"
-                className={`absolute transition-opacity duration-1500 ease-in-out ${
-                  index === currentLogoIndex 
-                    ? 'opacity-100' 
-                    : 'opacity-0'
-                }`}
-              />
-            ))}
+            <Image
+              src={logos[currentLogoIndex].src}
+              width={logos[currentLogoIndex].width}
+              height={logos[currentLogoIndex].height}
+              alt="Deamon DD - Agencia de Desarrollo Web"
+              className="transition-opacity duration-1000 ease-in-out"
+              key={currentLogoIndex} // Forza re-render para transición suave
+            />
           </div>
         </button>
 
