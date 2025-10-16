@@ -204,8 +204,8 @@ function Navbar2() {
                     >
                       Trabajos
                     </button>
-                    <div className={`mt-2 ml-6 space-y-1 transition-all duration-200 ease-out ${
-                      isDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                    <div className={`mt-3 ml-4 bg-purple-900/20 backdrop-blur-sm border border-purple-500/30 rounded-xl p-3 space-y-2 transition-all duration-300 ease-out ${
+                      isDropdownOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                     }`}>
                       <button
                         onClick={() => {
@@ -213,11 +213,11 @@ function Navbar2() {
                           router.push("/desarrolloweb?#trabajos");
                           setIsOpen(false);
                         }}
-                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        className="block text-white text-sm font-medium hover:text-purple-200 hover:bg-purple-800/30 w-full text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg py-2 px-3 border-l-2 border-transparent hover:border-purple-400"
                         aria-label="Ver trabajos de desarrollo web"
                         tabIndex={0}
                       >
-                        Desarrollo Web
+                        💻 Trabajos de Desarrollo
                       </button>
                       <button
                         onClick={() => {
@@ -225,11 +225,11 @@ function Navbar2() {
                           router.push("/graphic");
                           setIsOpen(false);
                         }}
-                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        className="block text-white text-sm font-medium hover:text-purple-200 hover:bg-purple-800/30 w-full text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg py-2 px-3 border-l-2 border-transparent hover:border-purple-400"
                         aria-label="Ver trabajos de diseño gráfico"
                         tabIndex={0}
                       >
-                        Diseño Gráfico
+                        🎨 Trabajos de Diseño
                       </button>
                     </div>
                   </div>
@@ -288,36 +288,38 @@ function Navbar2() {
                   Trabajos ▾
                 </button>
                 <div
-                  className={`absolute left-0 mt-1 bg-black/90 backdrop-blur-sm border border-gray-700/50 rounded-lg w-44 text-white z-50 transition-all duration-200 ${
+                  className={`absolute left-0 mt-2 bg-purple-900/95 backdrop-blur-sm border border-purple-500/40 shadow-2xl rounded-xl overflow-hidden w-56 text-white z-50 transition-all duration-300 ${
                     isDropdownOpen ? "block" : "hidden"
                   }`}
                   role="menu"
                   aria-hidden={!isDropdownOpen}
                 >
-                  <div className="py-1">
+                  <div className="p-2 space-y-1">
                     <button
                       onClick={() => {
                         setIsDropdownOpen(false);
                         router.push("/desarrolloweb?#trabajos");
                       }}
-                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      className="block px-4 py-3 hover:bg-purple-800/50 w-full text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg border-l-2 border-transparent hover:border-purple-400"
                       aria-label="Ver trabajos de desarrollo web"
                       tabIndex={isDropdownOpen ? 0 : -1}
                       role="menuitem"
                     >
-                      Desarrollo Web
+                      <span className="text-lg mr-2">💻</span>
+                      <span className="font-medium">Trabajos de Desarrollo</span>
                     </button>
                     <button
                       onClick={() => {
                         setIsDropdownOpen(false);
                         router.push("/graphic");
                       }}
-                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      className="block px-4 py-3 hover:bg-purple-800/50 w-full text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg border-l-2 border-transparent hover:border-purple-400"
                       aria-label="Ver trabajos de diseño gráfico"
                       tabIndex={isDropdownOpen ? 0 : -1}
                       role="menuitem"
                     >
-                      Diseño Gráfico
+                      <span className="text-lg mr-2">🎨</span>
+                      <span className="font-medium">Trabajos de Diseño</span>
                     </button>
                   </div>
                 </div>
