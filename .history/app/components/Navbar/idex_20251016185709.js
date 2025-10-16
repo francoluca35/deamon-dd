@@ -24,8 +24,8 @@ function Navbar2() {
     },
     {
       src: "/assets/Logo-equipo-B.avif",
-      width: 60,
-      height: 60
+      width: 150,
+      height: 150
     }
   ];
 
@@ -69,13 +69,13 @@ function Navbar2() {
   useEffect(() => {
     const logoInterval = setInterval(() => {
       setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    }, 4000); // Cambia cada 4 segundos
+    }, 3000); // Cambia cada 3 segundos
 
     return () => clearInterval(logoInterval);
   }, [logos.length]);
 
   const navLinks = [
-    { href: "#", label: "Inicio" },
+    { href: "/", label: "Inicio" },
     { href: "#equipo", label: "Equipo" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
     { href: "#diseno-grafico", label: "Diseño Gráfico" },
@@ -122,21 +122,15 @@ function Navbar2() {
           aria-label="Ir al inicio"
           tabIndex={0}
         >
-          <div className="relative w-[200px] h-[60px] flex items-center justify-center">
-            {logos.map((logo, index) => (
-              <Image
-                key={`${logo.src}-${index}`}
-                src={logo.src}
-                width={logo.width}
-                height={logo.height}
-                alt="Deamon DD - Agencia de Desarrollo Web"
-                className={`absolute transition-opacity duration-1500 ease-in-out ${
-                  index === currentLogoIndex 
-                    ? 'opacity-100' 
-                    : 'opacity-0'
-                }`}
-              />
-            ))}
+          <div className="relative">
+            <Image
+              src={logos[currentLogoIndex].src}
+              width={logos[currentLogoIndex].width}
+              height={logos[currentLogoIndex].height}
+              alt="Deamon DD - Agencia de Desarrollo Web"
+              className="transition-opacity duration-500 ease-in-out"
+              key={currentLogoIndex} // Forza re-render para transición suave
+            />
           </div>
         </button>
 
@@ -209,7 +203,7 @@ function Navbar2() {
                         handleLinkClick(link.href, link.isRoute);
                         setIsOpen(false);
                       }}
-                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
                       aria-label={`Navegar a ${link.label}`}
                       tabIndex={0}
                     >
@@ -231,7 +225,7 @@ function Navbar2() {
                   <div className="relative">
                     <button
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
                       aria-label="Ver trabajos realizados"
                       aria-expanded={isDropdownOpen}
                       tabIndex={0}
@@ -275,7 +269,7 @@ function Navbar2() {
                       handleLinkClick("#contacto", false);
                       setIsOpen(false);
                     }}
-                    className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                    className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
                     aria-label="Ir a la sección de contacto"
                     tabIndex={0}
                   >
@@ -297,7 +291,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -312,13 +306,13 @@ function Navbar2() {
                 onMouseLeave={() => setIsDropdownOpen(false)}
                 className="relative"
               >
-                  <button
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
-                    aria-label="Ver trabajos realizados"
-                    aria-expanded={isDropdownOpen}
-                    tabIndex={0}
-                  >
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                  aria-label="Ver trabajos realizados"
+                  aria-expanded={isDropdownOpen}
+                  tabIndex={0}
+                >
                   Trabajos ▾
                 </button>
                 <div
@@ -361,7 +355,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
