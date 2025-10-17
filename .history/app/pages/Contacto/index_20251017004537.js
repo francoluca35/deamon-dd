@@ -225,7 +225,7 @@ const Contacto = () => {
 
         {/* Datos de contacto */}
 
-        <div className="w-full lg:w-1/3 bg-purple-950 text-white p-8 flex flex-col justify-center">
+        <div className="w-full lg:w-1/3 bg-purple-900 text-white p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-semibold mb-4">Información</h3>
           <p className="text-sm mb-2 hover:text-purple-200 hover:text-base">
             <a href="mailto:deamoncompany18@gmail.com">Consultas generales</a>

@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
 import Navbar2 from "./components/Navbar/idex";
 import Inicio from "./pages/Home";
+import ArrowUp from "./components/ArrowUp";
 import { usePerformanceMonitor } from "./hooks/usePerformance";
 import { useErrorTracking } from "./lib/errorTracking";
 
@@ -77,6 +78,8 @@ export default function Home() {
         <Branding />
       </Suspense>
       
+      <ArrowUp />
+      
       <div id="desarrollo">
         <Suspense fallback={<LoadingSpinner />}>
           <Desarrollo />
@@ -95,10 +98,6 @@ export default function Home() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <Contacto />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <NuestroEquipo />
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>

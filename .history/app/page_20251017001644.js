@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
 import Navbar2 from "./components/Navbar/idex";
 import Inicio from "./pages/Home";
+import ArrowUp from "./components/ArrowUp";
 import { usePerformanceMonitor } from "./hooks/usePerformance";
 import { useErrorTracking } from "./lib/errorTracking";
 
@@ -15,7 +16,6 @@ const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
 
 const Contacto = lazy(() => import("./pages/Contacto"));
-const NuestroEquipo = lazy(() => import("./components/nuestroEquipo"));
 const Footer = lazy(() => import("./components/Footer"));
 
 // WhatsApp con loading optimizado
@@ -67,15 +67,11 @@ export default function Home() {
       <Navbar2 />
       <Inicio />
       
-      <div id="equipo">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Equipo />
-        </Suspense>
-      </div>
-      
       <Suspense fallback={<LoadingSpinner />}>
         <Branding />
       </Suspense>
+      
+      <ArrowUp />
       
       <div id="desarrollo">
         <Suspense fallback={<LoadingSpinner />}>
@@ -91,15 +87,15 @@ export default function Home() {
         <Diseño />
       </Suspense>
       
- 
-      
       <Suspense fallback={<LoadingSpinner />}>
         <Contacto />
       </Suspense>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <NuestroEquipo />
-      </Suspense>
+      <div id="equipo">
+        <Suspense fallback={<LoadingSpinner />}>
+          <Equipo />
+        </Suspense>
+      </div>
       
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />

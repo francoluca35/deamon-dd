@@ -271,7 +271,49 @@ function Navbar2() {
               </li>
             ))}
 
-          
+            <li className="relative">
+              <div
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                className="relative"
+              >
+               
+                <div
+                  className={`absolute left-0 mt-1 bg-black/90 backdrop-blur-sm border border-gray-700/50 rounded-lg w-44 text-white z-50 transition-all duration-200 ${
+                    isDropdownOpen ? "block" : "hidden"
+                  }`}
+                  role="menu"
+                  aria-hidden={!isDropdownOpen}
+                >
+                  <div className="py-1">
+                    <button
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        router.push("/desarrolloweb?#trabajos");
+                      }}
+                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      aria-label="Ver trabajos de desarrollo web"
+                      tabIndex={isDropdownOpen ? 0 : -1}
+                      role="menuitem"
+                    >
+                      Desarrollo Web
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        router.push("/graphic");
+                      }}
+                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      aria-label="Ver trabajos de diseño gráfico"
+                      tabIndex={isDropdownOpen ? 0 : -1}
+                      role="menuitem"
+                    >
+                      Diseño Gráfico
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
 
             <li>
               <button

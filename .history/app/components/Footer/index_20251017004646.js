@@ -209,10 +209,18 @@ const Footer = () => {
         </div>
 
         {/* Línea de separación y créditos */}
-        <div className="mt-10 border-t border-cyan-900 pt-4 text-center text-sm text-gray-400">
+        <div className="mt-10 border-t border-purple-950 pt-4 text-center text-sm text-gray-400">
           Created by{" "}
-          <span className="text-neutral-500 hover:text-violet-40">
-            Deamon DD
+          <span className="text-purple-800">
+            <a 
+              href="https://francomputer.com.ar" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-purple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+              aria-label="Visitar FranComputer"
+            >
+              @FranComputer
+            </a>
           </span>
         </div>
       </div>

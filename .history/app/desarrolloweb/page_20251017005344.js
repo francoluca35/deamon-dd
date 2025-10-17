@@ -42,6 +42,7 @@ const Website = () => {
         </div>
       </div>
 
+      <ArrowUp />
       <Footer />
     </div>
   );

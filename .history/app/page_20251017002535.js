@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
 import Navbar2 from "./components/Navbar/idex";
 import Inicio from "./pages/Home";
+import ArrowUp from "./components/ArrowUp";
 import { usePerformanceMonitor } from "./hooks/usePerformance";
 import { useErrorTracking } from "./lib/errorTracking";
 
@@ -13,9 +14,9 @@ const Especialidades = lazy(() => import("./pages/Especialidades"));
 const Desarrollo = lazy(() => import("./pages/Desarrollo"));
 const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
+const Formacion = lazy(() => import("./pages/Formacion"));
 
 const Contacto = lazy(() => import("./pages/Contacto"));
-const NuestroEquipo = lazy(() => import("./components/nuestroEquipo"));
 const Footer = lazy(() => import("./components/Footer"));
 
 // WhatsApp con loading optimizado
@@ -77,6 +78,8 @@ export default function Home() {
         <Branding />
       </Suspense>
       
+      <ArrowUp />
+      
       <div id="desarrollo">
         <Suspense fallback={<LoadingSpinner />}>
           <Desarrollo />
@@ -95,10 +98,6 @@ export default function Home() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <Contacto />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <NuestroEquipo />
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>
