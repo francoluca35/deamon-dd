@@ -38,7 +38,7 @@ const Footer = () => {
   )}`;
 
   return (
-    <footer className="bg-gradient-to-br from-black to-violet-950 text-white py-10">
+    <footer className="bg-neutral-950 text-white py-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-start gap-6 text-center sm:text-left">
           {/* Desarrollo Web */}
@@ -209,10 +209,18 @@ const Footer = () => {
         </div>
 
         {/* Línea de separación y créditos */}
-        <div className="mt-10 border-t border-cyan-900 pt-4 text-center text-sm text-gray-400">
+        <div className="mt-10 border-t border-purple-950 pt-4 text-center text-sm text-gray-400">
           Created by{" "}
-          <span className="text-neutral-500 hover:text-violet-40">
-            Deamon DD
+          <span className="text-purple-800">
+            <a 
+              href="https://francomputer.com.ar" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-purple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+              aria-label="Visitar FranComputer"
+            >
+              @FranComputer
+            </a>
           </span>
         </div>
       </div>

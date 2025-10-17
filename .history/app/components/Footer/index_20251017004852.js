@@ -211,7 +211,7 @@ const Footer = () => {
         {/* Línea de separación y créditos */}
         <div className="mt-10 border-t border-cyan-900 pt-4 text-center text-sm text-gray-400">
           Created by{" "}
-          <span className="text-neutral-500 hover:text-violet-40">
+          <span className="text-neutral-500 hover:text-violet-600">
             Deamon DD
           </span>
         </div>

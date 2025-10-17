@@ -78,8 +78,9 @@ function Navbar2() {
     { href: "#", label: "Inicio" },
     { href: "#equipo", label: "Agencia" },
     { href: "#branding", label: "Branding" },
+
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
-    { href: "#marketing", label: "Marketing Digital" },
+
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -230,7 +231,43 @@ function Navbar2() {
                   }}
                 >
                   <div className="relative">
-                   
+                    <button
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      aria-label="Ver trabajos realizados"
+                      aria-expanded={isDropdownOpen}
+                      tabIndex={0}
+                    >
+                      Trabajos
+                    </button>
+                    <div className={`mt-2 ml-6 space-y-1 transition-all duration-200 ease-out ${
+                      isDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                    }`}>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/desarrolloweb?#trabajos");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de desarrollo web"
+                        tabIndex={0}
+                      >
+                        Desarrollo Web
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/graphic");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de diseño gráfico"
+                        tabIndex={0}
+                      >
+                        Diseño Gráfico
+                      </button>
+                    </div>
                   </div>
                 </li>
 
@@ -271,7 +308,57 @@ function Navbar2() {
               </li>
             ))}
 
-          
+            <li className="relative">
+              <div
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                className="relative"
+              >
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                    aria-label="Ver trabajos realizados"
+                    aria-expanded={isDropdownOpen}
+                    tabIndex={0}
+                  >
+                  Trabajos ▾
+                </button>
+                <div
+                  className={`absolute left-0 mt-1 bg-black/90 backdrop-blur-sm border border-gray-700/50 rounded-lg w-44 text-white z-50 transition-all duration-200 ${
+                    isDropdownOpen ? "block" : "hidden"
+                  }`}
+                  role="menu"
+                  aria-hidden={!isDropdownOpen}
+                >
+                  <div className="py-1">
+                    <button
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        router.push("/desarrolloweb?#trabajos");
+                      }}
+                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      aria-label="Ver trabajos de desarrollo web"
+                      tabIndex={isDropdownOpen ? 0 : -1}
+                      role="menuitem"
+                    >
+                      Desarrollo Web
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        router.push("/graphic");
+                      }}
+                      className="block px-4 py-2 hover:bg-gray-800/50 w-full text-left transition-colors duration-150 focus:outline-none text-sm"
+                      aria-label="Ver trabajos de diseño gráfico"
+                      tabIndex={isDropdownOpen ? 0 : -1}
+                      role="menuitem"
+                    >
+                      Diseño Gráfico
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
 
             <li>
               <button

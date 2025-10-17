@@ -146,7 +146,7 @@ const Contacto = () => {
                   }
                   required={required}
                   aria-describedby={error && error.includes(label.toLowerCase()) ? `${id}-error` : undefined}
-                  className="w-full bg-black/75 text-white px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-900 text-sm transition-colors"
+                  className="w-full bg-white/35 text-white px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-900 text-sm transition-colors"
                 />
               </div>
             ))}
@@ -165,7 +165,7 @@ const Contacto = () => {
                 }
                 required
                 aria-describedby={error && error.includes("mensaje") ? "mensaje-error" : undefined}
-                className="w-full bg-black/75 text-white px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-900 text-sm resize-none transition-colors"
+                className="w-full bg-white/35 text-black px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-900 text-sm resize-none transition-colors"
               ></textarea>
             </div>
 
@@ -225,7 +225,7 @@ const Contacto = () => {
 
         {/* Datos de contacto */}
 
-        <div className="w-full lg:w-1/3 bg-purple-950 text-white p-8 flex flex-col justify-center">
+        <div className="w-full lg:w-1/3 bg-purple-900 text-white p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-semibold mb-4">Información</h3>
           <p className="text-sm mb-2 hover:text-purple-200 hover:text-base">
             <a href="mailto:deamoncompany18@gmail.com">Consultas generales</a>
