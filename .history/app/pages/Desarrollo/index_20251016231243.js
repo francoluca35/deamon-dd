@@ -1,106 +1,12 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 const Desarrollo = () => {
-  const router = useRouter();
-
-  const handleWhatsApp = () => {
-    const message = "Hola! Me interesa conocer más sobre el desarrollo web. ¿Podemos agendar una llamada?";
-    const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const handleVerMas = () => {
-    router.push('/desarrolloweb');
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-black to-neutral-900 text-white relative">
-      {/* Background with animated code lines - COVERING ENTIRE PAGE */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/40 via-transparent to-neutral-900/20"></div>
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 text-purple-400 font-mono text-sm animate-pulse">
-          &lt;div className=&quot;web-development&quot;&gt;
-        </div>
-        <div className="absolute top-32 left-20 text-purple-400 font-mono text-sm animate-pulse delay-300">
-          &lt;website&gt;Responsive&lt;/website&gt;
-        </div>
-        <div className="absolute top-44 left-10 text-purple-400 font-mono text-sm animate-pulse delay-500">
-          &lt;/div&gt;
-        </div>
-        <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
-          function createWebsite() {"{"}
-        </div>
-        <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
-          return userExperience;
-        </div>
-        <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
-          {"}"}
-        </div>
-        <div className="absolute top-40 right-10 text-purple-400 font-mono text-xs animate-pulse delay-900">
-          const tech = [&quot;React&quot;, &quot;Next.js&quot;];
-        </div>
-        <div className="absolute top-56 left-40 text-green-400 font-mono text-xs animate-pulse delay-1100">
-          designSystem.responsive();
-        </div>
-        <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
-          website.optimize();
-        </div>
-        
-        {/* Additional code lines for projects section */}
-        <div className="absolute top-[600px] left-10 text-cyan-400 font-mono text-sm animate-pulse delay-1500">
-          &lt;projects&gt;Portfolio&lt;/projects&gt;
-        </div>
-        <div className="absolute top-[650px] right-20 text-cyan-400 font-mono text-sm animate-pulse delay-1800">
-          const projects = [];
-        </div>
-        <div className="absolute top-[700px] left-40 text-orange-400 font-mono text-xs animate-pulse delay-2000">
-          projects.map(project =&gt; {"{"}
-        </div>
-        <div className="absolute top-[750px] right-10 text-orange-400 font-mono text-xs animate-pulse delay-2200">
-          return &lt;Card /&gt;;
-        </div>
-        <div className="absolute top-[800px] left-20 text-orange-400 font-mono text-xs animate-pulse delay-2400">
-          {"}"});
-        </div>
-        
-        {/* More code lines scattered throughout */}
-        <div className="absolute top-[400px] right-40 text-pink-400 font-mono text-xs animate-pulse delay-1600">
-          useEffect(() =&gt; {"{"}
-        </div>
-        <div className="absolute top-[450px] left-60 text-pink-400 font-mono text-xs animate-pulse delay-1900">
-          loadProjects();
-        </div>
-        <div className="absolute top-[500px] right-60 text-pink-400 font-mono text-xs animate-pulse delay-2100">
-          {"}"}, []);
-        </div>
-        
-        <div className="absolute top-[900px] left-10 text-emerald-400 font-mono text-xs animate-pulse delay-2300">
-          export default App;
-        </div>
-        <div className="absolute top-[950px] right-30 text-emerald-400 font-mono text-xs animate-pulse delay-2600">
-  
-        </div>
-        
-        {/* More scattered code elements */}
-        <div className="absolute top-[350px] left-80 text-blue-400 font-mono text-xs animate-pulse delay-1400">
-          const API = &quot;https://api.example.com&quot;;
-        </div>
-        <div className="absolute top-[550px] right-80 text-indigo-400 font-mono text-xs animate-pulse delay-1700">
-          fetchData().then();
-        </div>
-        <div className="absolute top-[850px] left-60 text-teal-400 font-mono text-xs animate-pulse delay-2500">
-          &lt;SEO&gt;optimized&lt;/SEO&gt;
-        </div>
-        <div className="absolute top-[1000px] right-10 text-rose-400 font-mono text-xs animate-pulse delay-2700">
-         
-        </div>
-      </div>
-      
+    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-black to-neutral-900 text-white">
       {/* Hero */}
-      <div className="relative px-8 py-20 max-w-6xl mx-auto z-10">
+      <div className="px-8 py-20 max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-lg overflow-hidden">
             <Image
@@ -123,30 +29,24 @@ const Desarrollo = () => {
         </p>
 
         <div className="flex gap-4 mb-14">
-          <button 
-            onClick={handleWhatsApp}
-            className="bg-violet-950 hover:bg-violet-800 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
+          <button className="bg-pink-500 hover:bg-pink-600 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
             Agendá una llamada
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
-          <button 
-            onClick={handleVerMas}
-            className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
-            Ver mas
+          <button className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
+            Conocé la agencia
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
         </div>
       </div>
 
       {/* Projects */}
-      <div className="relative px-8 pb-24 -mt-12 z-10">
+      <div className="px-8 pb-24">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold mb-8">A continuación explora algunos proyectos webs desarrollados:</h3>
 

@@ -123,25 +123,19 @@ const Desarrollo = () => {
         </p>
 
         <div className="flex gap-4 mb-14">
-          <button 
-            onClick={handleWhatsApp}
-            className="bg-violet-950 hover:bg-violet-800 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
+          <button className="bg-violet-950 hover:bg-violet-800 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
             Agendá una llamada
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
 
-          <button 
-            onClick={handleVerMas}
-            className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
-            Ver mas
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+            <button className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
+              Ver mas
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
         </div>
       </div>
 

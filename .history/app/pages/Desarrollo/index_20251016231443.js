@@ -1,107 +1,46 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 const Desarrollo = () => {
-  const router = useRouter();
-
-  const handleWhatsApp = () => {
-    const message = "Hola! Me interesa conocer más sobre el desarrollo web. ¿Podemos agendar una llamada?";
-    const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const handleVerMas = () => {
-    router.push('/desarrolloweb');
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-black to-neutral-900 text-white relative">
-      {/* Background with animated code lines - COVERING ENTIRE PAGE */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/40 via-transparent to-neutral-900/20"></div>
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 text-purple-400 font-mono text-sm animate-pulse">
-          &lt;div className=&quot;web-development&quot;&gt;
-        </div>
-        <div className="absolute top-32 left-20 text-purple-400 font-mono text-sm animate-pulse delay-300">
-          &lt;website&gt;Responsive&lt;/website&gt;
-        </div>
-        <div className="absolute top-44 left-10 text-purple-400 font-mono text-sm animate-pulse delay-500">
-          &lt;/div&gt;
-        </div>
-        <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
-          function createWebsite() {"{"}
-        </div>
-        <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
-          return userExperience;
-        </div>
-        <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
-          {"}"}
-        </div>
-        <div className="absolute top-40 right-10 text-purple-400 font-mono text-xs animate-pulse delay-900">
-          const tech = [&quot;React&quot;, &quot;Next.js&quot;];
-        </div>
-        <div className="absolute top-56 left-40 text-green-400 font-mono text-xs animate-pulse delay-1100">
-          designSystem.responsive();
-        </div>
-        <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
-          website.optimize();
-        </div>
-        
-        {/* Additional code lines for projects section */}
-        <div className="absolute top-[600px] left-10 text-cyan-400 font-mono text-sm animate-pulse delay-1500">
-          &lt;projects&gt;Portfolio&lt;/projects&gt;
-        </div>
-        <div className="absolute top-[650px] right-20 text-cyan-400 font-mono text-sm animate-pulse delay-1800">
-          const projects = [];
-        </div>
-        <div className="absolute top-[700px] left-40 text-orange-400 font-mono text-xs animate-pulse delay-2000">
-          projects.map(project =&gt; {"{"}
-        </div>
-        <div className="absolute top-[750px] right-10 text-orange-400 font-mono text-xs animate-pulse delay-2200">
-          return &lt;Card /&gt;;
-        </div>
-        <div className="absolute top-[800px] left-20 text-orange-400 font-mono text-xs animate-pulse delay-2400">
-          {"}"});
-        </div>
-        
-        {/* More code lines scattered throughout */}
-        <div className="absolute top-[400px] right-40 text-pink-400 font-mono text-xs animate-pulse delay-1600">
-          useEffect(() =&gt; {"{"}
-        </div>
-        <div className="absolute top-[450px] left-60 text-pink-400 font-mono text-xs animate-pulse delay-1900">
-          loadProjects();
-        </div>
-        <div className="absolute top-[500px] right-60 text-pink-400 font-mono text-xs animate-pulse delay-2100">
-          {"}"}, []);
-        </div>
-        
-        <div className="absolute top-[900px] left-10 text-emerald-400 font-mono text-xs animate-pulse delay-2300">
-          export default App;
-        </div>
-        <div className="absolute top-[950px] right-30 text-emerald-400 font-mono text-xs animate-pulse delay-2600">
-  
-        </div>
-        
-        {/* More scattered code elements */}
-        <div className="absolute top-[350px] left-80 text-blue-400 font-mono text-xs animate-pulse delay-1400">
-          const API = &quot;https://api.example.com&quot;;
-        </div>
-        <div className="absolute top-[550px] right-80 text-indigo-400 font-mono text-xs animate-pulse delay-1700">
-          fetchData().then();
-        </div>
-        <div className="absolute top-[850px] left-60 text-teal-400 font-mono text-xs animate-pulse delay-2500">
-          &lt;SEO&gt;optimized&lt;/SEO&gt;
-        </div>
-        <div className="absolute top-[1000px] right-10 text-rose-400 font-mono text-xs animate-pulse delay-2700">
-         
-        </div>
-      </div>
-      
+    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-black to-neutral-900 text-white">
       {/* Hero */}
-      <div className="relative px-8 py-20 max-w-6xl mx-auto z-10">
-        <div className="flex items-center gap-4 mb-8">
+      <div className="relative px-8 py-20 max-w-6xl mx-auto">
+        {/* Background with animated code lines */}
+        <div className="absolute inset-0 "></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10  font-mono text-sm animate-pulse">
+            &lt;div className=&quot;web-development&quot;&gt;
+          </div>
+          <div className="absolute top-32 left-20 text-purple-400 font-mono text-sm animate-pulse delay-300">
+            &lt;website&gt;Responsive&lt;/website&gt;
+          </div>
+          <div className="absolute top-44 left-10 text-purple-400 font-mono text-sm animate-pulse delay-500">
+            &lt;/div&gt;
+          </div>
+          <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
+            function createWebsite() {"{"}
+          </div>
+          <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
+            return userExperience;
+          </div>
+          <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
+            {"}"}
+          </div>
+          <div className="absolute top-40 right-10 text-purple-400 font-mono text-xs animate-pulse delay-900">
+            const tech = [&quot;React&quot;, &quot;Next.js&quot;];
+          </div>
+          <div className="absolute top-56 left-40 text-green-400 font-mono text-xs animate-pulse delay-1100">
+            designSystem.responsive();
+          </div>
+          <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
+            website.optimize();
+          </div>
+        </div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-lg overflow-hidden">
             <Image
               src="/assets/Logo-equipo-B.avif"
@@ -123,30 +62,25 @@ const Desarrollo = () => {
         </p>
 
         <div className="flex gap-4 mb-14">
-          <button 
-            onClick={handleWhatsApp}
-            className="bg-violet-950 hover:bg-violet-800 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
+          <button className="bg-pink-500 hover:bg-pink-600 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
             Agendá una llamada
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          <button 
-            onClick={handleVerMas}
-            className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
-          >
-            Ver mas
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
+
+          <button className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
+            Conocé la agencia
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
         </div>
       </div>
 
       {/* Projects */}
-      <div className="relative px-8 pb-24 -mt-12 z-10">
+      <div className="px-8 pb-24 -mt-12">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold mb-8">A continuación explora algunos proyectos webs desarrollados:</h3>
 
@@ -157,7 +91,7 @@ const Desarrollo = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Proyecto 1 - JLA Tecnico */}
+            {/* Proyecto 1 - Tokn1 */}
             <motion.div
               className="relative rounded-2xl overflow-hidden shadow-2xl group"
               whileHover={{ scale: 1.01, y: -6 }}
@@ -182,18 +116,18 @@ const Desarrollo = () => {
               </div>
             </motion.div>
 
-            {/* Proyecto 2 - Maurello + Caruso (dividido) */}
+            {/* Proyecto 2 - La Via + Tropical Paradise (dividido) */}
             <motion.div
               className="relative rounded-2xl overflow-hidden shadow-2xl group"
               whileHover={{ scale: 1.01, y: -6 }}
               transition={{ duration: 0.25 }}
             >
               <div className="relative aspect-[4/5] bg-neutral-800">
-                {/* Maurello - Parte Superior */}
+                {/* La Via - Parte Superior */}
                 <div className="relative h-1/2">
                   <Image
                     src="/assets/Proyectos/maurello.png"
-                    alt="Maurello Transportes"
+                    alt="La Via"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -208,19 +142,19 @@ const Desarrollo = () => {
                 </div>
                 
                 {/* Divider */}
-                <div className="absolute top-1/2 left-0 right-0 h-px bg-white/20"></div>
+                <div className="absolute top-1/2  left-0 right-0 h-px bg-white/20"></div>
                 
-                {/* Caruso - Parte Inferior */}
+                {/* Tropical Paradise - Parte Inferior */}
                 <div className="relative h-1/2">
                   <Image
                     src="/assets/Proyectos/caruso1.png"
-                    alt="Caruso FC"
+                    alt="Tropical Paradise"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-lg font-bold mb-1">Caruso FC</h4>
+                    <h4 className="text-white text-lg font-bold mb-1">Caruso FC </h4>
                     <p className="text-white/70 text-xs mb-2">Pagina para reservar canchas de futbol</p>
                     <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
                       Ver proyecto
@@ -230,7 +164,7 @@ const Desarrollo = () => {
               </div>
             </motion.div>
 
-            {/* Proyecto 3 - Arquimec */}
+            {/* Proyecto 3 - La Florida */}
             <motion.div
               className="relative rounded-2xl overflow-hidden shadow-2xl group"
               whileHover={{ scale: 1.01, y: -6 }}
@@ -239,7 +173,7 @@ const Desarrollo = () => {
               <div className="relative aspect-[4/5] bg-neutral-800">
                 <Image
                   src="/assets/Proyectos/arqui.png"
-                  alt="Arquimec"
+                  alt="La Florida"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
