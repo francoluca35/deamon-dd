@@ -78,7 +78,7 @@ export default function BrandingSection() {
 
   return (
     <section className="w-full min-h-screen bg-neutral-950 text-white px-6 py-20">
-     
+           <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/40 via-transparent to-neutral-900/20"></div>
       <div className="max-w-6xl mx-auto">
         
         <motion.div

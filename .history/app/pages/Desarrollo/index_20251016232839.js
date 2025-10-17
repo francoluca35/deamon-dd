@@ -18,7 +18,8 @@ const Desarrollo = () => {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white relative">
-
+      {/* Background with animated code lines - COVERING ENTIRE PAGE */}
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/40 via-transparent to-neutral-900/20"></div>
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 text-purple-400 font-mono text-sm animate-pulse">
           &lt;div className=&quot;web-development&quot;&gt;
