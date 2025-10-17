@@ -34,7 +34,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-black via-black to-black text-white">
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-200 text-white">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with animated code lines */}

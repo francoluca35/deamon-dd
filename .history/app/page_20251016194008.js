@@ -72,10 +72,6 @@ export default function Home() {
         </Suspense>
       </div>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <Branding />
-      </Suspense>
-      
       <ArrowUp />
       
       <div id="desarrollo">
