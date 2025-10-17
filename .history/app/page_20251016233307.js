@@ -86,10 +86,6 @@ export default function Home() {
       </div>
       
       <Suspense fallback={<LoadingSpinner />}>
-        <Marketing />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
         <Diseño />
       </Suspense>
       

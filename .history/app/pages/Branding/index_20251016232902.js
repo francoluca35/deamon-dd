@@ -78,7 +78,6 @@ export default function BrandingSection() {
 
   return (
     <section className="w-full min-h-screen bg-neutral-950 text-white px-6 py-20">
-     
       <div className="max-w-6xl mx-auto">
         
         <motion.div
