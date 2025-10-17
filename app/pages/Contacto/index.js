@@ -107,7 +107,7 @@ const Contacto = () => {
       id="contacto"
       className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-16"
       style={{
-        backgroundImage: "url('/assets/fondo-contact.avif')",
+        backgroundImage: "url('/assets/contacto.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
