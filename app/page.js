@@ -14,7 +14,7 @@ const Especialidades = lazy(() => import("./pages/Especialidades"));
 const Desarrollo = lazy(() => import("./pages/Desarrollo"));
 const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
-const PCompetition = lazy(() => import("./pages/PCompeticion"));
+
 const Contacto = lazy(() => import("./pages/Contacto"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -93,9 +93,7 @@ export default function Home() {
         <Diseño />
       </Suspense>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <PCompetition />
-      </Suspense>
+ 
       
       <Suspense fallback={<LoadingSpinner />}>
         <Contacto />
