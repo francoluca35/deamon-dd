@@ -76,11 +76,9 @@ function Navbar2() {
 
   const navLinks = [
     { href: "#", label: "Inicio" },
-    { href: "#equipo", label: "Agencia" },
-    { href: "#branding", label: "Branding" },
+    { href: "#equipo", label: "Equipo" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
-    { href: "#marketing", label: "Marketing Digital" },
-    { href: "#diseño", label: "Diseño Gráfico" },
+    { href: "#diseno-grafico", label: "Diseño Gráfico" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -220,20 +218,7 @@ function Navbar2() {
                   </li>
                 ))}
 
-                <li 
-                  className={`relative transform transition-all duration-300 ease-out ${
-                    isOpen 
-                      ? 'translate-x-0 opacity-100' 
-                      : 'translate-x-2 opacity-0'
-                  }`}
-                  style={{ 
-                    transitionDelay: isOpen ? `${navLinks.length * 50 + 100}ms` : '0ms' 
-                  }}
-                >
-                  <div className="relative">
-                   
-                  </div>
-                </li>
+        
 
                 <li>
                   <button
@@ -272,7 +257,7 @@ function Navbar2() {
               </li>
             ))}
 
-          
+
 
             <li>
               <button

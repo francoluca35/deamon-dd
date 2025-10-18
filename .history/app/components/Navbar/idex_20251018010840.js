@@ -79,7 +79,7 @@ function Navbar2() {
     { href: "#equipo", label: "Agencia" },
     { href: "#branding", label: "Branding" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
-    { href: "#marketing", label: "Marketing Digital" },
+    { href: "#marketing", label: "Marketing", isRoute: true },
     { href: "#diseño", label: "Diseño Gráfico" },
   ];
 
@@ -220,20 +220,7 @@ function Navbar2() {
                   </li>
                 ))}
 
-                <li 
-                  className={`relative transform transition-all duration-300 ease-out ${
-                    isOpen 
-                      ? 'translate-x-0 opacity-100' 
-                      : 'translate-x-2 opacity-0'
-                  }`}
-                  style={{ 
-                    transitionDelay: isOpen ? `${navLinks.length * 50 + 100}ms` : '0ms' 
-                  }}
-                >
-                  <div className="relative">
-                   
-                  </div>
-                </li>
+        
 
                 <li>
                   <button
@@ -272,7 +259,7 @@ function Navbar2() {
               </li>
             ))}
 
-          
+
 
             <li>
               <button
