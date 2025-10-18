@@ -183,7 +183,7 @@ function Navbar2() {
             onMouseLeave={handleMouseLeave}
           >
             <div 
-              className="fixed top-0 right-0 h-full w-3/4 sm:w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out"
+              className="fixed top-0 right-0 h-full w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -262,7 +262,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -276,7 +276,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
