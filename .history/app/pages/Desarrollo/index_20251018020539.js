@@ -52,28 +52,28 @@ const Desarrollo = () => {
   const appProjects = [
     {
       id: 1,
-      title: "QuickSolution",
-      description: "Multiapp para restaurantes",
-      image: "/assets/Proyectos/quick2.jpg",
+      title: "FoodTracker",
+      description: "App para seguimiento nutricional",
+      image: "/assets/Proyectos/foodtracker.jpg",
       type: "single"
     },
     {
       id: 2,
-      title: "JLA App",
+      title: "TaskManager",
       description: "Gestión de tareas empresariales",
-      image: "/assets/Proyectos/jlaapp2.jpg",
+      image: "/assets/Proyectos/taskmanager.png",
       type: "split",
       secondProject: {
-        title: "Maurello App",
-        description: "App para reservar pasajes de transporte",
-        image: "/assets/Proyectos/maureloapp.jpg"
+        title: "WeatherApp",
+        description: "Pronóstico del tiempo en tiempo real",
+        image: "/assets/Proyectos/weatherapp.png"
       }
     },
     {
       id: 3,
-      title: "PerúMar App",
-      description: "App personalizada para el restaurante PerúMar",
-      image: "/assets/Proyectos/perumarapp.jpg",
+      title: "FitnessCoach",
+      description: "Entrenador personal digital",
+      image: "/assets/Proyectos/fitness.jpg",
       type: "single"
     }
   ];
@@ -169,81 +169,104 @@ const Desarrollo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            key={selectedCategory} // Re-animate when category changes
           >
-            {currentProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="relative rounded-2xl overflow-hidden shadow-2xl group"
-                whileHover={{ scale: 1.01, y: -6 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {project.type === 'single' ? (
-                  // Proyecto individual
-                  <div className="relative aspect-[4/5] bg-neutral-800">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            {/* Proyecto 1 - JLA Tecnico */}
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-2xl group"
+              whileHover={{ scale: 1.01, y: -6 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="relative aspect-[4/5] bg-neutral-800">
+                <Image
+                  src="/assets/Proyectos/tec2.jpg"
+                  alt="JLA Tecnico"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h4 className="text-white text-2xl font-bold mb-1">{project.title}</h4>
-                      <p className="text-white/70 text-sm mb-3">{project.description}</p>
-                      <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200">
-                        Ver proyecto
-                      </button>
-                    </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h4 className="text-white text-2xl font-bold mb-1">JLA Tecnico</h4>
+                  <p className="text-white/70 text-sm mb-3">Web Site Industrial</p>
+                  <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200">
+                    Ver proyecto
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Proyecto 2 - Maurello + Caruso (dividido) */}
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-2xl group"
+              whileHover={{ scale: 1.01, y: -6 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="relative aspect-[4/5] bg-neutral-800">
+                {/* Maurello - Parte Superior */}
+                <div className="relative h-1/2">
+                  <Image
+                    src="/assets/Proyectos/maurello.png"
+                    alt="Maurello Transportes"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h4 className="text-white text-lg font-bold mb-1">Maurello Transportes</h4>
+                    <p className="text-white/70 text-xs mb-2">Landing para compra de pasajes de transporte</p>
+                    <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
+                      Ver proyecto
+                    </button>
                   </div>
-                ) : (
-                  // Proyecto dividido (split)
-                  <div className="relative aspect-[4/5] bg-neutral-800">
-                    {/* Proyecto Superior */}
-                    <div className="relative h-1/2">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/40"></div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h4 className="text-white text-lg font-bold mb-1">{project.title}</h4>
-                        <p className="text-white/70 text-xs mb-2">{project.description}</p>
-                        <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          Ver proyecto
-                        </button>
-                      </div>
-                    </div>
-                    
-                    {/* Divider */}
-                    <div className="absolute top-1/2 left-0 right-0 h-px bg-white/20"></div>
-                    
-                    {/* Proyecto Inferior */}
-                    <div className="relative h-1/2">
-                      <Image
-                        src={project.secondProject.image}
-                        alt={project.secondProject.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/40"></div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h4 className="text-white text-lg font-bold mb-1">{project.secondProject.title}</h4>
-                        <p className="text-white/70 text-xs mb-2">{project.secondProject.description}</p>
-                        <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          Ver proyecto
-                        </button>
-                      </div>
-                    </div>
+                </div>
+                
+                {/* Divider */}
+                <div className="absolute top-1/2 left-0 right-0 h-px bg-white/20"></div>
+                
+                {/* Caruso - Parte Inferior */}
+                <div className="relative h-1/2">
+                  <Image
+                    src="/assets/Proyectos/caruso1.png"
+                    alt="Caruso FC"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h4 className="text-white text-lg font-bold mb-1">Caruso FC</h4>
+                    <p className="text-white/70 text-xs mb-2">Pagina para reservar canchas de futbol</p>
+                    <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
+                      Ver proyecto
+                    </button>
                   </div>
-                )}
-              </motion.div>
-            ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Proyecto 3 - Arquimec */}
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-2xl group"
+              whileHover={{ scale: 1.01, y: -6 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="relative aspect-[4/5] bg-neutral-800">
+                <Image
+                  src="/assets/Proyectos/arqui.png"
+                  alt="Arquimec"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h4 className="text-white text-2xl font-bold mb-1">Arquimec</h4>
+                  <p className="text-white/70 text-sm mb-3">Estudio de arquitectura</p>
+                  <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200">
+                    Ver proyecto
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

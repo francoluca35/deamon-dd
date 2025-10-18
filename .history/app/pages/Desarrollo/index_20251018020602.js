@@ -52,28 +52,28 @@ const Desarrollo = () => {
   const appProjects = [
     {
       id: 1,
-      title: "QuickSolution",
-      description: "Multiapp para restaurantes",
-      image: "/assets/Proyectos/quick2.jpg",
+      title: "FoodTracker",
+      description: "App para seguimiento nutricional",
+      image: "/assets/Proyectos/foodtracker.jpg",
       type: "single"
     },
     {
       id: 2,
-      title: "JLA App",
+      title: "TaskManager",
       description: "Gestión de tareas empresariales",
-      image: "/assets/Proyectos/jlaapp2.jpg",
+      image: "/assets/Proyectos/taskmanager.png",
       type: "split",
       secondProject: {
-        title: "Maurello App",
-        description: "App para reservar pasajes de transporte",
-        image: "/assets/Proyectos/maureloapp.jpg"
+        title: "WeatherApp",
+        description: "Pronóstico del tiempo en tiempo real",
+        image: "/assets/Proyectos/weatherapp.png"
       }
     },
     {
       id: 3,
-      title: "PerúMar App",
-      description: "App personalizada para el restaurante PerúMar",
-      image: "/assets/Proyectos/perumarapp.jpg",
+      title: "FitnessCoach",
+      description: "Entrenador personal digital",
+      image: "/assets/Proyectos/fitness.jpg",
       type: "single"
     }
   ];

@@ -72,8 +72,8 @@ const Desarrollo = () => {
     {
       id: 3,
       title: "PerúMar App",
-      description: "App personalizada para el restaurante PerúMar",
-      image: "/assets/Proyectos/perumarapp.jpg",
+      description: "App para reservar pasajes de transporte",
+      image: "/assets/Proyectos/maureloapp.jpg",
       type: "single"
     }
   ];
