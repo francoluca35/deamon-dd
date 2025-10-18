@@ -19,6 +19,7 @@ const Desarrollo = () => {
   return (
     <div className="bg-neutral-950 text-white relative">
 
+    
       
       {/* Hero */}
       <div className="relative px-8 pt-24 pb-20 max-w-6xl mx-auto z-20">

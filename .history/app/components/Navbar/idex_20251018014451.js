@@ -113,16 +113,17 @@ function Navbar2() {
           : isScrolled
           ? "bg-black bg-opacity-40"
           : "bg-transparent"
-      } fixed w-full z-20 top-0 start-0  `}
+      } fixed w-full z-20 top-0 left-0 right-0`}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+        {/* Logo */}
         <button 
           onClick={() => router.push("/")} 
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1"
+          className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1 flex-shrink-0"
           aria-label="Ir al inicio"
           tabIndex={0}
         >
-          <div className="relative w-[200px] h-[60px] flex items-center justify-center">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12">
             {logos.map((logo, index) => (
               <Image
                 key={`${logo.src}-${index}`}
@@ -130,7 +131,7 @@ function Navbar2() {
                 width={logo.width}
                 height={logo.height}
                 alt="Deamon DD - Agencia de Desarrollo Web"
-                className={`absolute transition-opacity duration-1500 ease-in-out ${
+                className={`absolute inset-0 object-contain transition-opacity duration-1500 ease-in-out ${
                   index === currentLogoIndex 
                     ? 'opacity-100' 
                     : 'opacity-0'
@@ -138,9 +139,35 @@ function Navbar2() {
               />
             ))}
           </div>
+          <span className="text-lg font-semibold">
+            <span className="text-white">Deamon</span>
+            <span className="text-purple-400 ml-1">DD</span>
+          </span>
         </button>
 
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        {/* Menú de navegación - Centro */}
+        <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleLinkClick(link.href, link.isRoute)}
+              className={`text-white hover:text-purple-300 transition-colors duration-300 px-3 py-2 font-medium ${
+                activeLink === link.href ? 'text-purple-400' : ''
+              }`}
+            >
+              {link.label}
+            </button>
+          ))}
+          <button
+            onClick={() => handleLinkClick("#contacto", false)}
+            className="text-white hover:text-purple-300 transition-colors duration-300 px-3 py-2 font-medium"
+          >
+            Contactos
+          </button>
+        </div>
+
+        {/* Botones de acción - Derecha */}
+        <div className="flex items-center space-x-3 flex-shrink-0">
           <button
             onClick={() => setIsModalOpen(true)}
             className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors"

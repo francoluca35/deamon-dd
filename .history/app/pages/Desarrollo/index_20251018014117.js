@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Navbar2 from "../../components/Navbar/idex";
 
 const Desarrollo = () => {
   const router = useRouter();
@@ -17,11 +18,90 @@ const Desarrollo = () => {
   };
 
   return (
-    <div className="bg-neutral-950 text-white relative">
+    <div className="min-h-screen bg-neutral-950 text-white relative">
+      <Navbar2 />
 
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 text-purple-400 font-mono text-sm animate-pulse">
+          &lt;div className=&quot;web-development&quot;&gt;
+        </div>
+        <div className="absolute top-32 left-20 text-purple-400 font-mono text-sm animate-pulse delay-300">
+          &lt;website&gt;Responsive&lt;/website&gt;
+        </div>
+        <div className="absolute top-44 left-10 text-purple-400 font-mono text-sm animate-pulse delay-500">
+          &lt;/div&gt;
+        </div>
+        <div className="absolute top-60 right-20 text-violet-400 font-mono text-sm animate-pulse delay-700">
+          function createWebsite() {"{"}
+        </div>
+        <div className="absolute top-80 right-30 text-violet-400 font-mono text-sm animate-pulse delay-1000">
+          return userExperience;
+        </div>
+        <div className="absolute top-96 right-20 text-violet-400 font-mono text-sm animate-pulse delay-1200">
+          {"}"}
+        </div>
+        <div className="absolute top-40 right-10 text-purple-400 font-mono text-xs animate-pulse delay-900">
+          const tech = [&quot;React&quot;, &quot;Next.js&quot;];
+        </div>
+        <div className="absolute top-56 left-40 text-green-400 font-mono text-xs animate-pulse delay-1100">
+          designSystem.responsive();
+        </div>
+        <div className="absolute top-72 left-20 text-yellow-400 font-mono text-xs animate-pulse delay-1300">
+          website.optimize();
+        </div>
+        
+        {/* Additional code lines for projects section */}
+        <div className="absolute top-[600px] left-10 text-cyan-400 font-mono text-sm animate-pulse delay-1500">
+          &lt;projects&gt;Portfolio&lt;/projects&gt;
+        </div>
+        <div className="absolute top-[650px] right-20 text-cyan-400 font-mono text-sm animate-pulse delay-1800">
+          const projects = [];
+        </div>
+        <div className="absolute top-[700px] left-40 text-orange-400 font-mono text-xs animate-pulse delay-2000">
+          projects.map(project =&gt; {"{"}
+        </div>
+        <div className="absolute top-[750px] right-10 text-orange-400 font-mono text-xs animate-pulse delay-2200">
+          return &lt;Card /&gt;;
+        </div>
+        <div className="absolute top-[800px] left-20 text-orange-400 font-mono text-xs animate-pulse delay-2400">
+          {"}"});
+        </div>
+        
+        {/* More code lines scattered throughout */}
+        <div className="absolute top-[400px] right-40 text-pink-400 font-mono text-xs animate-pulse delay-1600">
+          useEffect(() =&gt; {"{"}
+        </div>
+        <div className="absolute top-[450px] left-60 text-pink-400 font-mono text-xs animate-pulse delay-1900">
+          loadProjects();
+        </div>
+        <div className="absolute top-[500px] right-60 text-pink-400 font-mono text-xs animate-pulse delay-2100">
+          {"}"}, []);
+        </div>
+        
+        <div className="absolute top-[900px] left-10 text-emerald-400 font-mono text-xs animate-pulse delay-2300">
+          export default App;
+        </div>
+        <div className="absolute top-[950px] right-30 text-emerald-400 font-mono text-xs animate-pulse delay-2600">
+  
+        </div>
+        
+        {/* More scattered code elements */}
+        <div className="absolute top-[350px] left-80 text-blue-400 font-mono text-xs animate-pulse delay-1400">
+          const API = &quot;https://api.example.com&quot;;
+        </div>
+        <div className="absolute top-[550px] right-80 text-indigo-400 font-mono text-xs animate-pulse delay-1700">
+          fetchData().then();
+        </div>
+        <div className="absolute top-[850px] left-60 text-teal-400 font-mono text-xs animate-pulse delay-2500">
+          &lt;SEO&gt;optimized&lt;/SEO&gt;
+        </div>
+        <div className="absolute top-[1000px] right-10 text-rose-400 font-mono text-xs animate-pulse delay-2700">
+         
+        </div>
+      </div>
       
       {/* Hero */}
-      <div className="relative px-8 pt-24 pb-20 max-w-6xl mx-auto z-20">
+      <div className="relative px-8 pt-32 pb-20 max-w-6xl mx-auto z-10">
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-lg overflow-hidden">
             <Image
@@ -67,7 +147,7 @@ const Desarrollo = () => {
       </div>
 
       {/* Projects */}
-      <div className="relative px-8 pb-24 -mt-12 z-20">
+      <div className="relative px-8 pb-24 mt-8 z-10">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold mb-8">A continuación explora algunos proyectos webs desarrollados:</h3>
 

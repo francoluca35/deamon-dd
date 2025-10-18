@@ -76,9 +76,11 @@ function Navbar2() {
 
   const navLinks = [
     { href: "#", label: "Inicio" },
-    { href: "#equipo", label: "Equipo" },
+    { href: "#equipo", label: "Agencia" },
+    { href: "#branding", label: "Branding" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
-    { href: "#diseno-grafico", label: "Diseño Gráfico" },
+    { href: "#marketing", label: "Marketing Digital" },
+    { href: "#diseño", label: "Diseño Gráfico" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -115,14 +117,15 @@ function Navbar2() {
           : "bg-transparent"
       } fixed w-full z-20 top-0 start-0  `}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+        {/* Logo - Izquierda */}
         <button 
           onClick={() => router.push("/")} 
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1"
+          className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1 flex-shrink-0"
           aria-label="Ir al inicio"
           tabIndex={0}
         >
-          <div className="relative w-[200px] h-[60px] flex items-center justify-center">
+          <div className="relative w-12 h-12 sm:w-16 sm:h-16">
             {logos.map((logo, index) => (
               <Image
                 key={`${logo.src}-${index}`}
@@ -130,7 +133,7 @@ function Navbar2() {
                 width={logo.width}
                 height={logo.height}
                 alt="Deamon DD - Agencia de Desarrollo Web"
-                className={`absolute transition-opacity duration-1500 ease-in-out ${
+                className={`absolute inset-0 object-contain transition-opacity duration-1500 ease-in-out ${
                   index === currentLogoIndex 
                     ? 'opacity-100' 
                     : 'opacity-0'
@@ -138,9 +141,39 @@ function Navbar2() {
               />
             ))}
           </div>
+          <span className="text-2xl font-bold">
+            <span className="text-white">Deamon</span>
+            <span className="text-purple-400 ml-1">DD</span>
+          </span>
         </button>
 
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        {/* Menú de navegación - Centro */}
+        <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleLinkClick(link.href, link.isRoute)}
+              className={`text-white hover:text-purple-300 transition-colors  duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded px-3 py-2 font-medium ${
+                activeLink === link.href ? 'text-purple-400' : ''
+              }`}
+              aria-label={`Navegar a ${link.label}`}
+              tabIndex={0}
+            >
+              {link.label}
+            </button>
+          ))}
+          <button
+            onClick={() => handleLinkClick("#contacto", false)}
+            className="text-white hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded px-3 py-2 font-medium"
+            aria-label="Ir a la sección de contacto"
+            tabIndex={0}
+          >
+            Contactos
+          </button>
+        </div>
+
+        {/* Botones de acción - Derecha */}
+        <div className="flex items-center space-x-3 flex-shrink-0">
           <button
             onClick={() => setIsModalOpen(true)}
             className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors"
@@ -218,6 +251,56 @@ function Navbar2() {
                   </li>
                 ))}
 
+                <li 
+                  className={`relative transform transition-all duration-300 ease-out ${
+                    isOpen 
+                      ? 'translate-x-0 opacity-100' 
+                      : 'translate-x-2 opacity-0'
+                  }`}
+                  style={{ 
+                    transitionDelay: isOpen ? `${navLinks.length * 50 + 100}ms` : '0ms' 
+                  }}
+                >
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      aria-label="Ver trabajos realizados"
+                      aria-expanded={isDropdownOpen}
+                      tabIndex={0}
+                    >
+                      Trabajos
+                    </button>
+                    <div className={`mt-2 ml-6 space-y-1 transition-all duration-200 ease-out ${
+                      isDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                    }`}>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/desarrolloweb?#trabajos");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de desarrollo web"
+                        tabIndex={0}
+                      >
+                        Desarrollo Web
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/graphic");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de diseño gráfico"
+                        tabIndex={0}
+                      >
+                        Diseño Gráfico
+                      </button>
+                    </div>
+                  </div>
+                </li>
 
                 <li>
                   <button
@@ -237,39 +320,6 @@ function Navbar2() {
           </div>
         )}
 
-        {/* Menú desktop normal */}
-        <div
-          className={`items-center justify-between hidden md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 md:flex-row md:mt-0 z-50">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <button
-                  onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
-                  aria-label={`Navegar a ${link.label}`}
-                  tabIndex={0}
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-
-
-
-            <li>
-              <button
-                onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
-                aria-label="Ir a la sección de contacto"
-                tabIndex={0}
-              >
-                Contactos
-              </button>
-            </li>
-          </ul>
-        </div>
       </div>
 
       {isModalOpen && (

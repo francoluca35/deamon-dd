@@ -218,6 +218,56 @@ function Navbar2() {
                   </li>
                 ))}
 
+                <li 
+                  className={`relative transform transition-all duration-300 ease-out ${
+                    isOpen 
+                      ? 'translate-x-0 opacity-100' 
+                      : 'translate-x-2 opacity-0'
+                  }`}
+                  style={{ 
+                    transitionDelay: isOpen ? `${navLinks.length * 50 + 100}ms` : '0ms' 
+                  }}
+                >
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      aria-label="Ver trabajos realizados"
+                      aria-expanded={isDropdownOpen}
+                      tabIndex={0}
+                    >
+                      Trabajos
+                    </button>
+                    <div className={`mt-2 ml-6 space-y-1 transition-all duration-200 ease-out ${
+                      isDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                    }`}>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/desarrolloweb?#trabajos");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de desarrollo web"
+                        tabIndex={0}
+                      >
+                        Desarrollo Web
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          router.push("/graphic");
+                          setIsOpen(false);
+                        }}
+                        className="block text-gray-300 text-sm w-full text-left transition-colors duration-150 hover:text-white focus:outline-none py-1"
+                        aria-label="Ver trabajos de diseño gráfico"
+                        tabIndex={0}
+                      >
+                        Diseño Gráfico
+                      </button>
+                    </div>
+                  </div>
+                </li>
 
                 <li>
                   <button
