@@ -243,9 +243,13 @@ img[loading="lazy"] {
 
 /* Mobile Home section improvements */
 @media screen and (max-width: 768px) {
+  .mobile-home-extended {
+    min-height: 140vh !important;
+  }
+  
   .mobile-home-content {
-    gap: 1.5rem !important;
-    padding: 1rem 0 !important;
+    gap: 2rem !important;
+    padding: 2rem 0 !important;
   }
   
   .mobile-home-image {
@@ -254,15 +258,15 @@ img[loading="lazy"] {
   }
   
   .mobile-home-text {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 1.5rem !important;
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
   }
   
   .mobile-home-title {
-    font-size: 2rem !important;
+    font-size: 2.25rem !important;
     line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.5rem !important;
   }
 }
 

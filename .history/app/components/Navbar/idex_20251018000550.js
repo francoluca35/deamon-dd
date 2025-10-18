@@ -114,7 +114,7 @@ function Navbar2() {
           : isScrolled
           ? "bg-black bg-opacity-40"
           : "bg-transparent"
-      } fixed w-full z-20 top-0 left-0 right-0 max-w-full overflow-hidden`}
+      } fixed w-full z-20 top-0 left-0 right-0`}
     >
       <div className="w-full max-w-screen-xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center justify-between w-full">
