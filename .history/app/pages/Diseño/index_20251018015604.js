@@ -105,10 +105,10 @@ const Diseño = () => {
           Trabajamos con marcas de todos los tamaños para crear diseños que no solo se ven increíbles, sino que también comunican efectivamente el mensaje de tu empresa y generan conexiones emocionales duraderas con tu audiencia.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-14">
+        <div className="flex gap-4 mb-14">
           <button 
             onClick={handleWhatsApp}
-            className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
+            className="bg-violet-950 hover:bg-violet-800 transition-colors px-6 py-2 rounded-lg font-semibold flex items-center gap-2"
           >
             Agendá una llamada
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +118,7 @@ const Diseño = () => {
 
           <button 
             onClick={handleVerProyectos}
-            className="border border-white/30 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+            className="bg-gray-800 hover:bg-gray-700 transition-colors px-6 py-3 rounded-lg font-semibold flex items-center gap-2"
           >
             Ver nuestros proyectos
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

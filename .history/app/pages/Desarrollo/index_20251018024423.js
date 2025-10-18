@@ -64,16 +64,16 @@ const Desarrollo = () => {
       image: "/assets/Proyectos/jlaapp2.jpg",
       type: "split",
       secondProject: {
-        title: "Maurello App",
-        description: "App para reservar pasajes de transporte",
+        title: "WeatherApp",
+        description: "Pronóstico del tiempo en tiempo real",
         image: "/assets/Proyectos/maureloapp.jpg"
       }
     },
     {
       id: 3,
-      title: "PerúMar App",
-      description: "App personalizada para el restaurante PerúMar",
-      image: "/assets/Proyectos/perumarapp.jpg",
+      title: "Maurello App",
+      description: "App para reservar pasajes de transporte",
+      image: "/assets/Proyectos/maureloapp.jpg",
       type: "single"
     }
   ];

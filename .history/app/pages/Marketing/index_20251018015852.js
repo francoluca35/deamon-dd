@@ -47,7 +47,7 @@ const Marketing = () => {
           Nuestro enfoque está orientado a hacer crecer empresas de forma sostenible, multiplicar su retorno de inversión y alcanzar objetivos comerciales a corto, mediano y largo plazo.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-14">
+        <div className="flex flex-col gap-4 mb-14">
           <button 
             onClick={handleWhatsApp}
             className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
