@@ -94,9 +94,7 @@ function Navbar2() {
     if (isRoute) {
       router.push(href);
     } else {
-      if (typeof window !== 'undefined') {
-        window.location.href = href;
-      }
+      window.location.href = href;
     }
   };
 
@@ -271,7 +269,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -285,7 +283,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                  className="block py-2 px-3 md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
