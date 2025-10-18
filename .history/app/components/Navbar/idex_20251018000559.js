@@ -30,8 +30,6 @@ function Navbar2() {
   ];
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -39,8 +37,6 @@ function Navbar2() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -50,8 +46,6 @@ function Navbar2() {
 
   const [buttonText, setButtonText] = useState("Reunite con nosotros");
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const updateText = () => {
       setButtonText(
         window.innerWidth <= 768 ? "Reunite" : "Reunite con nosotros"
@@ -86,7 +80,6 @@ function Navbar2() {
     { href: "#branding", label: "Branding" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
     { href: "#marketing", label: "Marketing Digital" },
-    { href: "#diseño", label: "Diseño Gráfico" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -94,9 +87,7 @@ function Navbar2() {
     if (isRoute) {
       router.push(href);
     } else {
-      if (typeof window !== 'undefined') {
-        window.location.href = href;
-      }
+      window.location.href = href;
     }
   };
 
@@ -273,7 +264,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -287,7 +278,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >

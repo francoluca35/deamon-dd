@@ -30,8 +30,6 @@ function Navbar2() {
   ];
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -39,8 +37,6 @@ function Navbar2() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -50,8 +46,6 @@ function Navbar2() {
 
   const [buttonText, setButtonText] = useState("Reunite con nosotros");
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
     const updateText = () => {
       setButtonText(
         window.innerWidth <= 768 ? "Reunite" : "Reunite con nosotros"
@@ -86,7 +80,6 @@ function Navbar2() {
     { href: "#branding", label: "Branding" },
     { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
     { href: "#marketing", label: "Marketing Digital" },
-    { href: "#diseño", label: "Diseño Gráfico" },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -94,9 +87,7 @@ function Navbar2() {
     if (isRoute) {
       router.push(href);
     } else {
-      if (typeof window !== 'undefined') {
-        window.location.href = href;
-      }
+      window.location.href = href;
     }
   };
 
@@ -123,7 +114,7 @@ function Navbar2() {
           : isScrolled
           ? "bg-black bg-opacity-40"
           : "bg-transparent"
-      } fixed w-full z-20 top-0 left-0 right-0 max-w-full overflow-hidden`}
+      } fixed w-full z-20 top-0 left-0 right-0`}
     >
       <div className="w-full max-w-screen-xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center justify-between w-full">
@@ -151,10 +142,10 @@ function Navbar2() {
           </div>
         </button>
 
-        <div className="flex md:order-2 space-x-1 sm:space-x-2 md:space-x-0 rtl:space-x-reverse flex-shrink-0">
+        <div className="flex md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-xs px-2 py-1.5 sm:px-4 sm:py-2 text-center transition-colors whitespace-nowrap"
+            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-xs sm:text-sm px-2 sm:px-4 py-2 text-center transition-colors"
             aria-label="Agendar reunión"
             tabIndex={0}
           >
@@ -163,7 +154,7 @@ function Navbar2() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={handleMouseEnter}
-            className="inline-flex items-center p-1.5 w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors flex-shrink-0"
+            className="inline-flex items-center p-2 w-8 h-8 sm:w-10 sm:h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
             aria-label="Abrir menú de navegación"
@@ -184,7 +175,6 @@ function Navbar2() {
               />
             </svg>
           </button>
-        </div>
         </div>
 
         {/* Menú móvil overlay */}
@@ -273,7 +263,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -287,7 +277,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
