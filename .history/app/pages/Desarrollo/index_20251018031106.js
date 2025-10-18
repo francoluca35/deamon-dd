@@ -36,7 +36,7 @@ const Desarrollo = () => {
       secondProject: {
         title: "Caruso FC",
         description: "Pagina para reservar canchas de futbol",
-        image: "/assets/Proyectos/carusoweb1.png"
+        image: "/assets/Proyectos/carusoweb.png"
       }
     },
     {

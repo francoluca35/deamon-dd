@@ -24,19 +24,19 @@ const Desarrollo = () => {
       id: 1,
       title: "JLA Tecnico",
       description: "Web Site Industrial",
-      image: "/assets/Proyectos/tec.png",
+      image: "/assets/Proyectos/tec.jpg",
       type: "single"
     },
     {
       id: 2,
       title: "Maurello Transportes",
       description: "Landing para compra de pasajes de transporte",
-      image: "/assets/Proyectos/maurello1.png",
+      image: "/assets/Proyectos/maurello.png",
       type: "split",
       secondProject: {
         title: "Caruso FC",
         description: "Pagina para reservar canchas de futbol",
-        image: "/assets/Proyectos/carusoweb1.png"
+        image: "/assets/Proyectos/caruso1.png"
       }
     },
     {
