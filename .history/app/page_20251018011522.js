@@ -9,7 +9,7 @@ import { useErrorTracking } from "./lib/errorTracking";
 // Lazy loading optimizado de componentes pesados
 const Equipo = lazy(() => import("./pages/Equipo"));
 const Branding = lazy(() => import("./pages/Branding"));
-
+const Especialidades = lazy(() => import("./pages/Especialidades"));
 const Desarrollo = lazy(() => import("./pages/Desarrollo"));
 const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
