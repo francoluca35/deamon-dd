@@ -113,9 +113,9 @@ function Navbar2() {
           : isScrolled
           ? "bg-black bg-opacity-40"
           : "bg-transparent"
-      } fixed w-full z-20 top-0 start-0  `}
+      } fixed w-full z-20 top-0 left-0 right-0`}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <button 
           onClick={() => router.push("/")} 
           className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1"
