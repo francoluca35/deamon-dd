@@ -19,13 +19,13 @@ function Navbar2() {
   const logos = [
     {
       src: "/assets/deamon-icon-B-s.avif",
-      width: isMobile ? 150 : 200,
-      height: isMobile ? 150 : 200
+      width: 200,
+      height: 200
     },
     {
       src: "/assets/Logo-equipo-B.avif",
-      width: isMobile ? 45 : 60,
-      height: isMobile ? 45 : 60
+      width: 60,
+      height: 60
     }
   ];
 
@@ -123,7 +123,7 @@ function Navbar2() {
           aria-label="Ir al inicio"
           tabIndex={0}
         >
-          <div className="relative w-[150px] h-[45px] sm:w-[200px] sm:h-[60px] flex items-center justify-center">
+          <div className="relative w-[200px] h-[60px] flex items-center justify-center">
             {logos.map((logo, index) => (
               <Image
                 key={`${logo.src}-${index}`}
@@ -141,10 +141,10 @@ function Navbar2() {
           </div>
         </button>
 
-        <div className="flex md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-xs sm:text-sm px-2 sm:px-4 py-2 text-center transition-colors"
+            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors"
             aria-label="Agendar reunión"
             tabIndex={0}
           >
@@ -153,7 +153,7 @@ function Navbar2() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={handleMouseEnter}
-            className="inline-flex items-center p-2 w-8 h-8 sm:w-10 sm:h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
             aria-label="Abrir menú de navegación"
@@ -183,7 +183,7 @@ function Navbar2() {
             onMouseLeave={handleMouseLeave}
           >
             <div 
-              className="fixed top-0 right-0 h-full w-3/4 sm:w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out"
+              className="fixed top-0 right-0 h-full w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -262,7 +262,7 @@ function Navbar2() {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -276,7 +276,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
