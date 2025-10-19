@@ -259,36 +259,6 @@ function Navbar2() {
                   </button>
                 </li>
               </ul>
-
-              {/* Selector de idiomas para móvil */}
-              <div className="px-6 py-4 border-t border-white/10">
-                <p className="text-white/70 text-sm mb-4 font-medium">Idioma / Language</p>
-                <div className="flex items-center space-x-3">
-                  {Object.values(languages).map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        changeLanguage(lang.code);
-                        setIsOpen(false);
-                      }}
-                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        currentLang === lang.code
-                          ? 'ring-2 ring-purple-500 shadow-lg shadow-purple-500/30'
-                          : 'hover:ring-2 hover:ring-white/30'
-                      }`}
-                      title={lang.name}
-                    >
-                      <Image
-                        src={lang.image}
-                        alt={lang.name}
-                        width={36}
-                        height={36}
-                        className="rounded-full object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         )}
