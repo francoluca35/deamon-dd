@@ -15,7 +15,7 @@ function Navbar2() {
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
-  const { t, currentLang, changeLanguage, languages, isLoaded } = useTranslation();
+  const { t, currentLang, changeLanguage, languages } = useTranslation();
 
   // Array de logos para alternar con sus configuraciones
   const logos = [
@@ -76,14 +76,13 @@ function Navbar2() {
     return () => clearInterval(logoInterval);
   }, [logos.length]);
 
-  // Crear navLinks reactivamente para que se actualicen cuando cambie el idioma
   const navLinks = [
-    { href: "/", label: isLoaded ? t("navbar.home") : "Inicio" },
-    { href: "#equipo", label: isLoaded ? t("navbar.agency") : "Agencia" },
-    { href: "#branding", label: isLoaded ? t("navbar.branding") : "Branding" },
-    { href: "#desarrollo", label: isLoaded ? t("navbar.webDevelopment") : "Desarrollo Web", isRoute: true },
-    { href: "#marketing", label: isLoaded ? t("navbar.marketing") : "Marketing", isRoute: true },
-    { href: "#diseño", label: isLoaded ? t("navbar.graphicDesign") : "Diseño Gráfico", isRoute: true },
+    { href: "/", label: t("navbar.home") },
+    { href: "#equipo", label: t("navbar.agency") },
+    { href: "#branding", label: t("navbar.branding") },
+    { href: "#desarrollo", label: t("navbar.webDevelopment"), isRoute: true },
+    { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
+    { href: "#diseño", label: t("navbar.graphicDesign"), isRoute: true },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -146,21 +145,6 @@ function Navbar2() {
         </button>
 
         <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-          {/* Selector de idiomas */}
-          <div className="relative">
-            <select
-              value={currentLang}
-              onChange={(e) => changeLanguage(e.target.value)}
-              className="bg-transparent text-white border border-white/20 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-            >
-              {Object.values(languages).map((lang) => (
-                <option key={lang.code} value={lang.code} className="bg-neutral-800 text-white">
-                  {lang.flag} {lang.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={handleMouseEnter}
@@ -241,7 +225,7 @@ function Navbar2() {
                     aria-label="Ir a la sección de contacto"
                     tabIndex={0}
                   >
-                    {isLoaded ? t("navbar.contact") : "Escribinos"}
+                    {t("navbar.contact")}
                   </button>
                 </li>
               </ul>
@@ -277,7 +261,7 @@ function Navbar2() {
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
-                {isLoaded ? t("navbar.contact") : "Escribinos"}
+                {t("navbar.contact")}
               </button>
             </li>
           </ul>

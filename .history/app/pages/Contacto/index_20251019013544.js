@@ -242,7 +242,7 @@ const Contacto = () => {
           
           <p className="text-sm mb-4 hover:text-purple-200 hover:text-base">
             <a 
-              href="https://meet.google.com/your-meeting-link"
+              href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola! Me gustaría agendar una reunión para conocer más sobre los servicios de Deamon DD. 💼")}`}
               target="_blank" 
               rel="noopener noreferrer"
             >

@@ -239,16 +239,6 @@ const Contacto = () => {
               Escribinos un WhatsApp
             </a>
           </p>
-          
-          <p className="text-sm mb-4 hover:text-purple-200 hover:text-base">
-            <a 
-              href="https://meet.google.com/your-meeting-link"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Agenda una reunión
-            </a>
-          </p>
 
           <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
           <p className="text-sm">Composición & Construcción</p>

@@ -240,15 +240,20 @@ const Contacto = () => {
             </a>
           </p>
           
-          <p className="text-sm mb-4 hover:text-purple-200 hover:text-base">
-            <a 
-              href="https://meet.google.com/your-meeting-link"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Agenda una reunión
-            </a>
-          </p>
+          {/* Botón Agenda una reunión */}
+          <button
+            onClick={() => {
+              const reunionMessage = "Hola! Me gustaría agendar una reunión para conocer más sobre los servicios de Deamon DD. 💼";
+              const reunionWhatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(reunionMessage)}`;
+              window.open(reunionWhatsappLink, '_blank');
+            }}
+            className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20 mb-4"
+          >
+            Agenda una reunión
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </button>
 
           <h4 className="text-lg font-medium mt-4">Deamon DD</h4>
           <p className="text-sm">Composición & Construcción</p>

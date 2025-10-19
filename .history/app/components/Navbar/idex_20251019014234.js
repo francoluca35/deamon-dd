@@ -76,7 +76,6 @@ function Navbar2() {
     return () => clearInterval(logoInterval);
   }, [logos.length]);
 
-  // Crear navLinks reactivamente para que se actualicen cuando cambie el idioma
   const navLinks = [
     { href: "/", label: isLoaded ? t("navbar.home") : "Inicio" },
     { href: "#equipo", label: isLoaded ? t("navbar.agency") : "Agencia" },
@@ -241,7 +240,7 @@ function Navbar2() {
                     aria-label="Ir a la sección de contacto"
                     tabIndex={0}
                   >
-                    {isLoaded ? t("navbar.contact") : "Escribinos"}
+                    {t("navbar.contact")}
                   </button>
                 </li>
               </ul>
@@ -277,7 +276,7 @@ function Navbar2() {
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
-                {isLoaded ? t("navbar.contact") : "Escribinos"}
+                {t("navbar.contact")}
               </button>
             </li>
           </ul>
