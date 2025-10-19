@@ -120,7 +120,7 @@ const Desarrollo = () => {
             onClick={handleVerMas}
             className="border border-white/30 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
           >
-            {isLoaded ? t("development.seeMore") : "Ver mas"}
+            {t("development.seeMore")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -142,7 +142,7 @@ const Desarrollo = () => {
                       : 'text-white/70 hover:text-white hover:bg-neutral-700'
                   }`}
                 >
-                  {isLoaded ? t("development.webTab") : "Web"}
+                  {t("development.webTab")}
                 </button>
                 <button
                   onClick={() => setSelectedCategory('apps')}
@@ -152,16 +152,13 @@ const Desarrollo = () => {
                       : 'text-white/70 hover:text-white hover:bg-neutral-700'
                   }`}
                 >
-                  {isLoaded ? t("development.appsTab") : "Apps"}
+                  {t("development.appsTab")}
                 </button>
               </div>
             </div>
 
             <h3 className="text-2xl font-bold mb-8 text-center">
-              {selectedCategory === 'web' 
-                ? (isLoaded ? t("development.projectsTitle") : "A continuación explora algunos proyectos web desarrollados:")
-                : (isLoaded ? t("development.projectsAppsTitle") : "A continuación explora algunos proyectos de apps desarrollados:")
-              }
+              {selectedCategory === 'web' ? t("development.projectsTitle") : t("development.projectsAppsTitle")}
             </h3>
 
           <motion.div
@@ -196,7 +193,7 @@ const Desarrollo = () => {
                       <h4 className="text-white text-2xl font-bold mb-1">{project.title}</h4>
                       <p className="text-white/70 text-sm mb-3">{project.description}</p>
                       <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200">
-                        {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                        {t("common.viewProject")}
                       </button>
                     </div>
                   </div>
@@ -216,7 +213,7 @@ const Desarrollo = () => {
                         <h4 className="text-white text-lg font-bold mb-1">{project.title}</h4>
                         <p className="text-white/70 text-xs mb-2">{project.description}</p>
                         <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                          {t("common.viewProject")}
                         </button>
                       </div>
                     </div>
@@ -237,7 +234,7 @@ const Desarrollo = () => {
                         <h4 className="text-white text-lg font-bold mb-1">{project.secondProject.title}</h4>
                         <p className="text-white/70 text-xs mb-2">{project.secondProject.description}</p>
                         <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                          {t("common.viewProject")}
                         </button>
                       </div>
                     </div>

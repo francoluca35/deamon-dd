@@ -76,7 +76,6 @@ function Navbar2() {
     return () => clearInterval(logoInterval);
   }, [logos.length]);
 
-  // Crear navLinks reactivamente para que se actualicen cuando cambie el idioma
   const navLinks = [
     { href: "/", label: isLoaded ? t("navbar.home") : "Inicio" },
     { href: "#equipo", label: isLoaded ? t("navbar.agency") : "Agencia" },
