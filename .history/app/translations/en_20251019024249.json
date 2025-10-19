@@ -1,0 +1,132 @@
+{
+  "navbar": {
+    "home": "Home",
+    "agency": "Agency", 
+    "branding": "Branding",
+    "webDevelopment": "Web Development",
+    "marketing": "Marketing",
+    "graphicDesign": "Graphic Design",
+    "contact": "Write us"
+  },
+  "home": {
+    "hero": {
+      "title": "We connect your brand values with your business results",
+      "subtitle": "Our sole purpose is to help you enhance your identity."
+    },
+    "services": {
+      "title": "Our Services",
+      "branding": {
+        "title": "Branding",
+        "description": "We create visual identities that represent the essence of your brand"
+      },
+      "development": {
+        "title": "Web Development",
+        "description": "Modern and functional websites that convert visitors into customers"
+      },
+      "marketing": {
+        "title": "Digital Marketing",
+        "description": "Digital strategies that maximize your reach and conversions"
+      },
+      "design": {
+        "title": "Graphic Design",
+        "description": "Creative designs that effectively communicate your message"
+      }
+    }
+  },
+  "branding": {
+    "title": "Branding",
+    "description": "It's not just about a logo, typography or an attractive color palette. We create authentic brands aligned with the essence of your business, ensuring they stand out in a competitive market and build a memorable presence. We design strategic visual identities, not only to generate impact, but to accompany growth and consolidate a memorable presence that represents your culture and values.",
+    "scheduleCall": "Schedule a call",
+    "knowAgency": "Get to know the agency",
+    "projectsTitle": "Below, explore some developed branding projects:"
+  },
+  "development": {
+    "title": "Web Development",
+    "description": "We design websites as the backbone of your digital strategy, integrating marketing tools that boost your commercial objectives. It's not just about aesthetics, but creating an optimized environment to persuade users and guide them towards key actions that drive conversions and growth.",
+    "scheduleCall": "Schedule a call",
+    "seeMore": "See more",
+    "projectsTitle": "Below, explore some developed web projects:",
+    "projectsAppsTitle": "Below, explore some developed app projects:",
+    "webTab": "Web",
+    "appsTab": "Apps"
+  },
+  "marketing": {
+    "title": "Digital Marketing",
+    "subtitle": "Success is the result of strategic decisions, and even better if they are predictable.",
+    "description1": "We design Deamon DD & +LevelUP Marketing strategies leveraging all available digital tools and media, with precise measurement and real-time investment optimization through artificial intelligence and a highly trained team. We analyze each asset of each campaign with accuracy to maximize investment impact.",
+    "description2": "Our approach is oriented towards growing companies sustainably, multiplying their return on investment and achieving commercial objectives in the short, medium and long term.",
+    "scheduleCall": "Schedule a call",
+    "knowAgency": "Get to know the agency",
+    "caseStudiesTitle": "Next, explore some Deamon DD & +LevelUP Marketing case studies:"
+  },
+  "design": {
+    "title": "Graphic Design",
+    "subtitle": "We transform ideas into impactful visual experiences that connect with your audience.",
+    "description1": "Our team of specialized designers creates unique visual identities, from memorable logos to complete corporate identity systems. Each project is developed with a strategic approach that combines creativity, functionality and measurable results.",
+    "description2": "We work with brands of all sizes to create designs that not only look incredible, but also effectively communicate your company's message and generate lasting emotional connections with your audience.",
+    "scheduleCall": "Schedule a call",
+    "seeProjects": "See our projects",
+    "projectsTitle": "Explore some of our graphic design projects:"
+  },
+  "agency": {
+    "title": "We are a digital agency committed to your success",
+    "titleHighlight": "digital agency",
+    "description": "At Deamon DD, we specialize in digital marketing, branding, mobile app development and websites. We provide significant improvements in our clients' digital presence, transforming their ideas into unique experiences that generate real and lasting results for their growth.",
+    "services": {
+      "webDev": "Web Development & Apps",
+      "branding": "Branding & Design",
+      "marketing": "Digital Marketing"
+    },
+    "code": {
+      "services": "services",
+      "mission": "mission",
+      "passion": "passion",
+      "improveClient": "improve each client",
+      "creativityResults": "creativity & results"
+    }
+  },
+  "contact": {
+    "title": "Get in touch with us",
+    "description": "Leave us your message and we will get back to you. You can also ",
+    "knowTeam": "meet our team",
+    "or": "or see our",
+    "seeWork": "completed work",
+    "information": "Information",
+    "generalQueries": "General queries",
+    "marketingQueries": "Digital Marketing queries",
+    "writeWhatsApp": "Write us on WhatsApp",
+    "scheduleMeeting": "Schedule a meeting",
+    "company": {
+      "tagline": "Design & Development",
+      "description": "Specialists in providing a service that guarantees security",
+      "founder": "Founder Deamon DD"
+    },
+    "form": {
+      "name": "Name",
+      "lastName": "Last Name",
+      "organization": "Organization",
+      "email": "Email",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "privacy": "By submitting this form, you agree that we process your contact information.",
+      "success": "Message sent successfully! We will contact you soon."
+    }
+  },
+  "team": {
+    "subtitle": "Our team",
+    "title1": "We accompany you to take",
+    "title2": "your brand to the next level",
+    "roles": {
+      "director": "Director & Full-Stack Developer",
+      "marketing": "Digital Marketing & Branding Strategist",
+      "designer": "Graphic Designer"
+    }
+  },
+  "common": {
+    "viewProject": "View project",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}
