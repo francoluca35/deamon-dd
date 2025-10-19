@@ -77,7 +77,7 @@ export default function TeamSection() {
           </div>
         </div>
 
-        <div className="relative z-10 mt-10 md:mt-0 mb-10 md:mb-0 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 mt-0 md:mt-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
