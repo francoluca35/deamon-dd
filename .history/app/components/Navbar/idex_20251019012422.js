@@ -30,7 +30,7 @@ function Navbar2() {
   ];
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -143,7 +143,7 @@ function Navbar2() {
           </div>
         </button>
 
-        <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={() => setIsModalOpen(true)}
             className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors"
@@ -155,7 +155,7 @@ function Navbar2() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={handleMouseEnter}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
             aria-label="Abrir menú de navegación"
@@ -181,7 +181,7 @@ function Navbar2() {
         {/* Menú móvil overlay */}
         {isOpen && (
           <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
             onMouseLeave={handleMouseLeave}
           >
             <div 
@@ -242,15 +242,15 @@ function Navbar2() {
 
         {/* Menú desktop normal */}
         <div
-          className={`items-center justify-between hidden lg:flex lg:w-auto lg:order-1`}
+          className={`items-center justify-between hidden md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-            <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:space-x-8 lg:flex-row lg:mt-0 z-50">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 md:flex-row md:mt-0 z-50">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm lg:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -264,7 +264,7 @@ function Navbar2() {
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm lg:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
