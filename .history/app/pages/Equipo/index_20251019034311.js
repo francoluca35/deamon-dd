@@ -44,9 +44,9 @@ export default function TeamSection() {
   return (
     <div key={`${currentLang}-${renderKey}`} className="w-full min-h-screen bg-gradient-to-br from-black via-black to-black text-white">
       {/* Hero Section */}
-      <div className="relative min-h-screen  flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-screen mt-10 md:mt-0 flex items-center justify-center overflow-hidden">
         {/* Background with animated code lines */}
-        <div className="absolute inset-0 bg-gradient-to-br  from-purple-900/20 via-transparent to-violet-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-violet-900/20"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 text-purple-400 font-mono text-sm animate-pulse">
             &lt;div className=&quot;creative-team&quot;&gt;
@@ -77,7 +77,7 @@ export default function TeamSection() {
           </div>
         </div>
 
-        <div className="relative z-10 mt-10 md:mt-0 mb-10 md:mb-0 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
