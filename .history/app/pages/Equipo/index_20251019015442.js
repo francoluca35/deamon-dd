@@ -1,40 +1,17 @@
 "use client";
 
-import { useRef } from "react";
+
 import { motion } from "framer-motion";
 import { FaLinkedin, FaCode, FaLightbulb, FaRocket, FaPalette, FaMobile, FaGlobe } from "react-icons/fa";
 import Image from "next/image";
 
 export default function TeamSection() {
-  const teamRef = useRef(null);
 
-  const scrollToTeam = () => {
-    if (teamRef.current) {
-      teamRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
-  const teamMembers = [
-    {
-      img: "/assets/equipo/yo-franco.avif",
-      name: "Franco L. Parera",
-      role: "Director & Full-Stack Developer",
-      description: "Estudiante de la Lic en sistemas. Químico Laboratorista. Creé Deamon DD con un solo objetivo: que cada persona, proyecto o idea tenga la llegada que merece en el mundo digital.",
-      linkedin: "https://www.linkedin.com/in/franco-parera/",
-      skills: ["React", "Node.js", "Firebase", "Marketing Digital"]
-    },
-    {
-      img: "/assets/equipo/marcos.avif",
-      name: "Markitos E. Parera",
-      role: "Diseñador Gráfico & Branding",
-      description: "Especialista en Branding y Diseño Gráfico con conocimientos en Photoshop, Illustrator, Canva, y Figma. Diseñador Automovilístico para autos de competición virtual y TC Pista.",
-      linkedin: "https://www.linkedin.com/in/markitos-parera/",
-      skills: ["Branding", "Photoshop", "Illustrator", "Figma"]
-    },
-  ];
+
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-black via-black to-black text-white">
+    <div className="w-full  min-h-screen bg-gradient-to-br from-black via-black to-black text-white">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with animated code lines */}
@@ -69,7 +46,7 @@ export default function TeamSection() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative mt-10 md:mt-0 mb-10 md:mb-0 z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

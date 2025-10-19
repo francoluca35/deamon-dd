@@ -1,0 +1,132 @@
+{
+  "navbar": {
+    "home": "Home",
+    "agency": "Agenzia", 
+    "branding": "Branding",
+    "webDevelopment": "Sviluppo Web",
+    "marketing": "Marketing",
+    "graphicDesign": "Design Grafico",
+    "contact": "Scrivici"
+  },
+  "home": {
+    "hero": {
+      "title": "Colleghiamo i valori del tuo brand con i risultati del tuo business",
+      "subtitle": "Il nostro unico scopo è aiutarti a potenziare la tua identità."
+    },
+    "services": {
+      "title": "I Nostri Servizi",
+      "branding": {
+        "title": "Branding",
+        "description": "Creiamo identità visive che rappresentano l'essenza del tuo brand"
+      },
+      "development": {
+        "title": "Sviluppo Web",
+        "description": "Siti web moderni e funzionali che convertono i visitatori in clienti"
+      },
+      "marketing": {
+        "title": "Marketing Digitale",
+        "description": "Strategie digitali che massimizzano la tua portata e le conversioni"
+      },
+      "design": {
+        "title": "Design Grafico",
+        "description": "Design creativi che comunicano efficacemente il tuo messaggio"
+      }
+    }
+  },
+  "branding": {
+    "title": "Branding",
+    "description": "Non si tratta solo di un logo, una tipografia o una tavolozza di colori attraente. Creiamo marchi autentici e allineati con l'essenza della tua attività, assicurandoci che si distinguano in un mercato competitivo e costruiscano una presenza memorabile. Progettiamo identità visive strategiche, non solo per generare impatto, ma per accompagnare la crescita e consolidare una presenza memorabile che rappresenti la tua cultura e i tuoi valori.",
+    "scheduleCall": "Programma una chiamata",
+    "knowAgency": "Conosci l'agenzia",
+    "projectsTitle": "Di seguito, esplora alcuni progetti di branding sviluppati:"
+  },
+  "development": {
+    "title": "Sviluppo Web",
+    "description": "Progettiamo siti web come la colonna vertebrale della tua strategia digitale, integrando strumenti di marketing che potenziano i tuoi obiettivi commerciali. Non si tratta solo di estetica, ma di creare un ambiente ottimizzato per persuadere gli utenti e guidarli verso azioni chiave che favoriscano conversioni e crescita.",
+    "scheduleCall": "Programma una chiamata",
+    "seeMore": "Vedi di più",
+    "projectsTitle": "Di seguito, esplora alcuni progetti web sviluppati:",
+    "projectsAppsTitle": "Di seguito, esplora alcuni progetti di app sviluppati:",
+    "webTab": "Web",
+    "appsTab": "App"
+  },
+  "marketing": {
+    "title": "Marketing Digitale",
+    "subtitle": "Il successo è il risultato di decisioni strategiche, e ancora meglio se sono prevedibili.",
+    "description1": "Progettiamo strategie Deamon DD & +LevelUP Marketing sfruttando tutti gli strumenti e media digitali disponibili, con misurazione precisa e ottimizzazione degli investimenti in tempo reale attraverso intelligenza artificiale e un team altamente qualificato. Analizziamo ogni asset di ogni campagna con precisione per massimizzare l'impatto dell'investimento.",
+    "description2": "Il nostro approccio è orientato a far crescere le aziende in modo sostenibile, moltiplicando il loro ritorno sull'investimento e raggiungendo obiettivi commerciali a breve, medio e lungo termine.",
+    "scheduleCall": "Programma una chiamata",
+    "knowAgency": "Conosci l'agenzia",
+    "caseStudiesTitle": "Successivamente, esplora alcuni case study di Deamon DD & +LevelUP Marketing:"
+  },
+  "design": {
+    "title": "Design Grafico",
+    "subtitle": "Trasformiamo le idee in esperienze visive di impatto che si connettono con il tuo pubblico.",
+    "description1": "Il nostro team di designer specializzati crea identità visive uniche, dai loghi memorabili ai sistemi di identità aziendale completi. Ogni progetto viene sviluppato con un approccio strategico che combina creatività, funzionalità e risultati misurabili.",
+    "description2": "Lavoriamo con marchi di tutte le dimensioni per creare design che non solo sembrano incredibili, ma comunicano anche efficacemente il messaggio della tua azienda e generano connessioni emotive durature con il tuo pubblico.",
+    "scheduleCall": "Programma una chiamata",
+    "seeProjects": "Vedi i nostri progetti",
+    "projectsTitle": "Esplora alcuni dei nostri progetti di design grafico:"
+  },
+  "agency": {
+    "title": "Siamo un'agenzia digitale impegnata nel tuo successo",
+    "titleHighlight": "agenzia digitale",
+    "description": "In Deamon DD, ci specializziamo in marketing digitale, branding, sviluppo di app mobili e siti web. Forniamo miglioramenti significativi nella presenza digitale dei nostri clienti, trasformando le loro idee in esperienze uniche che generano risultati reali e duraturi per la loro crescita.",
+    "services": {
+      "webDev": "Sviluppo Web & App",
+      "branding": "Branding & Design",
+      "marketing": "Marketing Digitale"
+    },
+    "code": {
+      "services": "servizi",
+      "mission": "missione",
+      "passion": "passione",
+      "improveClient": "migliorare ogni cliente",
+      "creativityResults": "creatività & risultati"
+    }
+  },
+  "contact": {
+    "title": "Mettiti in contatto con noi",
+    "description": "Lascia il tuo messaggio e ti risponderemo. Puoi anche ",
+    "knowTeam": "conoscere il nostro team",
+    "or": "o vedere i nostri",
+    "seeWork": "lavori completati",
+    "information": "Informazioni",
+    "generalQueries": "Consultazioni generali",
+    "marketingQueries": "Consultazioni di Marketing Digitale",
+    "writeWhatsApp": "Scrivici su WhatsApp",
+    "scheduleMeeting": "Programma un incontro",
+    "company": {
+      "tagline": "Design e Sviluppo",
+      "description": "Specialisti nel fornire un servizio che garantisca sicurezza",
+      "founder": "Fondatore Deamon DD"
+    },
+    "form": {
+      "name": "Nome",
+      "lastName": "Cognome",
+      "organization": "Organizzazione",
+      "email": "Email",
+      "message": "Messaggio",
+      "sendMessage": "Invia Messaggio",
+      "sending": "Invio...",
+      "privacy": "Inviando questo modulo, accetti che elaboriamo le tue informazioni di contatto.",
+      "success": "Messaggio inviato con successo! Ti contatteremo presto."
+    }
+  },
+  "team": {
+    "subtitle": "Il nostro team",
+    "title1": "Ti accompagniamo per portare",
+    "title2": "il tuo marchio al livello successivo",
+    "roles": {
+      "director": "Direttore & Full-Stack Developer",
+      "marketing": "Stratega di Marketing & Branding Digitale",
+      "designer": "Designer Grafico"
+    }
+  },
+  "common": {
+    "viewProject": "Vedi progetto",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo"
+  }
+}
