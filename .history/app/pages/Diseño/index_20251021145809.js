@@ -235,12 +235,7 @@ const Diseño = () => {
                           {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
                         </p>
                       </div>
-                      <button 
-                        onClick={() => openImageModal(project)}
-                        className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
-                      >
-                        {isLoaded ? (t("common.viewWork") || "Ver trabajo") : "Ver trabajo"}
-                      </button>
+                  
                     </div>
                   </div>
                 </div>
@@ -278,55 +273,12 @@ const Diseño = () => {
               {/* Imagen principal */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src={selectedImage.images ? selectedImage.images[currentImageIndex] : selectedImage.image}
+                  src={selectedImage.image}
                   alt={selectedImage.title}
                   width={800}
                   height={600}
                   className="w-full h-auto max-h-[70vh] object-contain"
                 />
-                
-                {/* Navegación de imágenes - solo si hay múltiples imágenes */}
-                {selectedImage.images && selectedImage.images.length > 1 && (
-                  <>
-                    {/* Botón anterior */}
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    
-                    {/* Botón siguiente */}
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                    
-                    {/* Indicadores de imagen */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                      {selectedImage.images.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentImageIndex(index)}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    
-                    {/* Contador de imágenes */}
-                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm z-10">
-                      {currentImageIndex + 1} / {selectedImage.images.length}
-                    </div>
-                  </>
-                )}
                 
                 {/* Información del proyecto - Completa en el modal */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">

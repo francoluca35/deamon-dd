@@ -185,7 +185,6 @@
   },
   "common": {
     "viewProject": "View project",
-    "viewWork": "View work",
     "loading": "Loading...",
     "error": "Error",
     "success": "Success"

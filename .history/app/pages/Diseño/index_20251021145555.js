@@ -10,7 +10,6 @@ const Diseño = () => {
   const router = useRouter();
   const { t, isLoaded, currentLang } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [renderKey, setRenderKey] = useState(0);
   
   // Forzar re-render cuando cambia el idioma
@@ -28,30 +27,12 @@ const Diseño = () => {
     router.push('/graphic');
   };
 
-  const openImageModal = (imageData, imageIndex = 0) => {
+  const openImageModal = (imageData) => {
     setSelectedImage(imageData);
-    setCurrentImageIndex(imageIndex);
   };
 
   const closeImageModal = () => {
     setSelectedImage(null);
-    setCurrentImageIndex(0);
-  };
-
-  const nextImage = () => {
-    if (selectedImage && selectedImage.images) {
-      setCurrentImageIndex((prev) => 
-        prev < selectedImage.images.length - 1 ? prev + 1 : 0
-      );
-    }
-  };
-
-  const prevImage = () => {
-    if (selectedImage && selectedImage.images) {
-      setCurrentImageIndex((prev) => 
-        prev > 0 ? prev - 1 : selectedImage.images.length - 1
-      );
-    }
   };
 
   // Datos de proyectos de diseño
@@ -62,11 +43,6 @@ const Diseño = () => {
       descriptionKey: "design.projects.asfixia",
       fallbackDescription: "Desarrollo completo de identidad visual para marca de ropa urbana, incluyendo logo, paleta de colores y aplicaciones en diferentes soportes.",
       image: "/assets/branding/asfixia.png",
-      images: [
-        "/assets/branding/asfixia.png",
-        "/assets/branding/asfixia2.png",
-        "/assets/branding/asfixia3.png"
-      ],
       tags: ["Branding", "Logo Design", "Identidad"],
       icon: Palette,
       category: "Ropa Urbana"
@@ -77,10 +53,6 @@ const Diseño = () => {
       descriptionKey: "design.projects.bicicoffe",
       fallbackDescription: "Diseño de identidad corporativa para empresa de bicicletas, incluyendo logo, material promocional y diseño de packaging.",
       image: "/assets/branding/bicico.png",
-      images: [
-        "/assets/branding/bicico.png",
-        "/assets/branding/bicico2.png"
-      ],
       tags: ["Logo", "Packaging", "Retail"],
       icon: Pencil,
       category: "Bicicletas"
@@ -91,9 +63,6 @@ const Diseño = () => {
       descriptionKey: "design.projects.bioma",
       fallbackDescription: "Identidad visual para empresa de productos ecológicos, enfocada en la sostenibilidad y el cuidado del medio ambiente.",
       image: "/assets/branding/bioma.png",
-      images: [
-        "/assets/branding/bioma.png"
-      ],
       tags: ["Eco Design", "Sostenibilidad", "Branding"],
       icon: Layers,
       category: "Productos Ecológicos"
@@ -104,12 +73,6 @@ const Diseño = () => {
       descriptionKey: "design.projects.citadino",
       fallbackDescription: "Identidad corporativa para empresa de servicios urbanos, con enfoque en la modernidad y eficiencia.",
       image: "/assets/branding/citadino.png",
-      images: [
-        "/assets/branding/citadino.png",
-        "/assets/branding/citadino2.png",
-        "/assets/branding/citadino3.png",
-        "/assets/branding/citadino4.png"
-      ],
       tags: ["Identidad", "Servicios", "Moderno"],
       icon: Zap,
       category: "Servicios Urbanos"
@@ -120,10 +83,6 @@ const Diseño = () => {
       descriptionKey: "design.projects.iruma",
       fallbackDescription: "Diseño de marca para empresa tecnológica, combinando innovación y profesionalismo.",
       image: "/assets/branding/iruma.png",
-      images: [
-        "/assets/branding/iruma.png",
-        "/assets/branding/iruma2.png"
-      ],
       tags: ["Tech", "Innovación", "Profesional"],
       icon: Palette,
       category: "Tecnología"
@@ -172,15 +131,7 @@ const Diseño = () => {
             </svg>
           </button>
 
-          <button 
-            onClick={handleVerProyectos}
-            className="border border-white/30 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-          >
-            {isLoaded ? t("design.seeProjects") : "Ver nuestros proyectos"}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </button>
+      
         </div>
       </div>
 
@@ -235,11 +186,8 @@ const Diseño = () => {
                           {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
                         </p>
                       </div>
-                      <button 
-                        onClick={() => openImageModal(project)}
-                        className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
-                      >
-                        {isLoaded ? (t("common.viewWork") || "Ver trabajo") : "Ver trabajo"}
+                      <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                        {isLoaded ? t("common.viewProject") : "Ver proyecto"}
                       </button>
                     </div>
                   </div>
@@ -278,55 +226,12 @@ const Diseño = () => {
               {/* Imagen principal */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src={selectedImage.images ? selectedImage.images[currentImageIndex] : selectedImage.image}
+                  src={selectedImage.image}
                   alt={selectedImage.title}
                   width={800}
                   height={600}
                   className="w-full h-auto max-h-[70vh] object-contain"
                 />
-                
-                {/* Navegación de imágenes - solo si hay múltiples imágenes */}
-                {selectedImage.images && selectedImage.images.length > 1 && (
-                  <>
-                    {/* Botón anterior */}
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    
-                    {/* Botón siguiente */}
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                    
-                    {/* Indicadores de imagen */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                      {selectedImage.images.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentImageIndex(index)}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    
-                    {/* Contador de imágenes */}
-                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm z-10">
-                      {currentImageIndex + 1} / {selectedImage.images.length}
-                    </div>
-                  </>
-                )}
                 
                 {/* Información del proyecto - Completa en el modal */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">

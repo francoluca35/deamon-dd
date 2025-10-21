@@ -97,7 +97,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.peruMarApp",
       fallbackDescription: "App personalizada para el restaurante PerúMar",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
-      url: "https://github.com/francoluca35/comandas",
+      url: "https://github.com/francoluca35/PeruMar-App",
       type: "single"
     }
   ];

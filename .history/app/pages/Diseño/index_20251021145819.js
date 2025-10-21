@@ -235,12 +235,7 @@ const Diseño = () => {
                           {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
                         </p>
                       </div>
-                      <button 
-                        onClick={() => openImageModal(project)}
-                        className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
-                      >
-                        {isLoaded ? (t("common.viewWork") || "Ver trabajo") : "Ver trabajo"}
-                      </button>
+                  
                     </div>
                   </div>
                 </div>
