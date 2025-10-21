@@ -28,7 +28,7 @@ const Website = () => {
       </div>
 
       {/* Sección Trabajos con tercera imagen */}
-      <div className="min-h-screen bg-[url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondoweb.jpg')] bg-cover bg-center bg-no-repeat relative">
+      <div className="min-h-screen bg-[url('/assets/fondo1.avif')] bg-cover bg-center bg-no-repeat relative">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10">
           <TrabajosSection />
