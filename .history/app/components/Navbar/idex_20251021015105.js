@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useTranslation } from "../../lib/i18n";
 
-function Navbar2() {
+const Navbar2 = memo(function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -114,11 +114,11 @@ function Navbar2() {
     <nav
       className={`${
         isMobile
-          ? "bg-black bg-opacity-40"
+          ? "bg-black bg-opacity-90 backdrop-blur-md"
           : isScrolled
-          ? "bg-black bg-opacity-40"
+          ? "bg-black bg-opacity-90 backdrop-blur-md"
           : "bg-transparent"
-      } fixed w-full z-50 top-0 start-0`}
+      } fixed w-full z-[9999] top-0 left-0 right-0`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <button 
@@ -386,6 +386,6 @@ function Navbar2() {
       )}
     </nav>
   );
-}
+});
 
 export default Navbar2;

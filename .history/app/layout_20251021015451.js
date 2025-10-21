@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
         {/* CSS Crítico Ultra Optimizado - Agresivo */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            :root{--bg:#fff;--fg:#171717;--p:#673372;--hero-bg:url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg')}
+            :root{--bg:#fff;--fg:#171717;--p:#673372;--hero-bg:url('/assets/fondoprincipal.jpg')}
             *{box-sizing:border-box;margin:0;padding:0}
             html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-display:swap}
             body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg)}

@@ -120,7 +120,7 @@ export const ultraOptimizations = {
       
       // Preload de recursos críticos
       const criticalResources = [
-        { href: 'https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg', as: 'image' },
+        { href: '/assets/fondoprincipal.jpg', as: 'image' },
         { href: '/assets/deamon-icon-B-s.avif', as: 'image' }
       ];
       
