@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimizaciones críticas de rendimiento */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-display: swap;
+    text-rendering: optimizeSpeed;
+    padding-top: 80px; /* Compensar altura del navbar fijo */
+  }
+}
+
+/* Optimizaciones para LCP */
+@layer utilities {
+  .lcp-optimized {
+    contain: layout style paint;
+    will-change: auto;
+  }
+  
+  .reduce-layout-shift {
+    contain: layout;
+  }
+  
+  .optimize-rendering {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Preload crítico para fuentes */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+}
+
+/* Optimizaciones para imágenes */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+
+/* Reducir CLS con dimensiones fijas */
+.aspect-ratio-fix {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+}
+
+/* Optimizaciones para animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Critical CSS inline para elementos above-the-fold */
+.hero-section {
+  background-image: url('/assets/fondoprincipal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optimizaciones para texto crítico */
+.hero-title {
+  font-size: clamp(1.875rem, 4vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  contain: layout style paint;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  contain: layout style paint;
+}
+
+/* Navbar fijo optimizado */
+.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

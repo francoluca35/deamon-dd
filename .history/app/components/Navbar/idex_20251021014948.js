@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useTranslation } from "../../lib/i18n";
 
-function Navbar2() {
+const Navbar2 = memo(function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -386,6 +386,6 @@ function Navbar2() {
       )}
     </nav>
   );
-}
+});
 
 export default Navbar2;
