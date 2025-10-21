@@ -29,7 +29,7 @@ const Footer = () => {
     // Cerrar el modal después de 5 segundos
     setTimeout(() => {
       setShowModal(false);
-    }, 3000);
+    }, 5000);
   };
 
   return (
