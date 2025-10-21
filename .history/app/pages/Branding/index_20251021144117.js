@@ -74,7 +74,7 @@ export default function BrandingSection() {
         fallbackDescription: "Manual de identidad visual",
         logo: "T",
         image: "/assets/branding/bicico.png",
-        url: "#",
+
         layout: "rectangle"
       },
        {
@@ -218,10 +218,9 @@ export default function BrandingSection() {
                                 {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
                               </p>
                             </div>
-                            {/* Botón oculto temporalmente */}
-                            {/* <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                            <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                               {isLoaded ? t("common.viewProject") : "Ver proyecto"}
-                            </button> */}
+                            </button>
                           </div>
                         </div>
                       </div>

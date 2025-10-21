@@ -43,7 +43,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.maurelloTransportes",
       fallbackDescription: "Landing empresarial de maquinaria industrial",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761068998/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_evwsep.png",
-      url: "https://jcp-web-site.vercel.app",
+      url: "https://maurellotransportes.com",
       type: "split",
       secondProject: {
         title: "Caruso FC",
@@ -88,7 +88,7 @@ const Desarrollo = () => {
         descriptionKey: "development.projects.maurelloApp",
         fallbackDescription: "App para reservar pasajes de transporte",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
-        url: "https://github.com/francoluca35/appcolectivos"
+        url: "https://github.com/francoluca35/Maurello-App"
       }
     },
     {
@@ -97,7 +97,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.peruMarApp",
       fallbackDescription: "App personalizada para el restaurante PerúMar",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
-      url: "https://github.com/francoluca35/comandas",
+      url: "https://github.com/francoluca35/PeruMar-App",
       type: "single"
     }
   ];

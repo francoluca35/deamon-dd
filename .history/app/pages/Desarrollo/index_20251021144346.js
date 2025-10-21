@@ -34,23 +34,23 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.jlaTecnicos",
       fallbackDescription: "Web Site Industrial",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
-      url: "https://jlatecnicos.com",
+      url: "https://jlatecnico.com.ar",
       type: "single"
     },
     {
       id: 2,
-      title: "JCP Maquinarias Industriales",
+      title: "Maurello Transportes",
       descriptionKey: "development.projects.maurelloTransportes",
-      fallbackDescription: "Landing empresarial de maquinaria industrial",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761068998/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_evwsep.png",
-      url: "https://jcp-web-site.vercel.app",
+      fallbackDescription: "Landing para compra de pasajes de transporte",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018645/deamon-dd/proyectos/maurello1.jpg",
+      url: "https://maurellotransportes.com",
       type: "split",
       secondProject: {
         title: "Caruso FC",
         descriptionKey: "development.projects.carusoFC",
         fallbackDescription: "Pagina para reservar canchas de futbol",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
-        url: "https://caruso-app.vercel.app"
+        url: "https://caruso-a.com"
       }
     },
     {
@@ -59,7 +59,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.arquimec",
       fallbackDescription: "Estudio de arquitectura",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/arqui2.jpg",
-      url: "https://arquimec-web.vercel.app",
+      url: "https://arquimec.com",
       type: "single"
     }
   ];
@@ -72,7 +72,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.quickSolution",
       fallbackDescription: "Multiapp para restaurantes",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/quick2.jpg",
-      url: "https://comandas-multiples.vercel.app",
+      url: "https://github.com/francoluca35/QuickSolution",
       type: "single"
     },
     {
@@ -88,7 +88,7 @@ const Desarrollo = () => {
         descriptionKey: "development.projects.maurelloApp",
         fallbackDescription: "App para reservar pasajes de transporte",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
-        url: "https://github.com/francoluca35/appcolectivos"
+        url: "https://github.com/francoluca35/Maurello-App"
       }
     },
     {
@@ -97,7 +97,7 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.peruMarApp",
       fallbackDescription: "App personalizada para el restaurante PerúMar",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
-      url: "https://github.com/francoluca35/comandas",
+      url: "https://github.com/francoluca35/PeruMar-App",
       type: "single"
     }
   ];
