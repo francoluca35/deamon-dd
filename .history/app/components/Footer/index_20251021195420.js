@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -13,24 +12,12 @@ import {
   FaFacebookF,
   FaYoutube,
   FaShare,
-  FaCheckCircle,
 } from "react-icons/fa";
 
 const Footer = () => {
-  const [showModal, setShowModal] = useState(false);
   const phone = "+541131199882";
   const message = "Hola!, Quisiera más información acerca de los servicios ofrecidos de DeamonDD.";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-  const handleNewsletterSubmit = () => {
-    // Mostrar modal
-    setShowModal(true);
-    
-    // Cerrar el modal después de 5 segundos
-    setTimeout(() => {
-      setShowModal(false);
-    }, 3000);
-  };
 
   return (
     <footer className="bg-[#1d0b2b] text-white py-10">
@@ -72,7 +59,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <FaGlobe className="text-[#ffffff]" />
+                <FaGlobe className="text-[#8bc34a]" />
                 <a href="https://deamondd.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                   www.deamondd.com
                 </a>
@@ -93,7 +80,9 @@ const Footer = () => {
               <a href="https://www.linkedin.com/in/deamon-company-129808354/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
                 <FaLinkedin className="text-lg" />
               </a>
-             
+              <a href="https://twitter.com/deamondd" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
+                <FaTwitter className="text-lg" />
+              </a>
               <a href="https://www.youtube.com/@deamondd" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
                 <FaYoutube className="text-lg" />
               </a>
@@ -110,12 +99,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-grow px-4 py-2 rounded-l-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#874ac3]"
+                className="flex-grow px-4 py-2 rounded-l-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8bc34a]"
               />
-              <button 
-                onClick={handleNewsletterSubmit}
-                className="px-4 py-2 rounded-r-lg bg-gray-600 text-white hover:bg-gray-700 transition-colors flex items-center justify-center"
-              >
+              <button className="px-4 py-2 rounded-r-lg bg-gray-600 text-white hover:bg-gray-700 transition-colors flex items-center justify-center">
                 <FaShare className="text-lg" />
               </button>
             </div>
@@ -131,49 +117,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
-      {/* Modal de suscripción exitosa */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform transition-all duration-300">
-            {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <Image
-                src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B-s.png"
-                alt="Deamon DD Logo"
-                width={120}
-                height={60}
-                className="object-contain"
-              />
-            </div>
-            
-            {/* Icono de éxito */}
-            <div className="flex justify-center mb-4">
-              <FaCheckCircle className="text-6xl text-green-500" />
-            </div>
-            
-            {/* Mensaje */}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                ¡Gracias por suscribirte!
-              </h3>
-              <p className="text-gray-600">
-                Te has unido a nuestra comunidad. Recibirás las últimas noticias sobre diseño, tecnología y ofertas especiales.
-              </p>
-            </div>
-            
-            {/* Barra de progreso */}
-            <div className="mt-6">
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full animate-pulse"></div>
-              </div>
-              <p className="text-xs text-gray-500 text-center mt-2">
-                Este mensaje se cerrará automáticamente...
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </footer>
   );
 };

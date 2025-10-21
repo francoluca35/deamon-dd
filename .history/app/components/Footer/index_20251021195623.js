@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -13,23 +12,23 @@ import {
   FaFacebookF,
   FaYoutube,
   FaShare,
-  FaCheckCircle,
 } from "react-icons/fa";
 
 const Footer = () => {
-  const [showModal, setShowModal] = useState(false);
   const phone = "+541131199882";
   const message = "Hola!, Quisiera más información acerca de los servicios ofrecidos de DeamonDD.";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   const handleNewsletterSubmit = () => {
-    // Mostrar modal
-    setShowModal(true);
+    // Mostrar alert
+    alert("¡Gracias por suscribirte a nuestra comunidad!");
     
-    // Cerrar el modal después de 5 segundos
+    // Cerrar el alert después de 5 segundos
     setTimeout(() => {
-      setShowModal(false);
-    }, 3000);
+      // En un entorno real, aquí podrías cerrar un modal personalizado
+      // Para el alert nativo, no se puede cerrar programáticamente
+      console.log("Newsletter subscription completed");
+    }, 5000);
   };
 
   return (
@@ -131,49 +130,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
-      {/* Modal de suscripción exitosa */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform transition-all duration-300">
-            {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <Image
-                src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B-s.png"
-                alt="Deamon DD Logo"
-                width={120}
-                height={60}
-                className="object-contain"
-              />
-            </div>
-            
-            {/* Icono de éxito */}
-            <div className="flex justify-center mb-4">
-              <FaCheckCircle className="text-6xl text-green-500" />
-            </div>
-            
-            {/* Mensaje */}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                ¡Gracias por suscribirte!
-              </h3>
-              <p className="text-gray-600">
-                Te has unido a nuestra comunidad. Recibirás las últimas noticias sobre diseño, tecnología y ofertas especiales.
-              </p>
-            </div>
-            
-            {/* Barra de progreso */}
-            <div className="mt-6">
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full animate-pulse"></div>
-              </div>
-              <p className="text-xs text-gray-500 text-center mt-2">
-                Este mensaje se cerrará automáticamente...
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </footer>
   );
 };
