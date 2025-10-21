@@ -1,0 +1,305 @@
+{
+  "generated_at": "2025-10-21T03:50:58.270Z",
+  "sections": {
+    "home": {
+      "deamon-icon-B-desarrollo.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B-desarrollo.png",
+        "publicId": "deamon-dd/home/deamon-icon-B-desarrollo",
+        "originalPath": "public\\assets\\deamon-icon-B-desarrollo.avif"
+      },
+      "firma3.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/firma3.png",
+        "publicId": "deamon-dd/home/firma3",
+        "originalPath": "public\\assets\\firma3.avif"
+      },
+      "deamon-icon-B.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B.png",
+        "publicId": "deamon-dd/home/deamon-icon-B",
+        "originalPath": "public\\assets\\deamon-icon-B.avif"
+      },
+      "deamon-icon-B-s.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B-s.png",
+        "publicId": "deamon-dd/home/deamon-icon-B-s",
+        "originalPath": "public\\assets\\deamon-icon-B-s.avif"
+      },
+      "deamon-2-N-T.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-2-N-T.png",
+        "publicId": "deamon-dd/home/deamon-2-N-T",
+        "originalPath": "public\\assets\\deamon-2-N-T.avif"
+      },
+      "whatsapp.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/whatsapp.png",
+        "publicId": "deamon-dd/home/whatsapp",
+        "originalPath": "public\\assets\\whatsapp.avif"
+      },
+      "fondo-contact.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/fondo-contact.jpg",
+        "publicId": "deamon-dd/home/fondo-contact",
+        "originalPath": "public\\assets\\fondo-contact.avif"
+      },
+      "grafic.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/grafic.jpg",
+        "publicId": "deamon-dd/home/grafic",
+        "originalPath": "public\\assets\\grafic.avif"
+      },
+      "Logo-equipo-B.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png",
+        "publicId": "deamon-dd/home/Logo-equipo-B",
+        "originalPath": "public\\assets\\Logo-equipo-B.avif"
+      },
+      "fondo-const.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondo-const.jpg",
+        "publicId": "deamon-dd/home/fondo-const",
+        "originalPath": "public\\assets\\fondo-const.jpg"
+      },
+      "fondo1.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/fondo1.jpg",
+        "publicId": "deamon-dd/home/fondo1",
+        "originalPath": "public\\assets\\fondo1.avif"
+      },
+      "fondoweb.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondoweb.jpg",
+        "publicId": "deamon-dd/home/fondoweb",
+        "originalPath": "public\\assets\\fondoweb.avif"
+      },
+      "imagen-ilu.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/imagen-ilu.png",
+        "publicId": "deamon-dd/home/imagen-ilu",
+        "originalPath": "public\\assets\\imagen-ilu.avif"
+      },
+      "fondoprincipal.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg",
+        "publicId": "deamon-dd/home/fondoprincipal",
+        "originalPath": "public\\assets\\fondoprincipal.jpg"
+      }
+    },
+    "equipo": {
+      "marcos.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/equipo/marcos.jpg",
+        "publicId": "deamon-dd/equipo/marcos",
+        "originalPath": "public\\assets\\equipo\\marcos.avif"
+      },
+      "juan.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/equipo/juan.png",
+        "publicId": "deamon-dd/equipo/juan",
+        "originalPath": "public\\assets\\equipo\\juan.png"
+      },
+      "marcos.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/equipo/marcos.png",
+        "publicId": "deamon-dd/equipo/marcos",
+        "originalPath": "public\\assets\\equipo\\marcos.png"
+      },
+      "Logo-equipo-B.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/equipo/Logo-equipo-B.png",
+        "publicId": "deamon-dd/equipo/Logo-equipo-B",
+        "originalPath": "public\\assets\\equipo\\Logo-equipo-B.avif"
+      },
+      "lucas-viale.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/equipo/lucas-viale.png",
+        "publicId": "deamon-dd/equipo/lucas-viale",
+        "originalPath": "public\\assets\\equipo\\lucas-viale.avif"
+      },
+      "yo-franco.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/equipo/yo-franco.png",
+        "publicId": "deamon-dd/equipo/yo-franco",
+        "originalPath": "public\\assets\\equipo\\yo-franco.avif"
+      },
+      "mateo-rendon.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/equipo/mateo-rendon.png",
+        "publicId": "deamon-dd/equipo/mateo-rendon",
+        "originalPath": "public\\assets\\equipo\\mateo-rendon.avif"
+      },
+      "franco.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/equipo/franco.png",
+        "publicId": "deamon-dd/equipo/franco",
+        "originalPath": "public\\assets\\equipo\\franco.png"
+      }
+    },
+    "proyectos": {
+      "maurello-app.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/maurello-app.png",
+        "publicId": "deamon-dd/proyectos/maurello-app",
+        "originalPath": "public\\assets\\Proyectos\\maurello-app.avif"
+      },
+      "perumar.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
+        "publicId": "deamon-dd/proyectos/perumar",
+        "originalPath": "public\\assets\\Proyectos\\perumar.avif"
+      },
+      "maurello-web.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/maurello-web.png",
+        "publicId": "deamon-dd/proyectos/maurello-web",
+        "originalPath": "public\\assets\\Proyectos\\maurello-web.avif"
+      },
+      "jlaapp2.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/jlaapp2.jpg",
+        "publicId": "deamon-dd/proyectos/jlaapp2",
+        "originalPath": "public\\assets\\Proyectos\\jlaapp2.jpg"
+      },
+      "quick2.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/quick2.jpg",
+        "publicId": "deamon-dd/proyectos/quick2",
+        "originalPath": "public\\assets\\Proyectos\\quick2.jpg"
+      },
+      "maureloapp.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
+        "publicId": "deamon-dd/proyectos/maureloapp",
+        "originalPath": "public\\assets\\Proyectos\\maureloapp.jpg"
+      },
+      "arqui2.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/arqui2.jpg",
+        "publicId": "deamon-dd/proyectos/arqui2",
+        "originalPath": "public\\assets\\Proyectos\\arqui2.png"
+      },
+      "app-jla.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/app-jla.jpg",
+        "publicId": "deamon-dd/proyectos/app-jla",
+        "originalPath": "public\\assets\\Proyectos\\app-jla.avif"
+      },
+      "perumarapp.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
+        "publicId": "deamon-dd/proyectos/perumarapp",
+        "originalPath": "public\\assets\\Proyectos\\perumarapp.jpg"
+      },
+      "JLA.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
+        "publicId": "deamon-dd/proyectos/JLA",
+        "originalPath": "public\\assets\\Proyectos\\JLA.avif"
+      },
+      "yael-app.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/yael-app.jpg",
+        "publicId": "deamon-dd/proyectos/yael-app",
+        "originalPath": "public\\assets\\Proyectos\\yael-app.avif"
+      },
+      "tec.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
+        "publicId": "deamon-dd/proyectos/tec",
+        "originalPath": "public\\assets\\Proyectos\\tec.png"
+      },
+      "maurello1.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018645/deamon-dd/proyectos/maurello1.jpg",
+        "publicId": "deamon-dd/proyectos/maurello1",
+        "originalPath": "public\\assets\\Proyectos\\maurello1.png"
+      },
+      "carusoweb1.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
+        "publicId": "deamon-dd/proyectos/carusoweb1",
+        "originalPath": "public\\assets\\Proyectos\\carusoweb1.png"
+      }
+    },
+    "marketing": {
+      "arquimec.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec.jpg",
+        "publicId": "deamon-dd/marketing/arquimec",
+        "originalPath": "public\\assets\\marketing\\arquimec.jpg"
+      },
+      "arquimec-logo.webp": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec-logo.png",
+        "publicId": "deamon-dd/marketing/arquimec-logo",
+        "originalPath": "public\\assets\\marketing\\arquimec-logo.webp"
+      }
+    },
+    "branding": {
+      "bioma.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/branding/bioma.jpg",
+        "publicId": "deamon-dd/branding/bioma",
+        "originalPath": "public\\assets\\branding\\bioma.png"
+      },
+      "citadino.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/branding/citadino.jpg",
+        "publicId": "deamon-dd/branding/citadino",
+        "originalPath": "public\\assets\\branding\\citadino.png"
+      },
+      "asfixia.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/asfixia.jpg",
+        "publicId": "deamon-dd/branding/asfixia",
+        "originalPath": "public\\assets\\branding\\asfixia.png"
+      },
+      "bicico.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/bicico.jpg",
+        "publicId": "deamon-dd/branding/bicico",
+        "originalPath": "public\\assets\\branding\\bicico.png"
+      },
+      "iruma.png": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg",
+        "publicId": "deamon-dd/branding/iruma",
+        "originalPath": "public\\assets\\branding\\iruma.png"
+      }
+    },
+    "diseño": {
+      "diseño-web.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/dise%C3%B1o/dise%C3%B1o-web.jpg",
+        "publicId": "deamon-dd/diseño/diseño-web",
+        "originalPath": "public\\assets\\diseño-web.avif"
+      },
+      "tc2024.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/dise%C3%B1o/tc2024.jpg",
+        "publicId": "deamon-dd/diseño/tc2024",
+        "originalPath": "public\\assets\\diseno\\tc2024.avif"
+      }
+    },
+    "contacto": {
+      "contacto.jpg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018652/deamon-dd/contacto/contacto.jpg",
+        "publicId": "deamon-dd/contacto/contacto",
+        "originalPath": "public\\assets\\contacto.jpg"
+      }
+    },
+    "desarrollo": {
+      "desarrollo-2.avif": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/desarrollo/desarrollo-2.png",
+        "publicId": "deamon-dd/desarrollo/desarrollo-2",
+        "originalPath": "public\\assets\\desarrollo-2.avif"
+      }
+    },
+    "flags": {
+      "spain.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/flags/spain.png",
+        "publicId": "deamon-dd/flags/spain",
+        "originalPath": "public\\assets\\flags\\spain.svg"
+      },
+      "italy.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/flags/italy.png",
+        "publicId": "deamon-dd/flags/italy",
+        "originalPath": "public\\assets\\flags\\italy.svg"
+      },
+      "argentina.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/flags/argentina.png",
+        "publicId": "deamon-dd/flags/argentina",
+        "originalPath": "public\\assets\\flags\\argentina.svg"
+      },
+      "usa.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/flags/usa.png",
+        "publicId": "deamon-dd/flags/usa",
+        "originalPath": "public\\assets\\flags\\usa.svg"
+      }
+    },
+    "icons": {
+      "file.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/icons/file.png",
+        "publicId": "deamon-dd/icons/file",
+        "originalPath": "public\\file.svg"
+      },
+      "window.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/icons/window.png",
+        "publicId": "deamon-dd/icons/window",
+        "originalPath": "public\\window.svg"
+      },
+      "next.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/icons/next.png",
+        "publicId": "deamon-dd/icons/next",
+        "originalPath": "public\\next.svg"
+      },
+      "globe.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/icons/globe.png",
+        "publicId": "deamon-dd/icons/globe",
+        "originalPath": "public\\globe.svg"
+      },
+      "vercel.svg": {
+        "cloudinaryUrl": "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/icons/vercel.png",
+        "publicId": "deamon-dd/icons/vercel",
+        "originalPath": "public\\vercel.svg"
+      }
+    }
+  }
+}
