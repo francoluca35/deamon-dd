@@ -15,7 +15,7 @@ export default function NuestroEquipo() {
   }, [currentLang]);
   const teamMembers = [
     {
-      img: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761019802/franco_rzefwl.png",
+      img: "/assets/equipo/franco.png",
       name: "Franco L. Parera",
       role: isLoaded ? t("team.roles.director") : "Director & Full-Stack Developer"
     },
