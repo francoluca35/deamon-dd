@@ -89,4 +89,3 @@ export const usePerformanceMonitor = () => {
   };
 
   return { startMonitoring, getMetrics, stopMonitoring };
-};

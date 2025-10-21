@@ -65,27 +65,22 @@ export const useLazyLoading = (threshold = 0.1) => {
   return [setRef, isVisible];
 };
 
-// Hook para usar las optimizaciones de performance
+// Hook para usar el monitor de performance
 export const usePerformanceMonitor = () => {
   const startMonitoring = () => {
     if (typeof window !== 'undefined') {
-      performanceOptimizations.preloadCriticalResources();
-      performanceOptimizations.optimizeAnimations();
-      performanceOptimizations.preventLayoutShift();
+      performanceMonitor.measureWebVitals();
+      performanceMonitor.measureResourceTiming();
+      performanceMonitor.measureRenderTime();
     }
   };
 
   const getMetrics = () => {
-    return {
-      preloadResources: performanceOptimizations.preloadCriticalResources,
-      optimizeAnimations: performanceOptimizations.optimizeAnimations,
-      preventLayoutShift: performanceOptimizations.preventLayoutShift
-    };
+    return performanceMonitor.getAllMetrics();
   };
 
   const stopMonitoring = () => {
-    // Las optimizaciones no necesitan ser detenidas
-    console.log('Performance optimizations are active');
+    performanceMonitor.disconnect();
   };
 
   return { startMonitoring, getMetrics, stopMonitoring };
