@@ -50,11 +50,6 @@ const nextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
-          // Preconnect para mejorar LCP
-          {
-            key: 'Link',
-            value: '<https://www.deamondd.com>; rel=preconnect',
-          },
         ],
       },
       {

@@ -386,6 +386,6 @@ const Navbar2 = memo(function Navbar2() {
       )}
     </nav>
   );
-});
+}
 
 export default Navbar2;
