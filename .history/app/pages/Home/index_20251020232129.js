@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, memo } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useTranslation } from "../../lib/i18n";
 
 const Home = memo(function Home() {
@@ -74,26 +75,26 @@ const Home = memo(function Home() {
       <div className="absolute inset-0 bg-black bg-opacity-10"></div>
 
       <div className="relative z-10 w-full max-w-6xl flex flex-col items-center justify-center gap-6 py-8 text-center">
-        {/* TEXTO CENTRADO - Optimizado para LCP */}
+        {/* TEXTO CENTRADO */}
         <div className="text-white px-4 w-full">
-          <h1 
+          <motion.h1 
+            key={`title-${currentLang}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
-            style={{ 
-              contain: 'layout style paint',
-              willChange: 'auto'
-            }}
           >
             {t("home.hero.title")}
-          </h1>
-          <p 
+          </motion.h1>
+          <motion.p 
+            key={`subtitle-${currentLang}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
             className="text-lg sm:text-xl md:text-2xl mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] leading-relaxed max-w-4xl mx-auto"
-            style={{ 
-              contain: 'layout style paint',
-              willChange: 'auto'
-            }}
           >
             {t("home.hero.subtitle")}
-          </p>
+          </motion.p>
         </div>
 
         {/* BOTONES CENTRADOS */}
@@ -119,7 +120,7 @@ const Home = memo(function Home() {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 });
 

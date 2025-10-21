@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, memo } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useTranslation } from "../../lib/i18n";
 
 const Home = memo(function Home() {

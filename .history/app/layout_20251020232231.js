@@ -123,10 +123,6 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Inicializar optimizaciones de rendimiento
-              ${initializePerformanceOptimizations.toString()}
-              initializePerformanceOptimizations();
-              
               // Cargar Google Analytics de forma diferida
               function loadGA() {
                 const script = document.createElement('script');

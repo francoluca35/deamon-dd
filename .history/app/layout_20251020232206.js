@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { initializePerformanceOptimizations } from "./lib/performance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -123,10 +122,6 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Inicializar optimizaciones de rendimiento
-              ${initializePerformanceOptimizations.toString()}
-              initializePerformanceOptimizations();
-              
               // Cargar Google Analytics de forma diferida
               function loadGA() {
                 const script = document.createElement('script');

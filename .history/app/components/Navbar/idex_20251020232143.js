@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useTranslation } from "../../lib/i18n";
 
-const Navbar2 = memo(function Navbar2() {
+function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -386,6 +386,6 @@ const Navbar2 = memo(function Navbar2() {
       )}
     </nav>
   );
-});
+}
 
 export default Navbar2;
