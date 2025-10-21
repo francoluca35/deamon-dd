@@ -80,57 +80,52 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   
-  // Webpack optimizations ULTRA agresivas para móvil
+  // Webpack optimizations ultra agresivas para móvil
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
-      // Optimizaciones ultra agresivas
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 5000,
-        maxSize: 50000,
+        minSize: 10000,
+        maxSize: 100000,
         cacheGroups: {
           react: {
             test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
             name: 'react',
             chunks: 'all',
-            priority: 30,
-            maxSize: 30000,
+            priority: 20,
+            maxSize: 50000,
           },
           framer: {
             test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
             name: 'framer',
             chunks: 'all',
-            priority: 25,
-            maxSize: 20000,
+            priority: 15,
+            maxSize: 30000,
           },
           icons: {
             test: /[\\/]node_modules[\\/]react-icons[\\/]/,
             name: 'icons',
             chunks: 'all',
-            priority: 20,
-            maxSize: 15000,
+            priority: 15,
+            maxSize: 20000,
           },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
-            priority: 15,
-            maxSize: 40000,
+            priority: 10,
+            maxSize: 80000,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            priority: 10,
+            priority: 5,
             reuseExistingChunk: true,
-            maxSize: 25000,
+            maxSize: 50000,
           },
         },
       };
-      
-      // Eliminar código no utilizado más agresivamente
-      config.optimization.usedExports = true;
-      config.optimization.sideEffects = false;
     }
     return config;
   },

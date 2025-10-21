@@ -148,10 +148,6 @@ export default function RootLayout({ children }) {
               ${initializePerformanceOptimizations.toString()}
               initializePerformanceOptimizations();
               
-              // Inicializar optimizaciones ultra agresivas
-              ${initializeUltraOptimizations.toString()}
-              initializeUltraOptimizations();
-              
               // Cargar Google Analytics de forma diferida
               function loadGA() {
                 const script = document.createElement('script');
