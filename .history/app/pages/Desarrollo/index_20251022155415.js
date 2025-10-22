@@ -88,7 +88,7 @@ const Desarrollo = () => {
         descriptionKey: "development.projects.maurelloApp",
         fallbackDescription: "App para reservar pasajes de transporte",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
-        url: "https://github.com/DeamonDesingDev/maurello-app"
+        url: "https://github.com/francoluca35/appcolectivos"
       }
     },
     {
