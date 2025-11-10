@@ -148,11 +148,11 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               // Inicializar optimizaciones de rendimiento
-              ${initializePerformanceOptimizations.toString()}
+              const initializePerformanceOptimizations = ${initializePerformanceOptimizations.toString()};
               initializePerformanceOptimizations();
               
               // Inicializar optimizaciones ultra agresivas
-              ${initializeUltraOptimizations.toString()}
+              const initializeUltraOptimizations = ${initializeUltraOptimizations.toString()};
               initializeUltraOptimizations();
               
               // Cargar Google Analytics de forma diferida
