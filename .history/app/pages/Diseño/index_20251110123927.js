@@ -61,11 +61,11 @@ const Diseño = () => {
       title: "Proyecto Asfixia",
       descriptionKey: "design.projects.asfixia",
       fallbackDescription: "Desarrollo completo de identidad visual para marca de ropa urbana, incluyendo logo, paleta de colores y aplicaciones en diferentes soportes.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/asfixia.jpg",
+      image: "/assets/branding/asfixia.png",
       images: [
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/asfixia.jpg",
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/asfixia.jpg",
-
+        "/assets/branding/asfixia.png",
+        "/assets/branding/asfixia2.png",
+        "/assets/branding/asfixia3.png"
       ],
       tags: ["Branding", "Logo Design", "Identidad"],
       icon: Palette,
@@ -76,10 +76,10 @@ const Diseño = () => {
       title: "Proyecto Bicicoffe",
       descriptionKey: "design.projects.bicicoffe",
       fallbackDescription: "Diseño de identidad corporativa para empresa de bicicletas, incluyendo logo, material promocional y diseño de packaging.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/bicico.jpg",
+      image: "/assets/branding/bicico.png",
       images: [
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/bicico.jpg",
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/bicico.jpg"
+        "/assets/branding/bicico.png",
+        "/assets/branding/bicico2.png"
       ],
       tags: ["Logo", "Packaging", "Retail"],
       icon: Pencil,
@@ -90,9 +90,9 @@ const Diseño = () => {
       title: "Proyecto Bioma",
       descriptionKey: "design.projects.bioma",
       fallbackDescription: "Identidad visual para empresa de productos ecológicos, enfocada en la sostenibilidad y el cuidado del medio ambiente.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/branding/bioma.jpg",
+      image: "/assets/branding/bioma.png",
       images: [
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/branding/bioma.jpg"
+        "/assets/branding/bioma.png"
       ],
       tags: ["Eco Design", "Sostenibilidad", "Branding"],
       icon: Layers,
@@ -100,12 +100,15 @@ const Diseño = () => {
     },
     {
       id: 4,
-      title: "Proyecto Carusso",
+      title: "Proyecto Citadino",
       descriptionKey: "design.projects.citadino",
       fallbackDescription: "Identidad corporativa para empresa de servicios urbanos, con enfoque en la modernidad y eficiencia.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
+      image: "/assets/branding/citadino.png",
       images: [
-     
+        "/assets/branding/citadino.png",
+        "/assets/branding/citadino2.png",
+        "/assets/branding/citadino3.png",
+        "/assets/branding/citadino4.png"
       ],
       tags: ["Identidad", "Servicios", "Moderno"],
       icon: Zap,
@@ -116,10 +119,10 @@ const Diseño = () => {
       title: "Proyecto Iruma",
       descriptionKey: "design.projects.iruma",
       fallbackDescription: "Diseño de marca para empresa tecnológica, combinando innovación y profesionalismo.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg",
+      image: "/assets/branding/iruma.png",
       images: [
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg",
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg"
+        "/assets/branding/iruma.png",
+        "/assets/branding/iruma2.png"
       ],
       tags: ["Tech", "Innovación", "Profesional"],
       icon: Palette,

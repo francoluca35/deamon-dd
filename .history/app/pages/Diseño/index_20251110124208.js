@@ -116,10 +116,10 @@ const Diseño = () => {
       title: "Proyecto Iruma",
       descriptionKey: "design.projects.iruma",
       fallbackDescription: "Diseño de marca para empresa tecnológica, combinando innovación y profesionalismo.",
-      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg",
+      image: "/assets/branding/iruma.png",
       images: [
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg",
-        "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/iruma.jpg"
+        "/assets/branding/iruma.png",
+        "/assets/branding/iruma2.png"
       ],
       tags: ["Tech", "Innovación", "Profesional"],
       icon: Palette,

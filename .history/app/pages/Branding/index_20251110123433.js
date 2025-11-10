@@ -73,7 +73,7 @@ export default function BrandingSection() {
         descriptionKey: "branding.projects.bicicoffee",
         fallbackDescription: "Manual de identidad visual",
         logo: "T",
-        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/branding/bicico.jpg",
+        image: "/assets/branding/bicico.png",
         url: "#",
         layout: "rectangle"
       },
@@ -86,7 +86,7 @@ export default function BrandingSection() {
          descriptionKey: "branding.projects.moreProjects",
          fallbackDescription: "Explora todos mis proyectos en GitHub",
          logo: "",
-         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png",
+         image: "/assets/Logo-equipo-B.avif",
          url: "https://github.com/francoluca35",
          layout: "square",
          type: "more-projects"

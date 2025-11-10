@@ -93,7 +93,7 @@ const Marketing = () => {
               <div className="relative aspect-[3/4]">
                 {/* Imagen que ocupa toda la tarjeta */}
                 <Image
-                  src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec.jpg"
+                  src="/assets/marketing/arquimec.jpg"
                   alt="Arquimec"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -106,7 +106,7 @@ const Marketing = () => {
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
                   <div className="w-16 h-16 bg-black/100 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
                     <Image
-                      src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec-logo.png"
+                      src="/assets/marketing/arquimec-logo.webp"
                       alt="Arquimec Logo"
                       width={100}
                       height={100}
