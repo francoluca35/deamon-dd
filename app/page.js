@@ -113,10 +113,7 @@ export default function Home() {
           <Contacto />
         </Suspense>
         
-        {/* <Suspense fallback={<LoadingSpinner />}>
-          <NuestroEquipo />
-        </Suspense>
-         */}
+       */
         <Suspense fallback={<LoadingSpinner />}>
           <Footer />
         </Suspense>

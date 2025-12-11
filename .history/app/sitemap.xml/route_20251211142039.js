@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = 'https://deamon-dd.vercel.app';
+  const baseUrl = 'https://www.deamondd.com';
   
   const routes = [
     {

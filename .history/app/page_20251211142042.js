@@ -5,17 +5,18 @@ import Navbar2 from "./components/Navbar/idex";
 import Inicio from "./pages/Home";
 import { usePerformanceMonitor } from "./hooks/usePerformance";
 import { useErrorTracking } from "./lib/errorTracking";
+import { LanguageProvider } from "./lib/i18n";
 
 // Lazy loading optimizado de componentes pesados
 const Equipo = lazy(() => import("./pages/Equipo"));
 const Branding = lazy(() => import("./pages/Branding"));
-const Especialidades = lazy(() => import("./pages/Especialidades"));
+
 const Desarrollo = lazy(() => import("./pages/Desarrollo"));
 const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
 
 const Contacto = lazy(() => import("./pages/Contacto"));
-const NuestroEquipo = lazy(() => import("./components/nuestroEquipo"));
+// const NuestroEquipo = lazy(() => import("./components/nuestroEquipo"));
 const Footer = lazy(() => import("./components/Footer"));
 
 // WhatsApp con loading optimizado
@@ -77,49 +78,48 @@ export default function Home() {
   }, [startMonitoring, trackError]);
 
   return (
-    <div>
-      <Navbar2 />
-      <Inicio />
-      
-      <div id="equipo">
+    <LanguageProvider>
+      <div>
+        <Navbar2 />
+        <Inicio />
+        
+        <div id="equipo">
+          <Suspense fallback={<LoadingSpinner />}>
+            <Equipo />
+          </Suspense>
+        </div>
+        
         <Suspense fallback={<LoadingSpinner />}>
-          <Equipo />
+          <Branding />
         </Suspense>
-      </div>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Branding />
-      </Suspense>
-      
-      <div id="desarrollo">
+        
+        <div id="desarrollo">
+          <Suspense fallback={<LoadingSpinner />}>
+            <Desarrollo />
+          </Suspense>
+        </div>
+        
         <Suspense fallback={<LoadingSpinner />}>
-          <Desarrollo />
+          <Marketing />
         </Suspense>
+        
+        <Suspense fallback={<LoadingSpinner />}>
+          <Diseño />
+        </Suspense>
+        
+   
+        
+        <Suspense fallback={<LoadingSpinner />}>
+          <Contacto />
+        </Suspense>
+        
+       */
+        <Suspense fallback={<LoadingSpinner />}>
+          <Footer />
+        </Suspense>
+        
+        {isLoaded && <FloatingWhatsApp />}
       </div>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Marketing />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Diseño />
-      </Suspense>
-      
- 
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Contacto />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <NuestroEquipo />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Footer />
-      </Suspense>
-      
-      {isLoaded && <FloatingWhatsApp />}
-    </div>
+    </LanguageProvider>
   );
 }
