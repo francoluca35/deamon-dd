@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useTranslation } from "../../lib/i18n";
 
 function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +12,28 @@ function Navbar2() {
   const [activeLink, setActiveLink] = useState("/");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState(null);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
+  const { t, currentLang, changeLanguage, languages, isLoaded } = useTranslation();
+  
+
+  // Array de logos para alternar con sus configuraciones
+  const logos = [
+    {
+      src: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/deamon-icon-B-s.png",
+      width: 200,
+      height: 200
+    },
+    {
+      src: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png",
+      width: 60,
+      height: 60
+    }
+  ];
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -50,11 +68,22 @@ function Navbar2() {
     };
   }, [hoverTimeout]);
 
+  // Alternar logos automáticamente cada 3 segundos
+  useEffect(() => {
+    const logoInterval = setInterval(() => {
+      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
+    }, 4000); // Cambia cada 4 segundos
+
+    return () => clearInterval(logoInterval);
+  }, [logos.length]);
+
+  // Crear navLinks reactivamente para que se actualicen cuando cambie el idioma
   const navLinks = [
-    { href: "/", label: "Inicio" },
-    { href: "#equipo", label: "Equipo" },
-    { href: "#desarrollo", label: "Desarrollo Web", isRoute: true },
-    { href: "#diseno-grafico", label: "Diseño Gráfico" },
+    { href: "#equipo", label: t("navbar.agency") },
+    { href: "#branding", label: t("navbar.branding") },
+    { href: "#desarrollo", label: t("navbar.webDevelopment"), isRoute: true },
+   // { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
+    { href: "#diseño", label: t("navbar.graphicDesign"), isRoute: true },
   ];
 
   const handleLinkClick = (href, isRoute) => {
@@ -89,36 +118,67 @@ function Navbar2() {
           : isScrolled
           ? "bg-black bg-opacity-40"
           : "bg-transparent"
-      } fixed w-full z-20 top-0 start-0  `}
+      } fixed w-full z-50 top-0 start-0`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <button 
-          onClick={() => router.push("/")} 
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }} 
+          className="flex items-center focus:outline-none hover:scale-105 transition-all duration-300 focus:ring-offset-2 rounded-lg p-1"
           aria-label="Ir al inicio"
           tabIndex={0}
         >
-          <Image
-            src="/assets/deamon-icon-B-s.avif"
-            width={200}
-            height={200}
-            alt="Deamon DD - Agencia de Desarrollo Web"
-          />
+          <div className="relative w-[200px] h-[60px] flex items-center justify-center">
+            {logos.map((logo, index) => (
+              <Image
+                key={`${logo.src}-${index}`}
+                src={logo.src}
+                width={logo.width}
+                height={logo.height}
+                alt="Deamon DD - Agencia de Desarrollo Web"
+                className={`absolute transition-opacity duration-1500 ease-in-out ${
+                  index === currentLogoIndex 
+                    ? 'opacity-100' 
+                    : 'opacity-0'
+                }`}
+              />
+            ))}
+          </div>
         </button>
 
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="text-white bg-[#673372a8] hover:bg-[#36203a] focus:ring-4 focus:outline-none focus:ring-[#36203a] font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors"
-            aria-label="Agendar reunión"
-            tabIndex={0}
-          >
-            {buttonText}
-          </button>
+        <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
+          {/* Selector de idiomas - Solo visible en desktop */}
+          <div className="hidden lg:flex items-center space-x-3">
+            {Object.values(languages).map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+                  currentLang === lang.code
+                    ? 'ring-0 ring-purple-500 ring-offset-2 ring-offset-transparent shadow-lg shadow-purple-500/30'
+                    : 'hover:ring-2 hover:ring-white/30'
+                }`}
+                title={lang.name}
+              >
+                <Image
+                  src={lang.image}
+                  alt={lang.name}
+                  width={32}
+                  height={32}
+                  className="rounded-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={handleMouseEnter}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors"
             aria-controls="navbar-sticky"
             aria-expanded={isOpen}
             aria-label="Abrir menú de navegación"
@@ -142,19 +202,16 @@ function Navbar2() {
         </div>
 
         {/* Menú móvil overlay */}
-        <div 
-          className={`fixed inset-0 bg-black z-40 md:hidden transition-opacity duration-300 ${
-            isOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
-          }`}
-          onMouseLeave={handleMouseLeave}
-        >
+        {isOpen && (
           <div 
-            className={`fixed top-0 right-0 h-full w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out ${
-              isOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-            onMouseEnter={handleMouseEnter}
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
             onMouseLeave={handleMouseLeave}
           >
+            <div 
+              className="fixed top-0 right-0 h-full w-2/3 bg-black bg-opacity-90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               {/* Botón de cerrar */}
               <div className="flex justify-end p-4">
                 <button
@@ -178,7 +235,7 @@ function Navbar2() {
                         handleLinkClick(link.href, link.isRoute);
                         setIsOpen(false);
                       }}
-                      className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                      className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
                       aria-label={`Navegar a ${link.label}`}
                       tabIndex={0}
                     >
@@ -187,47 +244,6 @@ function Navbar2() {
                   </li>
                 ))}
 
-                <li className="relative">
-                  <div className="relative">
-                    <button
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
-                      aria-label="Ver trabajos realizados"
-                      aria-expanded={isDropdownOpen}
-                      tabIndex={0}
-                    >
-                      Trabajos
-                    </button>
-                    {isDropdownOpen && (
-                      <div className="mt-2 space-y-3 pl-4">
-                        <button
-                          onClick={() => {
-                            setIsDropdownOpen(false);
-                            router.push("/desarrolloweb?#trabajos");
-                            setIsOpen(false);
-                          }}
-                          className="block text-white text-base hover:text-purple-300 w-full text-left transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-1"
-                          aria-label="Ver trabajos de desarrollo web"
-                          tabIndex={0}
-                        >
-                          Trabajos de Desarrollo
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsDropdownOpen(false);
-                            router.push("/graphic");
-                            setIsOpen(false);
-                          }}
-                          className="block text-white text-base hover:text-purple-300 w-full text-left transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-1"
-                          aria-label="Ver trabajos de diseño gráfico"
-                          tabIndex={0}
-                        >
-                          Trabajos de Diseño
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </li>
 
                 <li>
                   <button
@@ -235,29 +251,59 @@ function Navbar2() {
                       handleLinkClick("#contacto", false);
                       setIsOpen(false);
                     }}
-                    className="block text-white text-lg font-semibold hover:text-purple-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
+                    className="block text-white text-lg font-semibold hover:text-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black rounded py-2"
                     aria-label="Ir a la sección de contacto"
                     tabIndex={0}
                   >
-                    Contactos
+                    {t("navbar.contact")}
                   </button>
                 </li>
               </ul>
+
+              {/* Selector de idiomas para móvil */}
+              <div className="px-6 py-4 border-t border-white/10">
+                <p className="text-white/70 text-sm mb-4 font-medium">Idioma / Language</p>
+                <div className="flex items-center space-x-3">
+                  {Object.values(languages).map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setIsOpen(false);
+                      }}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        currentLang === lang.code
+                          ? 'ring-2 ring-purple-500 shadow-lg shadow-purple-500/30'
+                          : 'hover:ring-2 hover:ring-white/30'
+                      }`}
+                      title={lang.name}
+                    >
+                      <Image
+                        src={lang.image}
+                        alt={lang.name}
+                        width={36}
+                        height={36}
+                        className="rounded-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Menú desktop normal */}
         <div
-          className={`items-center justify-between hidden md:flex md:w-auto md:order-1`}
+          className={`items-center justify-between hidden lg:flex lg:w-auto lg:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 md:flex-row md:mt-0 z-50">
+            <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:space-x-8 lg:flex-row lg:mt-0 z-50">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href, link.isRoute)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                  className="block py-2 px-3 rounded-sm lg:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                   aria-label={`Navegar a ${link.label}`}
                   tabIndex={0}
                 >
@@ -266,69 +312,21 @@ function Navbar2() {
               </li>
             ))}
 
-            <li className="relative">
-              <div
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
-                className="relative"
-              >
-                <button
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
-                  aria-label="Ver trabajos realizados"
-                  aria-expanded={isDropdownOpen}
-                  tabIndex={0}
-                >
-                  Trabajos ▾
-                </button>
-                <div
-                  className={`absolute left-0 mt-1 bg-[#673372a8] shadow-md rounded-md overflow-hidden w-48 text-white z-50 transition-all duration-300 ${
-                    isDropdownOpen ? "block" : "hidden"
-                  }`}
-                  role="menu"
-                  aria-hidden={!isDropdownOpen}
-                >
-                  <button
-                    onClick={() => {
-                      setIsDropdownOpen(false);
-                      router.push("/desarrolloweb?#trabajos");
-                    }}
-                    className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-                    aria-label="Ver trabajos de desarrollo web"
-                    tabIndex={isDropdownOpen ? 0 : -1}
-                    role="menuitem"
-                  >
-                    Trabajos de Desarrollo
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsDropdownOpen(false);
-                      router.push("/graphic");
-                    }}
-                    className="block px-4 py-2 hover:bg-[#36203a] w-full text-left transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-                    aria-label="Ver trabajos de diseño gráfico"
-                    tabIndex={isDropdownOpen ? 0 : -1}
-                    role="menuitem"
-                  >
-                    Trabajos de Diseño
-                  </button>
-                </div>
-              </div>
-            </li>
+
 
             <li>
               <button
                 onClick={() => handleLinkClick("#contacto", false)}
-                className="block py-2 px-3 rounded-sm md:p-0 text-white hover:text-[#673372a8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                className="block py-2 px-3 rounded-sm lg:p-0 text-white hover:border-b-2 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                 aria-label="Ir a la sección de contacto"
                 tabIndex={0}
               >
-                Contactos
+                {isLoaded ? t("navbar.contact") : "Escribinos"}
               </button>
             </li>
           </ul>
         </div>
-     
+      </div>
 
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">

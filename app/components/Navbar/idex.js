@@ -82,7 +82,7 @@ function Navbar2() {
     { href: "#equipo", label: t("navbar.agency") },
     { href: "#branding", label: t("navbar.branding") },
     { href: "#desarrollo", label: t("navbar.webDevelopment"), isRoute: true },
-    { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
+   // { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
     { href: "#diseño", label: t("navbar.graphicDesign"), isRoute: true },
   ];
 
