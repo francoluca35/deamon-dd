@@ -83,60 +83,62 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   
-  // Webpack optimizations ULTRA agresivas para móvil
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      // Optimizaciones ultra agresivas
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        minSize: 5000,
-        maxSize: 50000,
-        cacheGroups: {
-          react: {
-            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-            name: 'react',
-            chunks: 'all',
-            priority: 30,
-            maxSize: 30000,
-          },
-          framer: {
-            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-            name: 'framer',
-            chunks: 'all',
-            priority: 25,
-            maxSize: 20000,
-          },
-          icons: {
-            test: /[\\/]node_modules[\\/]react-icons[\\/]/,
-            name: 'icons',
-            chunks: 'all',
-            priority: 20,
-            maxSize: 15000,
-          },
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 15,
-            maxSize: 40000,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 10,
-            reuseExistingChunk: true,
-            maxSize: 25000,
-          },
-        },
-      };
-      
-      // Eliminar código no utilizado más agresivamente
-      config.optimization.usedExports = true;
-      config.optimization.sideEffects = false;
-    }
-    return config;
-  },
+  // Configuración de Turbopack (Next.js 16+ usa Turbopack por defecto)
+  // Turbopack maneja automáticamente las optimizaciones de código splitting
+  turbopack: {},
+  
+  // Webpack config (solo se usa si se deshabilita Turbopack explícitamente)
+  // En Next.js 16, Turbopack es más eficiente y maneja estas optimizaciones automáticamente
+  // webpack: (config, { dev, isServer }) => {
+  //   if (!dev && !isServer) {
+  //     config.optimization.splitChunks = {
+  //       chunks: 'all',
+  //       minSize: 5000,
+  //       maxSize: 50000,
+  //       cacheGroups: {
+  //         react: {
+  //           test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+  //           name: 'react',
+  //           chunks: 'all',
+  //           priority: 30,
+  //           maxSize: 30000,
+  //         },
+  //         framer: {
+  //           test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+  //           name: 'framer',
+  //           chunks: 'all',
+  //           priority: 25,
+  //           maxSize: 20000,
+  //         },
+  //         icons: {
+  //           test: /[\\/]node_modules[\\/]react-icons[\\/]/,
+  //           name: 'icons',
+  //           chunks: 'all',
+  //           priority: 20,
+  //           maxSize: 15000,
+  //         },
+  //         vendor: {
+  //           test: /[\\/]node_modules[\\/]/,
+  //           name: 'vendors',
+  //           chunks: 'all',
+  //           priority: 15,
+  //           maxSize: 40000,
+  //         },
+  //         common: {
+  //           name: 'common',
+  //           minChunks: 2,
+  //           chunks: 'all',
+  //           priority: 10,
+  //           reuseExistingChunk: true,
+  //           maxSize: 25000,
+  //         },
+  //       },
+  //     };
+  //     config.optimization.usedExports = true;
+  //     config.optimization.sideEffects = false;
+  //   }
+  //   return config;
+  // },
 };
 
 export default nextConfig;
