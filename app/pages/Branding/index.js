@@ -120,9 +120,9 @@ export default function BrandingSection() {
           </div>
           
           {/* Descripción */}
-          <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
+          {/* <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
             {isLoaded ? t("branding.description") : "No se trata sólo de un logo, una tipografía o una paleta de colores atractiva. Creamos marcas auténticas y alineadas con la esencia de tu negocio, asegurando que se destaquen en un mercado competitivo y construyan una presencia memorable. Diseñamos identidades visuales estratégicas, no solo para generar impacto, sino para acompañar el crecimiento y consolidar una presencia memorable que represente tu cultura y valores."}
-          </p>
+          </p> */}
 
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4 mb-14">
