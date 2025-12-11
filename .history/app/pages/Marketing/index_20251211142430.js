@@ -3,17 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "../../lib/i18n";
-import { useState, useEffect } from "react";
 
 const Marketing = () => {
   const router = useRouter();
-  const { t, isLoaded, currentLang } = useTranslation();
-  const [renderKey, setRenderKey] = useState(0);
-  
-  // Forzar re-render cuando cambia el idioma
-  useEffect(() => {
-    setRenderKey(prev => prev + 1);
-  }, [currentLang]);
+  const { t, currentLang } = useTranslation();
 
   const handleWhatsApp = () => {
     const message = "Hola! Me interesa conocer más sobre Growth Marketing. ¿Podemos agendar una llamada?";
@@ -26,7 +19,7 @@ const Marketing = () => {
   };
 
   return (
-    <div id="marketing" key={`${currentLang}-${renderKey}`} className="min-h-screen bg-neutral-950 text-white relative">
+    <div id="marketing" className="min-h-screen bg-neutral-950 text-white relative">
 
 
       {/* Hero Section */}
@@ -34,26 +27,26 @@ const Marketing = () => {
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-lg overflow-hidden hidden sm:block">
             <Image
-              src="/assets/Logo-equipo-B.avif"
+              src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png"
               alt="Logo Deamon DD"
               width={48}
               height={48}
               className="object-cover"
             />
           </div>
-          <h1 className="text-5xl font-extrabold">Deamon DD & +LevelUP Marketing</h1>
+          <h1 className="text-5xl font-extrabold">Deamon DD Marketing</h1>
         </div>
 
         <h2 className="text-lg font-semibold text-white/90 mb-6">
-          {isLoaded ? t("marketing.subtitle") : "El éxito es el resultado de decisiones estratégicas, y aún mejor si son predecibles."}
+          {t("marketing.subtitle")}
         </h2>
 
         <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
-          {isLoaded ? t("marketing.description1") : "Diseñamos estrategias de Deamon DD & +LevelUP Marketing aprovechando todas las herramientas y medios digitales disponibles, con medición precisa y optimización de la inversión en tiempo real mediante inteligencia artificial y un equipo altamente capacitado. Analizamos cada activo de cada campaña con exactitud para maximizar el impacto de la inversión."}
+          {t("marketing.description1")}
         </p>
 
         <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
-          {isLoaded ? t("marketing.description2") : "Nuestro enfoque está orientado a hacer crecer empresas de forma sostenible, multiplicar su retorno de inversión y alcanzar objetivos comerciales a corto, mediano y largo plazo."}
+          {t("marketing.description2")}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-14">
@@ -61,7 +54,7 @@ const Marketing = () => {
             onClick={handleWhatsApp}
             className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
           >
-            {isLoaded ? t("marketing.scheduleCall") : "Agendá una llamada"}
+            {t("marketing.scheduleCall")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -71,7 +64,7 @@ const Marketing = () => {
             onClick={handleConoceAgencia}
             className="border border-white/30 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
           >
-            {isLoaded ? t("marketing.knowAgency") : "Conocé la agencia"}
+            {t("marketing.knowAgency")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
@@ -82,7 +75,7 @@ const Marketing = () => {
       {/* Case Studies Section */}
       <div className="relative px-8 pb-24 z-10">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold mb-8">{isLoaded ? t("marketing.caseStudiesTitle") : "A continuación explora algunos casos de estudio de Deamon DD & +LevelUP Marketing:"}</h3>
+          <h3 className="text-2xl font-bold mb-8">{t("marketing.caseStudiesTitle")}</h3>
 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -100,7 +93,7 @@ const Marketing = () => {
               <div className="relative aspect-[3/4]">
                 {/* Imagen que ocupa toda la tarjeta */}
                 <Image
-                  src="/assets/marketing/arquimec.jpg"
+                  src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec.jpg"
                   alt="Arquimec"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -113,7 +106,7 @@ const Marketing = () => {
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
                   <div className="w-16 h-16 bg-black/100 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
                     <Image
-                      src="/assets/marketing/arquimec-logo.webp"
+                      src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/marketing/arquimec-logo.png"
                       alt="Arquimec Logo"
                       width={100}
                       height={100}
@@ -122,20 +115,20 @@ const Marketing = () => {
                   </div>
                 </div>
 
-                {/* Tags en la parte media */}
-                <div className="absolute top-20 left-4 flex flex-wrap gap-2">
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Pauta</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Diseño UX/UI</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Desarrollo Web</span>
+                {/* Tags en la parte media - centrados */}
+                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2 justify-center">
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.advertising")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.uxui")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.webDev")}</span>
                 </div>
 
                 {/* Contenido de texto en la parte inferior */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h4 className="text-white text-xl font-bold mb-2">
-                    {isLoaded ? t("marketing.caseStudies.arquimec.title") : "Caso de éxito | Estudio Arquimec"}
+                    {t("marketing.caseStudies.arquimec.title")}
                   </h4>
                   <p className="text-white/70 text-sm leading-relaxed">
-                    {isLoaded ? t("marketing.caseStudies.arquimec.description") : "Arquimec nos brindo la oportunidad de trabajar en su proyecto de crecimiento digital, con el objetivo de posicionarse en el mercado  para una llegada a nivel nacional."}
+                    {t("marketing.caseStudies.arquimec.description")}
                   </p>
                 </div>
               </div>
@@ -172,20 +165,20 @@ const Marketing = () => {
                     </div>
                 </div>
 
-                {/* Tags en la parte media */}
-                <div className="absolute top-20 left-4 flex flex-wrap gap-2">
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Pauta</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Diseño UX/UI</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Desarrollo Web</span>
+                {/* Tags en la parte media - centrados */}
+                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2 justify-center">
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.advertising")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.uxui")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.webDev")}</span>
                 </div>
 
                 {/* Contenido de texto en la parte inferior */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h4 className="text-white text-xl font-bold mb-2">
-                    {isLoaded ? t("marketing.caseStudies.zarahCarter.title") : "Caso de éxito | Zarah Carter"}
+                    {t("marketing.caseStudies.zarahCarter.title")}
                   </h4>
                   <p className="text-white/70 text-sm leading-relaxed">
-                    {isLoaded ? t("marketing.caseStudies.zarahCarter.description") : "Zarah Carter, óptica en Costa Rica, pasó de 30 a 800 leads mensuales con alta conversión, gracias a la optimización de procesos de venta y estrategias innovadoras de gran impacto."}
+                    {t("marketing.caseStudies.zarahCarter.description")}
                   </p>
                 </div>
               </div>
@@ -222,20 +215,20 @@ const Marketing = () => {
                     </div>
                 </div>
 
-                {/* Tags en la parte media */}
-                <div className="absolute top-20 left-4 flex flex-wrap gap-2">
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Pauta</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Diseño UX/UI</span>
-                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">Desarrollo Web</span>
+                {/* Tags en la parte media - centrados */}
+                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2 justify-center">
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.advertising")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.uxui")}</span>
+                  <span className="bg-gray-800/90 text-white px-3 py-1 rounded-full text-xs">{t("marketing.tags.webDev")}</span>
                 </div>
 
                 {/* Contenido de texto en la parte inferior */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h4 className="text-white text-xl font-bold mb-2">
-                    {isLoaded ? t("marketing.caseStudies.entreNous.title") : "Caso de éxito | Entre Nous"}
+                    {t("marketing.caseStudies.entreNous.title")}
                   </h4>
                   <p className="text-white/70 text-sm leading-relaxed">
-                    {isLoaded ? t("marketing.caseStudies.entreNous.description") : "Hemos acompañado a la cadena de restaurantes Entre Nous en su transformación digital, potenciando su imagen y comunicación con el objetivo de atraer a más comensales."}
+                    {t("marketing.caseStudies.entreNous.description")}
                   </p>
                 </div>
               </div>

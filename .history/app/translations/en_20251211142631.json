@@ -38,7 +38,17 @@
     "description": "It's not just about a logo, typography or an attractive color palette. We create authentic brands aligned with the essence of your business, ensuring they stand out in a competitive market and build a memorable presence. We design strategic visual identities, not only to generate impact, but to accompany growth and consolidate a memorable presence that represents your culture and values.",
     "scheduleCall": "Schedule a call",
     "knowAgency": "Get to know the agency",
-    "projectsTitle": "Below, explore some developed branding projects:"
+    "projectsTitle": "Below, explore some developed branding projects:",
+    "projects": {
+      "asfixia": "Visual identity programs",
+      "iruma": "Brand #1 in Argentina for Chinese food",
+      "bioma": "Electronic party developer",
+      "citadino": "visual identity design",
+      "bicicoffee": "Visual identity manual",
+      "moreProjects": "Explore all my projects on GitHub",
+      "moreProjectsTitle": "MORE PROJECTS",
+      "seeMore": "SEE MORE"
+    }
   },
   "development": {
     "title": "Web Development",
@@ -48,16 +58,45 @@
     "projectsTitle": "Below, explore some developed web projects:",
     "projectsAppsTitle": "Below, explore some developed app projects:",
     "webTab": "Web",
-    "appsTab": "Apps"
+    "appsTab": "Apps",
+    "projects": {
+      "jlaTecnicos": "Industrial Website",
+      "maurelloTransportes": "Corporate landing page for industrial machinery",
+      "carusoFC": "Page for booking football fields",
+      "arquimec": "Architecture studio",
+      "quickSolution": "Multi-app for restaurants",
+      "jlaApp": "Business task management",
+      "maurelloApp": "App for booking transport tickets",
+      "peruMarApp": "Custom app for PeruMar restaurant"
+    }
   },
   "marketing": {
     "title": "Digital Marketing",
     "subtitle": "Success is the result of strategic decisions, and even better if they are predictable.",
-    "description1": "We design Deamon DD & +LevelUP Marketing strategies leveraging all available digital tools and media, with precise measurement and real-time investment optimization through artificial intelligence and a highly trained team. We analyze each asset of each campaign with accuracy to maximize investment impact.",
+    "description1": "We design Deamon DD Marketing strategies leveraging all available digital tools and media, with precise measurement and real-time investment optimization through artificial intelligence and a highly trained team. We analyze each asset of each campaign with accuracy to maximize investment impact.",
     "description2": "Our approach is oriented towards growing companies sustainably, multiplying their return on investment and achieving commercial objectives in the short, medium and long term.",
     "scheduleCall": "Schedule a call",
     "knowAgency": "Get to know the agency",
-    "caseStudiesTitle": "Next, explore some Deamon DD & +LevelUP Marketing case studies:"
+    "caseStudiesTitle": "Next, explore some Deamon DD Marketing case studies:",
+    "tags": {
+      "advertising": "Advertising",
+      "uxui": "UX/UI Design", 
+      "webDev": "Web Development"
+    },
+    "caseStudies": {
+      "arquimec": {
+        "title": "Success case | Arquimec Studio",
+        "description": "Arquimec gave us the opportunity to work on their digital growth project, with the goal of positioning themselves in the market for a national reach."
+      },
+      "zarahCarter": {
+        "title": "Success case | Zarah Carter",
+        "description": "Zarah Carter, an optician in Costa Rica, went from 30 to 800 monthly leads with high conversion, thanks to sales process optimization and innovative high-impact strategies."
+      },
+      "entreNous": {
+        "title": "Success case | Entre Nous",
+        "description": "We have accompanied the Entre Nous restaurant chain in its digital transformation, enhancing its image and communication with the goal of attracting more diners."
+      }
+    }
   },
   "design": {
     "title": "Graphic Design",
@@ -66,7 +105,14 @@
     "description2": "We work with brands of all sizes to create designs that not only look incredible, but also effectively communicate your company's message and generate lasting emotional connections with your audience.",
     "scheduleCall": "Schedule a call",
     "seeProjects": "See our projects",
-    "projectsTitle": "Explore some of our graphic design projects:"
+    "projectsTitle": "Explore some of our graphic design projects:",
+    "projects": {
+      "asfixia": "Complete visual identity development for urban clothing brand, including logo, color palette and applications on different media.",
+      "bicicoffe": "Corporate identity design for bicycle company, including logo, promotional materials and packaging design.",
+      "bioma": "Visual identity for eco-friendly products company, focused on sustainability and environmental care.",
+      "citadino": "Corporate identity for urban services company, with focus on modernity and efficiency.",
+      "iruma": "Brand design for technology company, combining innovation and professionalism."
+    }
   },
   "agency": {
     "title": "We are a digital agency committed to your success",
@@ -115,16 +161,31 @@
   },
   "team": {
     "subtitle": "Our team",
-    "title1": "We accompany you to take",
-    "title2": "your brand to the next level",
+    "title": "The people in charge of taking your project to the next level",
     "roles": {
-      "director": "Director & Full-Stack Developer",
+      "director": "CEO & Full-Stack Developer",
       "marketing": "Digital Marketing & Branding Strategist",
       "designer": "Graphic Designer"
     }
   },
+  "footer": {
+    "webDevelopment": "Web Development",
+    "graphicDesign": "Graphic Design",
+    "ourTeam": "Our Team",
+    "developmentServices": "Development Services",
+    "ourWork": "Our Work",
+    "contact": "Contact",
+    "logoDesign": "Logo Design",
+    "vehicleDesign": "Competition Vehicle Design",
+    "uiuxDesign": "UI/UX Design",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "socialMedia": "Social Media",
+    "createdBy": "Created by"
+  },
   "common": {
     "viewProject": "View project",
+    "viewWork": "View work",
     "loading": "Loading...",
     "error": "Error",
     "success": "Success"

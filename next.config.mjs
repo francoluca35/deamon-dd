@@ -4,12 +4,12 @@ const nextConfig = {
   trailingSlash: false,
   
   // Optimizaciones de rendimiento críticas - Ultra agresivas
-  swcMinify: true,
+  // swcMinify: removido - SWC minification es el default en Next.js 13+
   poweredByHeader: false,
   generateEtags: false,
   compress: true,
   productionBrowserSourceMaps: false,
-  optimizeFonts: true,
+  // optimizeFonts: removido - la optimización de fuentes es automática en Next.js 13+
   
   // Optimización de imágenes mejorada para móvil
   images: {
@@ -77,9 +77,6 @@ const nextConfig = {
       },
     ];
   },
-  
-  // Compresión y optimizaciones adicionales
-  compress: true,
   
   // Optimizaciones de rendimiento
   experimental: {

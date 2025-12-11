@@ -34,7 +34,7 @@ const Marketing = () => {
               className="object-cover"
             />
           </div>
-          <h1 className="text-5xl font-extrabold">Deamon DD & +LevelUP Marketing</h1>
+          <h1 className="text-5xl font-extrabold">Deamon DD Marketing</h1>
         </div>
 
         <h2 className="text-lg font-semibold text-white/90 mb-6">

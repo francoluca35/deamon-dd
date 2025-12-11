@@ -38,7 +38,17 @@
     "description": "No se trata sólo de un logo, una tipografía o una paleta de colores atractiva. Creamos marcas auténticas y alineadas con la esencia de tu negocio, asegurando que se destaquen en un mercado competitivo y construyan una presencia memorable. Diseñamos identidades visuales estratégicas, no solo para generar impacto, sino para acompañar el crecimiento y consolidar una presencia memorable que represente tu cultura y valores.",
     "scheduleCall": "Agendá una llamada",
     "knowAgency": "Conocé la agencia",
-    "projectsTitle": "A continuación explora algunos proyectos de branding desarrollados:"
+    "projectsTitle": "A continuación explora algunos proyectos de branding desarrollados:",
+    "projects": {
+      "asfixia": "Programas de identidad visual",
+      "iruma": "Marca N°1 en Argentina de comida china",
+      "bioma": "Desarrolladora de fiestas electronicas",
+      "citadino": "diseño de identidad visual",
+      "bicicoffee": "Manual de identidad visual",
+      "moreProjects": "Explora todos mis proyectos en GitHub",
+      "moreProjectsTitle": "MAS PROYECTOS",
+      "seeMore": "VER MAS"
+    }
   },
   "development": {
     "title": "Desarrollo Web",
@@ -48,16 +58,45 @@
     "projectsTitle": "A continuación explora algunos proyectos web desarrollados:",
     "projectsAppsTitle": "A continuación explora algunos proyectos de apps desarrollados:",
     "webTab": "Web",
-    "appsTab": "Apps"
+    "appsTab": "Apps",
+    "projects": {
+      "jlaTecnicos": "Sitio Web Industrial",
+      "maurelloTransportes": "Landing para compra de pasajes de transporte",
+      "carusoFC": "Pagina para reservar canchas de futbol",
+      "arquimec": "Estudio de arquitectura",
+      "quickSolution": "Multiapp para restaurantes",
+      "jlaApp": "Gestión de tareas empresariales",
+      "maurelloApp": "App para reservar pasajes de transporte",
+      "peruMarApp": "App personalizada para el restaurante PerúMar"
+    }
   },
   "marketing": {
     "title": "Marketing Digital",
     "subtitle": "El éxito es el resultado de decisiones estratégicas, y aún mejor si son predecibles.",
-    "description1": "Diseñamos estrategias de Deamon DD & +LevelUP Marketing aprovechando todas las herramientas y medios digitales disponibles, con medición precisa y optimización de la inversión en tiempo real mediante inteligencia artificial y un equipo altamente capacitado. Analizamos cada activo de cada campaña con exactitud para maximizar el impacto de la inversión.",
+    "description1": "Diseñamos estrategias de Deamon DD Marketing aprovechando todas las herramientas y medios digitales disponibles, con medición precisa y optimización de la inversión en tiempo real mediante inteligencia artificial y un equipo altamente capacitado. Analizamos cada activo de cada campaña con exactitud para maximizar el impacto de la inversión.",
     "description2": "Nuestro enfoque está orientado a hacer crecer empresas de forma sostenible, multiplicar su retorno de inversión y alcanzar objetivos comerciales a corto, mediano y largo plazo.",
     "scheduleCall": "Agendá una llamada",
     "knowAgency": "Conocé la agencia",
-    "caseStudiesTitle": "A continuación explora algunos casos de estudio de Deamon DD & +LevelUP Marketing:"
+    "caseStudiesTitle": "A continuación explora algunos casos de estudio de Deamon DD Marketing:",
+    "tags": {
+      "advertising": "Pauta",
+      "uxui": "Diseño UX/UI", 
+      "webDev": "Desarrollo Web"
+    },
+    "caseStudies": {
+      "arquimec": {
+        "title": "Caso de éxito | Estudio Arquimec",
+        "description": "Arquimec nos brindo la oportunidad de trabajar en su proyecto de crecimiento digital, con el objetivo de posicionarse en el mercado  para una llegada a nivel nacional."
+      },
+      "zarahCarter": {
+        "title": "Caso de éxito | Zarah Carter",
+        "description": "Zarah Carter, óptica en Costa Rica, pasó de 30 a 800 leads mensuales con alta conversión, gracias a la optimización de procesos de venta y estrategias innovadoras de gran impacto."
+      },
+      "entreNous": {
+        "title": "Caso de éxito | Entre Nous",
+        "description": "Hemos acompañado a la cadena de restaurantes Entre Nous en su transformación digital, potenciando su imagen y comunicación con el objetivo de atraer a más comensales."
+      }
+    }
   },
   "design": {
     "title": "Diseño Gráfico",
@@ -66,7 +105,14 @@
     "description2": "Trabajamos con marcas de todos los tamaños para crear diseños que no solo se ven increíbles, sino que también comunican efectivamente el mensaje de tu empresa y generan conexiones emocionales duraderas con tu audiencia.",
     "scheduleCall": "Agendá una llamada",
     "seeProjects": "Ver nuestros proyectos",
-    "projectsTitle": "Explora algunos de nuestros proyectos de diseño gráfico:"
+    "projectsTitle": "Explora algunos de nuestros proyectos de diseño gráfico:",
+    "projects": {
+      "asfixia": "Desarrollo completo de identidad visual para marca de ropa urbana, incluyendo logo, paleta de colores y aplicaciones en diferentes soportes.",
+      "bicicoffe": "Diseño de identidad corporativa para empresa de bicicletas, incluyendo logo, material promocional y diseño de packaging.",
+      "bioma": "Identidad visual para empresa de productos ecológicos, enfocada en la sostenibilidad y el cuidado del medio ambiente.",
+      "citadino": "Identidad corporativa para empresa de servicios urbanos, con enfoque en la modernidad y eficiencia.",
+      "iruma": "Diseño de marca para empresa tecnológica, combinando innovación y profesionalismo."
+    }
   },
   "agency": {
     "title": "Somos una agencia digital comprometida con tu éxito",
@@ -115,16 +161,31 @@
   },
   "team": {
     "subtitle": "Nuestro equipo",
-    "title1": "Te acompañamos para llevar",
-    "title2": "tu marca al siguiente nivel",
+    "title": "Las personas a cargo de llevar tu proyecto al siguiente nivel",
     "roles": {
       "director": "Director & Full-Stack Developer",
       "marketing": "Estratega de Marketing & Branding Digital",
       "designer": "Diseñador Gráfico"
     }
   },
+  "footer": {
+    "webDevelopment": "Desarrollo Web",
+    "graphicDesign": "Diseño Gráfico",
+    "ourTeam": "Nuestro Equipo",
+    "developmentServices": "Servicios de Desarrollo",
+    "ourWork": "Nuestros Trabajos",
+    "contact": "Contacto",
+    "logoDesign": "Diseño de logos",
+    "vehicleDesign": "Diseño vehicular de competición",
+    "uiuxDesign": "Diseño UI/UX",
+    "quickLinks": "Enlaces Rápidos",
+    "home": "Inicio",
+    "socialMedia": "Redes Sociales",
+    "createdBy": "Creado por"
+  },
   "common": {
     "viewProject": "Ver proyecto",
+    "viewWork": "Ver trabajo",
     "loading": "Cargando...",
     "error": "Error",
     "success": "Éxito"
