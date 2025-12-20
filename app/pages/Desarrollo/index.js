@@ -84,11 +84,11 @@ const Desarrollo = () => {
       url: "https://github.com/DeamonDesingDev/jla-app",
       type: "split",
       secondProject: {
-        title: "Maurello App",
+        title: "Reservas App",
         descriptionKey: "development.projects.maurelloApp",
         fallbackDescription: "App para reservar pasajes de transporte",
-        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
-        url: "https://github.com/DeamonDesingDev/maurello-app"
+        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1766243232/Cream_Minimalist_Laptop_Mockup_Promotion_Instagram_Post_efegxp.png",
+        url: "https://github.com/DeamonDesingDev/Transportes-app"
       }
     },
     {

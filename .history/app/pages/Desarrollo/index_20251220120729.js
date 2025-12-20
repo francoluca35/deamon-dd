@@ -2,13 +2,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "../../lib/i18n";
 
 const Desarrollo = () => {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState('web');
-  const { t, isLoaded } = useTranslation();
+  const { t, isLoaded, currentLang } = useTranslation();
+  const [forceRender, setForceRender] = useState(0);
+  
+  // Forzar re-render cuando cambia el idioma
+  useEffect(() => {
+    setForceRender(prev => prev + 1);
+  }, [currentLang]);
 
   const handleWhatsApp = () => {
     const message = "Hola! Me interesa conocer más sobre el desarrollo web. ¿Podemos agendar una llamada?";
@@ -25,27 +31,35 @@ const Desarrollo = () => {
     {
       id: 1,
       title: "JLA Tecnico",
-      description: "Web Site Industrial",
-      image: "/assets/Proyectos/tec.png",
+      descriptionKey: "development.projects.jlaTecnicos",
+      fallbackDescription: "Web Site Industrial",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
+      url: "https://jlatecnicos.com",
       type: "single"
     },
     {
       id: 2,
-      title: "Maurello Transportes",
-      description: "Landing para compra de pasajes de transporte",
-      image: "/assets/Proyectos/maurello1.png",
+      title: "JCP Maquinarias Industriales",
+      descriptionKey: "development.projects.maurelloTransportes",
+      fallbackDescription: "Landing empresarial de maquinaria industrial",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761068998/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_evwsep.png",
+      url: "https://jcp-web-site.vercel.app",
       type: "split",
       secondProject: {
         title: "Caruso FC",
-        description: "Pagina para reservar canchas de futbol",
-        image: "/assets/Proyectos/carusoweb1.png"
+        descriptionKey: "development.projects.carusoFC",
+        fallbackDescription: "Pagina para reservar canchas de futbol",
+        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
+        url: "https://caruso-app.vercel.app"
       }
     },
     {
       id: 3,
       title: "Arquimec",
-      description: "Estudio de arquitectura",
-      image: "/assets/Proyectos/arqui2.png",
+      descriptionKey: "development.projects.arquimec",
+      fallbackDescription: "Estudio de arquitectura",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/arqui2.jpg",
+      url: "https://estudio-arquimec.vercel.app",
       type: "single"
     }
   ];
@@ -55,27 +69,35 @@ const Desarrollo = () => {
     {
       id: 1,
       title: "QuickSolution",
-      description: "Multiapp para restaurantes",
-      image: "/assets/Proyectos/quick2.jpg",
+      descriptionKey: "development.projects.quickSolution",
+      fallbackDescription: "Multiapp para restaurantes",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/quick2.jpg",
+      url: "https://comandas-multiples.vercel.app",
       type: "single"
     },
     {
       id: 2,
       title: "JLA App",
-      description: "Gestión de tareas empresariales",
-      image: "/assets/Proyectos/jlaapp2.jpg",
+      descriptionKey: "development.projects.jlaApp",
+      fallbackDescription: "Gestión de tareas empresariales",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/jlaapp2.jpg",
+      url: "https://github.com/DeamonDesingDev/jla-app",
       type: "split",
       secondProject: {
         title: "Maurello App",
-        description: "App para reservar pasajes de transporte",
-        image: "/assets/Proyectos/maureloapp.jpg"
+        descriptionKey: "development.projects.maurelloApp",
+        fallbackDescription: "App para reservar pasajes de transporte",
+        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1766243232/Cream_Minimalist_Laptop_Mockup_Promotion_Instagram_Post_efegxp.png",
+        url: "https://github.com/DeamonDesingDev/Transportes-app"
       }
     },
     {
       id: 3,
       title: "PerúMar App",
-      description: "App personalizada para el restaurante PerúMar",
-      image: "/assets/Proyectos/perumarapp.jpg",
+      descriptionKey: "development.projects.peruMarApp",
+      fallbackDescription: "App personalizada para el restaurante PerúMar",
+      image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
+      url: "https://github.com/DeamonDesingDev/Perumar-app",
       type: "single"
     }
   ];
@@ -83,7 +105,7 @@ const Desarrollo = () => {
   const currentProjects = selectedCategory === 'web' ? webProjects : appProjects;
 
   return (
-    <div className="bg-neutral-950 text-white relative">
+    <div key={`${currentLang}-${forceRender}`} className="bg-neutral-950 text-white relative">
 
       
       {/* Hero */}
@@ -91,7 +113,7 @@ const Desarrollo = () => {
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 rounded-lg overflow-hidden hidden sm:block">
             <Image
-              src="/assets/Logo-equipo-B.avif"
+              src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png"
               alt="Logo Deamon DD"
               width={48}
               height={48}
@@ -110,7 +132,7 @@ const Desarrollo = () => {
             onClick={handleWhatsApp}
             className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
           >
-            {t("development.scheduleCall")}
+            {isLoaded ? t("development.scheduleCall") : "Agendá una llamada"}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
@@ -120,7 +142,7 @@ const Desarrollo = () => {
             onClick={handleVerMas}
             className="border border-white/30 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
           >
-            {t("development.seeMore")}
+            {isLoaded ? t("development.seeMore") : "Ver mas"}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -142,7 +164,7 @@ const Desarrollo = () => {
                       : 'text-white/70 hover:text-white hover:bg-neutral-700'
                   }`}
                 >
-                  {t("development.webTab")}
+                  {isLoaded ? t("development.webTab") : "Web"}
                 </button>
                 <button
                   onClick={() => setSelectedCategory('apps')}
@@ -152,13 +174,16 @@ const Desarrollo = () => {
                       : 'text-white/70 hover:text-white hover:bg-neutral-700'
                   }`}
                 >
-                  {t("development.appsTab")}
+                  {isLoaded ? t("development.appsTab") : "Apps"}
                 </button>
               </div>
             </div>
 
             <h3 className="text-2xl font-bold mb-8 text-center">
-              {selectedCategory === 'web' ? t("development.projectsTitle") : t("development.projectsAppsTitle")}
+              {selectedCategory === 'web' 
+                ? (isLoaded ? t("development.projectsTitle") : "A continuación explora algunos proyectos web desarrollados:")
+                : (isLoaded ? t("development.projectsAppsTitle") : "A continuación explora algunos proyectos de apps desarrollados:")
+              }
             </h3>
 
           <motion.div
@@ -191,10 +216,17 @@ const Desarrollo = () => {
 
                     <div className="absolute bottom-6 left-6 right-6">
                       <h4 className="text-white text-2xl font-bold mb-1">{project.title}</h4>
-                      <p className="text-white/70 text-sm mb-3">{project.description}</p>
-                      <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200">
-                        {t("common.viewProject")}
-                      </button>
+                      <p className="text-white/70 text-sm mb-3">
+                        {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
+                      </p>
+                      <a 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all duration-200 inline-block"
+                      >
+                        {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                      </a>
                     </div>
                   </div>
                 ) : (
@@ -211,10 +243,17 @@ const Desarrollo = () => {
                       <div className="absolute inset-0 bg-black/40"></div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <h4 className="text-white text-lg font-bold mb-1">{project.title}</h4>
-                        <p className="text-white/70 text-xs mb-2">{project.description}</p>
-                        <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          {t("common.viewProject")}
-                        </button>
+                        <p className="text-white/70 text-xs mb-2">
+                          {isLoaded ? t(project.descriptionKey) : project.fallbackDescription}
+                        </p>
+                        <a 
+                          href={project.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200 inline-block"
+                        >
+                          {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                        </a>
                       </div>
                     </div>
                     
@@ -232,10 +271,17 @@ const Desarrollo = () => {
                       <div className="absolute inset-0 bg-black/40"></div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <h4 className="text-white text-lg font-bold mb-1">{project.secondProject.title}</h4>
-                        <p className="text-white/70 text-xs mb-2">{project.secondProject.description}</p>
-                        <button className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200">
-                          {t("common.viewProject")}
-                        </button>
+                        <p className="text-white/70 text-xs mb-2">
+                          {isLoaded ? t(project.secondProject.descriptionKey) : project.secondProject.fallbackDescription}
+                        </p>
+                        <a 
+                          href={project.secondProject.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="border border-white/30 text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all duration-200 inline-block"
+                        >
+                          {isLoaded ? t("common.viewProject") : "Ver proyecto"}
+                        </a>
                       </div>
                     </div>
                   </div>
