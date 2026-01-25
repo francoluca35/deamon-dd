@@ -9,8 +9,9 @@ const Marketing = () => {
   const { t, currentLang } = useTranslation();
 
   const handleWhatsApp = () => {
-    const message = "Hola! Me interesa conocer más sobre Growth Marketing. ¿Podemos agendar una llamada?";
-    const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(message)}`;
+    const phone = "+541131199882";
+    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

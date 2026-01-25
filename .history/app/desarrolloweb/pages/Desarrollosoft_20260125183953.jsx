@@ -157,7 +157,8 @@ const projects = [
     repo: "https://github.com/francoluca35/web-site-jla",
     galeria: [
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
-     
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
     ],
   },
@@ -169,10 +170,10 @@ const projects = [
     image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
     repo: "https://github.com/francoluca35/comandas",
     galeria: [
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
-
-     
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
     ],
   },
   
@@ -264,8 +265,8 @@ export default function TrabajosSection() {
 
       {modalGaleria && (
         <GaleriaModal
-          imagenes={imagenesGaleria}
-          alCerrar={() => setImagenesGaleria(null)}
+          images={modalGaleria}
+          onClose={() => setModalGaleria(null)}
         />
       )}
     </div>

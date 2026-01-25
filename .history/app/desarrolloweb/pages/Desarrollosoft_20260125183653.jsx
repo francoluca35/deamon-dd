@@ -36,17 +36,11 @@ function GaleriaModal({ images, onClose }) {
   };
 
   return (
-    <div 
-      className="fixed inset-0 z-50 bg-black bg-opacity-80 flex justify-center items-center p-4"
-      onClick={onClose}
-    >
-      <div 
-        className="bg-black/40 p-6 rounded-xl max-w-4xl w-full relative shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex justify-center items-center p-4">
+      <div className="bg-black/40 p-6 rounded-xl max-w-4xl w-full relative shadow-xl">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white hover:text-gray-400 text-2xl font-black z-10"
+          className="absolute top-4 right-4 text-white hover:text-gray-400 text-2xl font-black"
         >
           X
         </button>
@@ -54,7 +48,7 @@ function GaleriaModal({ images, onClose }) {
         <div className="relative flex justify-center items-center">
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow hover:bg-gray-100 z-10"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow hover:bg-gray-100"
           >
             <FiChevronLeft size={20} />
           </button>
@@ -69,7 +63,7 @@ function GaleriaModal({ images, onClose }) {
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow hover:bg-gray-100 z-10"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow hover:bg-gray-100"
           >
             <FiChevronRight size={20} />
           </button>
@@ -157,7 +151,8 @@ const projects = [
     repo: "https://github.com/francoluca35/web-site-jla",
     galeria: [
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
-     
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/tec.jpg",
     ],
   },
@@ -169,10 +164,10 @@ const projects = [
     image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
     repo: "https://github.com/francoluca35/comandas",
     galeria: [
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/perumarapp.jpg",
-
-     
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/perumar.png",
     ],
   },
   
@@ -181,12 +176,12 @@ const projects = [
     title: "JLA App",
     category: "App Web",
     dominio: "Control de clientes",
-    image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/JLA.jpg",
+    image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/jlaapp2.jpg",
     url: "https://jlatecnicos.online",
     repo: "https://github.com/francoluca35/jla-app",
     galeria: [
- 
-    
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/app-jla.jpg",
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/jlaapp2.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/app-jla.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/jlaapp2.jpg",
     ],
@@ -200,7 +195,7 @@ const projects = [
     url: "https://caruso-app.vercel.app",
     repo: "https://github.com/francoluca35/yael-app/",
     galeria: [
-    
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/yael-app.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
     ],
@@ -213,10 +208,10 @@ const projects = [
     image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/maurello-app.png",
     repo: "https://github.com/francoluca35/appcolectivos",
     galeria: [
-
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/maurello-app.png",
       "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/proyectos/maureloapp.jpg",
-     
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/proyectos/maurello-app.png",
     ],
   },
 ];
@@ -264,8 +259,8 @@ export default function TrabajosSection() {
 
       {modalGaleria && (
         <GaleriaModal
-          imagenes={imagenesGaleria}
-          alCerrar={() => setImagenesGaleria(null)}
+          images={modalGaleria}
+          onClose={() => setModalGaleria(null)}
         />
       )}
     </div>

@@ -19,8 +19,9 @@ const Diseño = () => {
   }, [currentLang]);
 
   const handleWhatsApp = () => {
-    const message = "Hola! Me interesa conocer más sobre Diseño Gráfico. ¿Podemos agendar una llamada?";
-    const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(message)}`;
+    const phone = "+541131199882";
+    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -163,7 +164,7 @@ const Diseño = () => {
             onClick={handleWhatsApp}
             className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
           >
-            {isLoaded ? t("design.scheduleCall") : "Agendá una llamada"}
+            {isLoaded ? t("design.scheduleCall") : "Envíanos un mensaje"}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

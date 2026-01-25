@@ -83,7 +83,7 @@ const Home = memo(function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white text-violet-800 hover:text-white hover:bg-transparent hover:border-2 hover:border-violet-950 border-2 border-transparent font-semibold transition-all duration-200 rounded-lg shadow-lg text-center focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 flex items-center justify-center gap-2 text-base min-w-[180px]"
-            aria-label="Agendar una llamada"
+            aria-label="Envíanos un mensaje"
           >
             {t("development.scheduleCall")}
           </a>

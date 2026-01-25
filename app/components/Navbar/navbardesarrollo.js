@@ -77,7 +77,12 @@ function Navdesarrollo() {
         {/* Menú hamburguesa */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => {
+              const phone = "+541131199882";
+              const message = "Hola me gustaria saber mas sobre los servicios que ofrecen como agencia de desarrollo.";
+              const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+              window.open(whatsappUrl, '_blank');
+            }}
             type="button"
             className="text-white hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-900 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
           >
