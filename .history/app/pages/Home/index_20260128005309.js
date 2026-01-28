@@ -98,47 +98,47 @@ const Home = memo(function Home() {
             {t("branding.knowAgency")}
           </a>
         </div>
-      </div>
 
-      {/* ICONO ANIMADO CON PELOTITA - Posicionado más abajo */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div 
-          className="relative w-8 h-14"
-          style={{
-            animation: 'bounceIcon 2s ease-in-out infinite'
-          }}
-        >
-          {/* Contenedor del icono tipo rectángulo redondeado */}
-          <svg 
-            viewBox="0 0 40 70" 
-            className="w-full h-full"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        {/* ICONO ANIMADO CON PELOTITA */}
+        <div className="mt-8 flex flex-col items-center">
+          <div 
+            className="relative w-12 h-20"
+            style={{
+              animation: 'bounceIcon 2s ease-in-out infinite'
+            }}
           >
-            {/* Rectángulo redondeado (forma de cápsula) */}
-            <rect 
-              x="4" 
-              y="4" 
-              width="32" 
-              height="62" 
-              rx="16" 
-              ry="16" 
-              stroke="#8b5cf6" 
-              strokeWidth="2" 
-              fill="transparent"
-            />
-            {/* Pelotita interior ovalada con animación */}
-            <ellipse 
-              cx="20" 
-              cy="35" 
-              rx="6" 
-              ry="10" 
-              fill="#8b5cf6"
-              style={{
-                animation: 'bounceBall 1.5s ease-in-out infinite'
-              }}
-            />
-          </svg>
+            {/* Contenedor del icono tipo rectángulo redondeado */}
+            <svg 
+              viewBox="0 0 40 70" 
+              className="w-full h-full"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Rectángulo redondeado (forma de cápsula) */}
+              <rect 
+                x="4" 
+                y="4" 
+                width="32" 
+                height="62" 
+                rx="16" 
+                ry="16" 
+                stroke="#8b5cf6" 
+                strokeWidth="2" 
+                fill="transparent"
+              />
+              {/* Pelotita interior ovalada con animación */}
+              <ellipse 
+                cx="20" 
+                cy="35" 
+                rx="6" 
+                ry="10" 
+                fill="#8b5cf6"
+                style={{
+                  animation: 'bounceBall 1.5s ease-in-out infinite'
+                }}
+              />
+            </svg>
+          </div>
         </div>
       </div>
 

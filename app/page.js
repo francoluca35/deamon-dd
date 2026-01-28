@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
 import Navbar2 from "./components/Navbar/idex";
 import Inicio from "./pages/Home";
+import CursorEffect from "./components/CursorEffect";
 import { usePerformanceMonitor } from "./hooks/usePerformance";
 import { useErrorTracking } from "./lib/errorTracking";
 import { LanguageProvider } from "./lib/i18n";
@@ -80,6 +81,7 @@ export default function Home() {
   return (
     <LanguageProvider>
       <div>
+        <CursorEffect />
         <Navbar2 />
         <Inicio />
         
