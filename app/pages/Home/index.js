@@ -100,64 +100,36 @@ const Home = memo(function Home() {
         </div>
       </div>
 
-      {/* ICONO ANIMADO CON PELOTITA - Posicionado más abajo */}
+      {/* ICONO SCROLL INDICATOR - Estilo simple */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <div 
-          className="relative w-8 h-14"
-          style={{
-            animation: 'bounceIcon 2s ease-in-out infinite'
+          className="w-6 h-10 border-2 border-violet-400 rounded-full flex justify-center p-1 cursor-pointer hover:border-violet-300 transition-colors"
+          onClick={() => {
+            const target = document.getElementById("equipo");
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
           }}
         >
-          {/* Contenedor del icono tipo rectángulo redondeado */}
-          <svg 
-            viewBox="0 0 40 70" 
-            className="w-full h-full"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Rectángulo redondeado (forma de cápsula) */}
-            <rect 
-              x="4" 
-              y="4" 
-              width="32" 
-              height="62" 
-              rx="16" 
-              ry="16" 
-              stroke="#8b5cf6" 
-              strokeWidth="2" 
-              fill="transparent"
-            />
-            {/* Pelotita interior ovalada con animación */}
-            <ellipse 
-              cx="20" 
-              cy="35" 
-              rx="6" 
-              ry="10" 
-              fill="#8b5cf6"
-              style={{
-                animation: 'bounceBall 1.5s ease-in-out infinite'
-              }}
-            />
-          </svg>
+          <div 
+            className="w-1.5 h-2.5 bg-violet-400 rounded-full"
+            style={{
+              animation: 'scrollBounce 1.5s ease-in-out infinite'
+            }}
+          />
         </div>
       </div>
 
       {/* Estilos para las animaciones */}
       <style jsx>{`
-        @keyframes bounceIcon {
+        @keyframes scrollBounce {
           0%, 100% {
             transform: translateY(0);
+            opacity: 1;
           }
           50% {
-            transform: translateY(-10px);
-          }
-        }
-        @keyframes bounceBall {
-          0%, 100% {
-            cy: 45;
-          }
-          50% {
-            cy: 35;
+            transform: translateY(12px);
+            opacity: 0.5;
           }
         }
       `}</style>

@@ -6,43 +6,56 @@ import Vision from "./pages/Vision";
 import TrabajosSection from "./pages/Desarrollosoft";
 import Pricing from "./pages/Trabajos";
 import Footer from "./pages/Footer";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Website = () => {
+  const phone = "+541131199882";
+  const message = "Hola, me gustaría conocer más sobre los servicios de desarrollo web de Deamon Estudio.";
+  const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
   return (
-    <div className="text-white">
+    <div className="bg-black text-white">
       <Navdesarrollo />
       
-      {/* Sección Home con primera imagen */}
-      <div className="min-h-screen bg-[url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondoweb.jpg')] bg-cover bg-center bg-no-repeat relative">
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Hero Section */}
+      <div className="min-h-screen bg-[url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondoweb.jpg')] bg-cover bg-center bg-fixed relative">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.95) 100%)'
+          }}
+        />
         <div className="relative z-10">
           <Home />
         </div>
       </div>
 
-      {/* Sección Vision con fondo sólido */}
-      <div className="min-h-screen bg-gray-900 relative">
-        <div className="relative z-10">
-          <Vision />
-        </div>
-      </div>
+      {/* Vision/Services Section */}
+      <Vision />
 
-      {/* Sección Trabajos con tercera imagen */}
-      <div className="min-h-screen bg-[url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018643/deamon-dd/home/fondoweb.jpg')] bg-cover bg-center bg-no-repeat relative">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10">
-          <TrabajosSection />
-        </div>
-      </div>
+      {/* Projects Section */}
+      <TrabajosSection />
 
-      {/* Sección Pricing con fondo sólido */}
-      <div className="min-h-screen bg-gray-800 relative">
-        <div className="relative z-10">
-          <Pricing />
-        </div>
-      </div>
+      {/* Pricing Section */}
+      <Pricing />
 
+      {/* Footer */}
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg shadow-blue-500/25 flex items-center justify-center transition-all duration-300 hover:scale-110"
+        aria-label="Contactar por WhatsApp"
+        style={{
+          marginBottom: 'max(env(safe-area-inset-bottom, 0px), 16px)',
+          marginRight: 'max(env(safe-area-inset-right, 0px), 16px)'
+        }}
+      >
+        <FaWhatsapp className="text-white text-2xl" />
+      </a>
     </div>
   );
 };

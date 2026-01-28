@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaArrowRight, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaArrowRight, FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
 import { useTranslation } from "../../lib/i18n";
 import { useState, useEffect } from "react";
@@ -19,13 +19,6 @@ export default function BrandingSection() {
     if (equipoSection) {
       equipoSection.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const handleWhatsApp = () => {
-    const phone = "+541131199882";
-    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
   };
 
   const projects = [
@@ -127,18 +120,15 @@ export default function BrandingSection() {
           </div>
           
           {/* Descripción */}
-          <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
-            {isLoaded ? t("branding.description") : "Creamos identidades visuales únicas que conectan con tu audiencia. Desde el diseño de logotipos hasta manuales de marca completos, desarrollamos la imagen que tu negocio necesita para destacar en el mercado."}
-          </p>
+          {/* <p className="text-white/70 max-w-3xl leading-relaxed mb-8">
+            {isLoaded ? t("branding.description") : "No se trata sólo de un logo, una tipografía o una paleta de colores atractiva. Creamos marcas auténticas y alineadas con la esencia de tu negocio, asegurando que se destaquen en un mercado competitivo y construyan una presencia memorable. Diseñamos identidades visuales estratégicas, no solo para generar impacto, sino para acompañar el crecimiento y consolidar una presencia memorable que represente tu cultura y valores."}
+          </p> */}
 
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4 mb-14">
             {/* Botón principal - Agendar llamada */}
-            <button 
-              onClick={handleWhatsApp}
-              className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
-            >
-              <span>{isLoaded ? t("branding.scheduleCall") : "Envíanos un mensaje"}</span>
+            <button className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20">
+              <span>{isLoaded ? t("branding.scheduleCall") : "Agendá una llamada"}</span>
               <FaArrowRight className="text-white" />
             </button>
 
@@ -147,7 +137,7 @@ export default function BrandingSection() {
               onClick={scrollToAgency}
               className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-gray-600 hover:border-gray-500"
             >
-              <FaChevronUp className="text-white" />
+              <FaChevronDown className="text-white" />
               <span>{isLoaded ? t("branding.knowAgency") : "Conocé la agencia"}</span>
             </button>
           </div>

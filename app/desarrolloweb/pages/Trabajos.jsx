@@ -1,172 +1,197 @@
 "use client";
 import { useState } from "react";
-import { Clock, RefreshCw, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaCheck, FaClock, FaSync, FaWhatsapp } from "react-icons/fa";
 
 const plans = [
   {
     id: "static",
-    name: "Pagina Web",
-    price: "300 ~ 700 USD",
+    name: "Sitio Web",
+    price: "300 ~ 700",
+    currency: "USD",
+    description: "Ideal para presentar tu negocio en internet",
     features: [
-      "1 página con Next.js",
-      "Personalización de diseño",
-      "Diseño responsivo",
-      "Diseño de figma",
-      "Subido de contenido",
-      "3 complementos/extensiones",
+      "Desarrollo con Next.js",
+      "Diseño personalizado",
+      "100% Responsive",
+      "Diseño en Figma incluido",
+      "Carga de contenido",
+      "3 integraciones",
     ],
+    popular: false,
   },
   {
     id: "standard",
-    name: "Estandar",
-    price: "800 ~ 1600 USD",
+    name: "Estándar",
+    price: "800 ~ 1600",
+    currency: "USD",
+    description: "Para negocios que necesitan funcionalidades avanzadas",
     features: [
-      "1 páginas con Next.js",
-      "1 Aplicación Web PWA",
-      "Diseño completo responsivo",
-      "Alijamiento y base de datos",
-      "Optimización de SEO",
-      "6 complementos/extensiones",
+      "Sitio web con Next.js",
+      "Aplicación Web PWA",
+      "Diseño responsive completo",
+      "Hosting y base de datos",
+      "Optimización SEO",
+      "6 integraciones",
     ],
+    popular: true,
   },
   {
-    id: "Aplicación",
-    name: "Aplicaciónes Web",
+    id: "custom",
+    name: "Personalizado",
     price: "A consultar",
+    currency: "",
+    description: "Soluciones a medida para proyectos complejos",
     features: [
       "Aplicación Web PWA",
-      "Diseño personalizado desde cero",
-      "Optimización de datos",
-      "Integración de Base de datos y alojamiento",
-      "Mantenimiento Personalizado",
-      "Atencion de Lunes a Viernes",
+      "Diseño desde cero",
+      "Arquitectura optimizada",
+      "Base de datos y hosting",
+      "Mantenimiento incluido",
+      "Soporte L-V",
     ],
+    popular: false,
   },
 ];
 
-const calendlyLinks = {
-  static: "https://calendly.com/deamoncompany18/paquete-estatico",
-  standard: "https://calendly.com/deamoncompany18/paquete-estandar",
-  premium: "https://calendly.com/deamoncompany18/paquete-profesional",
-};
-
 const Pricing = () => {
   const [selectedPlan, setSelectedPlan] = useState(plans[1]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    window.location.reload();
+  const handleOrder = () => {
+    const phone = "+541131199882";
+    const planName = selectedPlan.name.toLowerCase();
+    const message = `Hola, me interesa el plan ${planName} de desarrollo web. ¿Podrían darme más información?`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section id="Servicio">
-      <div className=" bg-gradient-to-b from-black to-cyan-900 min-h-screen flex items-center">
-        <div className="bg-gray-900 text-white px-12 py-8 rounded-lg w-11/12 lg:w-10/12 max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-6">Servicios</h2>
+    <section id="Servicio" className="py-24 px-4 bg-[#0a0a0a]">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">
+            Precios
+          </span>
+          <h2 className="text-3xl md:text-5xl font-light text-white mt-4 mb-6">
+            Planes <span className="font-semibold">transparentes</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Elige el plan que mejor se adapte a las necesidades de tu proyecto.
+          </p>
+        </motion.div>
 
-          {selectedPlan.id === "standard" && (
-            <div className="text-center mb-6 text-yellow-400 font-semibold">
-              <span>Más Recomendado</span>
-            </div>
-          )}
-
-          <div className="flex justify-center space-x-4 mb-6">
-            {plans.map((plan) => (
-              <button
-                key={plan.id}
-                onClick={() => setSelectedPlan(plan)}
-                className={`px-4 py-2 rounded-lg transition border ${
-                  selectedPlan.id === plan.id
-                    ? "border-blue-800 text-blue-500"
-                    : "border-gray-700 text-gray-400"
-                } hover:border-blue-500 hover:text-blue-500`}
-              >
-                {plan.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold">{selectedPlan.name} Plan</h3>
-            <p className="text-blue-400 text-2xl font-bold mt-2">
-              {selectedPlan.price}
-            </p>
-            <ul className="mt-4 space-y-2">
-              {selectedPlan.features.map((feature, index) => (
-                <li key={index} className="flex items-center space-x-2">
-                  <span className="text-green-400">✔</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Plan Selector */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {plans.map((plan) => (
             <button
-              onClick={() => {
-                const phone = "+541131199882";
-                let planName = "";
-                if (selectedPlan.id === "static") {
-                  planName = "plan pagina web";
-                } else if (selectedPlan.id === "standard") {
-                  planName = "plan estandar";
-                } else if (selectedPlan.id === "Aplicación") {
-                  planName = "plan aplicacion web";
-                }
-                const message = `Hola, me gustaria ordenar el ${planName}.`;
-                const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
-              }}
-              className="mt-6 px-6 py-3 w-full bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-lg"
+              key={plan.id}
+              onClick={() => setSelectedPlan(plan)}
+              className={`relative px-6 py-3 rounded-xl text-sm font-medium transition-all ${
+                selectedPlan.id === plan.id
+                  ? "bg-white text-gray-900"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+              }`}
             >
-              ORDENAR
+              {plan.popular && (
+                <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-blue-500 text-white text-[10px] font-bold rounded-full">
+                  Popular
+                </span>
+              )}
+              {plan.name}
             </button>
-          </div>
-
-          <div className="flex justify-center items-center space-x-8 mt-6">
-            <div className="flex items-center space-x-2">
-              <Clock className="w-5 h-5 text-yellow-400" />
-              <span>Entrega Pactada</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RefreshCw className="w-5 h-5 text-blue-400" />
-              <span>Revisión ilimitada</span>
-            </div>
-          </div>
+          ))}
         </div>
+
+        {/* Selected Plan Details */}
+        <motion.div
+          key={selectedPlan.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12"
+        >
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Left - Info */}
+            <div>
+              <div className="mb-6">
+                {selectedPlan.popular && (
+                  <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-medium rounded-full mb-4">
+                    Más elegido
+                  </span>
+                )}
+                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-2">
+                  Plan {selectedPlan.name}
+                </h3>
+                <p className="text-gray-400">
+                  {selectedPlan.description}
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-bold text-white">
+                    {selectedPlan.price}
+                  </span>
+                  {selectedPlan.currency && (
+                    <span className="text-xl text-gray-400">
+                      {selectedPlan.currency}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <button
+                onClick={handleOrder}
+                className="w-full md:w-auto px-8 py-4 bg-white text-gray-900 font-medium rounded-xl hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-3"
+              >
+                <FaWhatsapp className="text-lg" />
+                Solicitar presupuesto
+              </button>
+            </div>
+
+            {/* Right - Features */}
+            <div>
+              <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-6">
+                Incluye
+              </h4>
+              <ul className="space-y-4">
+                {selectedPlan.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 bg-blue-500/20 rounded-full flex items-center justify-center mt-0.5">
+                      <FaCheck className="text-blue-400 text-xs" />
+                    </div>
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Guarantees */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 flex flex-wrap justify-center gap-8"
+        >
+          <div className="flex items-center gap-3 text-gray-400">
+            <FaClock className="text-blue-400" />
+            <span>Entrega en tiempo acordado</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-400">
+            <FaSync className="text-blue-400" />
+            <span>Revisiones ilimitadas</span>
+          </div>
+        </motion.div>
       </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-6 max-w-2xl w-full relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              Reserva tu cita
-            </h2>
-            <iframe
-              src={calendlyLinks[selectedPlan.id]}
-              className="w-full h-[500px] rounded-md"
-              frameBorder="0"
-              onLoad={() => console.log("Calendly cargado")}
-            ></iframe>
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={closeModal}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-              >
-                Aceptar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

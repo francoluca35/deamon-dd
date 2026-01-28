@@ -1,129 +1,149 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lightbulb, ShieldCheck, Rocket, Leaf, Palette, Target, Handshake, BarChart } from 'lucide-react';
+import { FaLightbulb, FaShieldAlt, FaRocket, FaUsers, FaCode, FaCogs, FaChartLine, FaHandshake } from 'react-icons/fa';
 
 const Vision = () => {
-  const visionItems = [
-    { title: "Innovación", icon: <Lightbulb size={40} /> },
-    { title: "Calidad", icon: <ShieldCheck size={40} /> },
-    { title: "Eficiencia", icon: <Rocket size={40} /> },
-    { title: "Sostenibilidad", icon: <Leaf size={40} /> },
+  const services = [
+    { 
+      title: "Desarrollo Web", 
+      description: "Sitios web modernos, rápidos y optimizados para SEO.",
+      icon: FaCode 
+    },
+    { 
+      title: "Aplicaciones Web", 
+      description: "PWAs y plataformas web con funcionalidades avanzadas.",
+      icon: FaCogs 
+    },
+    { 
+      title: "Sistemas a Medida", 
+      description: "Software empresarial adaptado a tus procesos.",
+      icon: FaChartLine 
+    },
+    { 
+      title: "Consultoría Tech", 
+      description: "Asesoramiento estratégico para tu transformación digital.",
+      icon: FaLightbulb 
+    },
   ];
 
-  const missionItems = [
-    { title: "Creatividad", icon: <Palette size={40} /> },
-    { title: "Estrategia", icon: <Target size={40} /> },
-    { title: "Compromiso", icon: <Handshake size={40} /> },
-    { title: "Resultados", icon: <BarChart size={40} /> },
+  const values = [
+    { title: "Calidad", icon: FaShieldAlt },
+    { title: "Innovación", icon: FaRocket },
+    { title: "Compromiso", icon: FaHandshake },
+    { title: "Colaboración", icon: FaUsers },
   ];
-
-  // Función para crear texto con degradado animado
-  const AnimatedText = ({ text, className = "" }) => {
-    const letters = text.split("");
-    return (
-      <div className={`flex flex-wrap justify-center ${className}`}>
-        {letters.map((letter, index) => (
-          <motion.span
-            key={index}
-            className="inline-block"
-            style={{
-              background: "linear-gradient(45deg, #ff6b6b, #ff8c42, #ffa726, #ffb74d, #B12C00, #ffab91, #ff7043)",
-              backgroundSize: "400% 400%",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              animation: `gradientShift 3s ease-in-out infinite`,
-              animationDelay: `${index * 0.1}s`
-            }}
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: index * 0.1,
-              ease: "easeInOut"
-            }}
-          >
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
-      </div>
-    );
-  };
 
   return (
-    <section id='vision' className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-black to-gray-900 text-white overflow-hidden ">
-      <motion.div
-        className="mb-6 mt-8 sm:mt-1"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <AnimatedText text="Nuestra Visión" className="text-5xl font-bold" />
-      </motion.div>
-      
-      <motion.p
-        className="text-lg max-w-2xl text-center"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-       Ser innovadora, ofrecer soluciones de calidad y generar valor para sus clientes.
-      </motion.p>
-      
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-        {visionItems.map((item, i) => (
-          <motion.div
-            key={i}
-            className="p-6 bg-gray-900 rounded-xl flex flex-col items-center justify-center border border-gray-700 shadow-xl"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: 'spring', stiffness: 200 }}
-          >
-            <motion.div className="mb-4">{item.icon}</motion.div>
-            <h3 className="text-xl font-semibold">{item.title}</h3>
-          </motion.div>
-        ))}
-      </motion.div>
+    <section id='vision' className="relative py-24 px-4 bg-[#0a0a0a]">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">
+            Qué Hacemos
+          </span>
+          <h2 className="text-3xl md:text-5xl font-light text-white mt-4 mb-6">
+            Soluciones tecnológicas
+            <span className="font-semibold"> de alto impacto</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Transformamos ideas en productos digitales que generan resultados 
+            medibles para tu negocio.
+          </p>
+        </motion.div>
 
-      <br />
-      <motion.div
-        className="mb-6"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <AnimatedText text="Nuestra Misión" className="text-5xl font-bold" />
-      </motion.div>
-      
-      <motion.p
-        className="text-lg max-w-xl text-center sm:max-w-2xl"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-       Ayudar a los clientes a interactuar con su audiencia, a través de la creación de estrategias de marketing y comunicación digital.
-      </motion.p>
-      
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-        {missionItems.map((item, i) => (
-          <motion.div
-            key={i}
-            className="p-6 bg-gray-900 rounded-xl flex flex-col items-center justify-center border border-gray-700 shadow-xl"
-            whileHover={{ scale: 1.1, rotate: -5 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: 'spring', stiffness: 200 }}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                <service.icon className="text-blue-400 text-xl" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-400 leading-relaxed">
+                {service.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Values Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">
+            Nuestros Valores
+          </span>
+          <h2 className="text-3xl md:text-4xl font-light text-white mt-4">
+            Lo que nos <span className="font-semibold">define</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {values.map((value, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-2xl flex items-center justify-center mb-4 border border-white/5">
+                <value.icon className="text-blue-400 text-2xl" />
+              </div>
+              <h3 className="text-white font-medium">{value.title}</h3>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-24 text-center p-12 bg-gradient-to-br from-blue-900/20 to-cyan-900/10 rounded-3xl border border-white/5"
+        >
+          <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
+            ¿Listo para comenzar tu proyecto?
+          </h3>
+          <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+            Contáctanos y conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos.
+          </p>
+          <button
+            onClick={() => {
+              const target = document.getElementById("Servicio");
+              if (target) target.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-all duration-300"
           >
-            <motion.div className="mb-4">{item.icon}</motion.div>
-            <h3 className="text-xl font-semibold">{item.title}</h3>
-          </motion.div>
-        ))}
-      </motion.div>
-      <div className='mt-10'></div>
+            Ver planes y precios
+          </button>
+        </motion.div>
+
+      </div>
     </section>
-    
   );
 };
 
