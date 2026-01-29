@@ -51,7 +51,7 @@ const Desarrollo = () => {
         descriptionKey: "development.projects.carusoFC",
         fallbackDescription: "Pagina para reservar canchas de futbol",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1769730380/Olive_Green_Website_Launch_Laptop_Promotion_Instagram_Post_1_fypdlq.png",
-        url: "#"
+        url: "https://caruso-app.vercel.app"
       }
     },
     {

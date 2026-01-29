@@ -185,12 +185,12 @@ const projects = [
     title: "Futbol App",
     dominio: "Plataforma de reserva de canchas deportivas",
     category: "App Web",
-    image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1769730380/Olive_Green_Website_Launch_Laptop_Promotion_Instagram_Post_1_fypdlq.png",
+    image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/yael-app.jpg",
     url: "",
     repo: "https://github.com/francoluca35/yael-app/",
     galeria: [
-
-      "https://res.cloudinary.com/dhmswq45h/image/upload/v1769730380/Olive_Green_Website_Launch_Laptop_Promotion_Instagram_Post_1_fypdlq.png",
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/yael-app.jpg",
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
     ],
   },
   {

@@ -189,8 +189,8 @@ const projects = [
     url: "",
     repo: "https://github.com/francoluca35/yael-app/",
     galeria: [
+      "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018644/deamon-dd/proyectos/yael-app.jpg",
 
-      "https://res.cloudinary.com/dhmswq45h/image/upload/v1769730380/Olive_Green_Website_Launch_Laptop_Promotion_Instagram_Post_1_fypdlq.png",
     ],
   },
   {
