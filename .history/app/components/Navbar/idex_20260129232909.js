@@ -79,10 +79,12 @@ function Navbar2() {
 
   // Crear navLinks reactivamente para que se actualicen cuando cambie el idioma
   const navLinks = [
-    { href: "#equipo", label: t("navbar.agency") },
+  
+  { href: "#equipo", label: t("navbar.agency") },
     { href: "#desarrollo", label: t("navbar.webDevelopment"), isRoute: true },
-    { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
+  
     { href: "#branding", label: t("navbar.branding") },
+   // { href: "#marketing", label: t("navbar.marketing"), isRoute: true },
     { href: "#diseño", label: t("navbar.graphicDesign"), isRoute: true },
   ];
 

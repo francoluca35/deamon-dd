@@ -108,8 +108,8 @@ const Desarrollo = () => {
   return (
     <div key={`${currentLang}-${forceRender}`} className="bg-neutral-950 text-white relative">
  <div className="absolute inset-0">
-        <div className="absolute top-24  -left-24 w-72 h-72 bg-pink-600/20  blur-3xl rounded-full"></div>
-        <div className="absolute bottom-20 -right-20 w-80 h-80 bg-violet-700/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-24 -right-20  w-72 h-72 bg-violet-700/20 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-20 -left-24 w-80 h-80 bg-pink-600/20 blur-3xl rounded-full"></div>
       </div>
       
       {/* Hero */}

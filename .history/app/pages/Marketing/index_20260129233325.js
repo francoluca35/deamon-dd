@@ -23,11 +23,9 @@ const Marketing = () => {
     return Array.isArray(value) ? value : fallback;
   };
 
-  const handleWhatsApp = (selectedService) => {
+  const handleWhatsApp = () => {
     const phone = "+541131199882";
-    const fallbackService = translate(activeOffering.titleKey, activeOffering.fallbackTitle);
-    const serviceLabel = selectedService || fallbackService;
-    const message = `hola quisiera saber los servicios que ofrece Deamon Estudio. Me interesa: ${serviceLabel}.`;
+    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -227,71 +225,38 @@ const Marketing = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 via-white/5 to-transparent p-8 shadow-2xl"
+              className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 shadow-2xl"
             >
-              <div className="absolute -top-24 -right-16 h-56 w-56 rounded-full bg-violet-500/30 blur-3xl"></div>
-              <div className="absolute -bottom-28 -left-20 h-56 w-56 rounded-full bg-pink-500/20 blur-3xl"></div>
-
-              <div className="relative flex flex-wrap items-center gap-3 mb-6">
-                <span className="w-12 h-12 rounded-xl bg-violet-600 flex items-center justify-center text-white text-xl shadow-lg shadow-violet-500/40">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-12 h-12 rounded-xl bg-violet-600 flex items-center justify-center text-white text-xl">
                   <ActiveIcon />
                 </span>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20">
-                    Performance
-                  </span>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20">
-                    Creatividad
-                  </span>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20">
-                    Escalado
-                  </span>
+                <div>
+                  <h3 className="text-2xl font-bold">
+                    {translate(activeOffering.titleKey, activeOffering.fallbackTitle)}
+                  </h3>
+                  <p className="text-white/70">
+                    {translate(activeOffering.descriptionKey, activeOffering.fallbackDescription)}
+                  </p>
                 </div>
               </div>
 
-              <div className="relative mb-6">
-                <h3 className="text-3xl font-bold mb-2">
-                  {translate(activeOffering.titleKey, activeOffering.fallbackTitle)}
-                </h3>
-                <p className="text-white/70 text-lg">
-                  {translate(activeOffering.descriptionKey, activeOffering.fallbackDescription)}
-                </p>
-              </div>
-
-              <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm text-white/60 mb-1">Impacto</p>
-                  <p className="text-2xl font-bold text-white">+320%</p>
-                  <p className="text-xs text-white/50">Mejora promedio en campañas activas</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm text-white/60 mb-1">Velocidad</p>
-                  <p className="text-2xl font-bold text-white">72hs</p>
-                  <p className="text-xs text-white/50">Primeras optimizaciones con datos</p>
-                </div>
-              </div>
-
-              <ul className="relative space-y-3 mb-6">
+              <ul className="space-y-3 mb-6">
                 {translateList(activeOffering.bulletsKey, activeOffering.fallbackBullets).map((bullet, index) => (
-                  <li key={index} className="flex items-center gap-3 text-white/85">
+                  <li key={index} className="flex items-center gap-3 text-white/80">
                     <span className="w-2 h-2 rounded-full bg-violet-400"></span>
                     {bullet}
                   </li>
                 ))}
               </ul>
 
-              <div className="relative flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => handleWhatsApp()}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-neutral-900 font-semibold hover:bg-violet-100 transition-all"
-                >
-                  {translate("marketing.ctaInline", "Quiero mi estrategia")}
-                  <FaRocket />
-                </button>
-                <span className="text-sm text-white/60">
-                  {translate("marketing.ctaHint", "Respuesta rápida y propuesta en 24/48 hs.")}
-                </span>
-              </div>
+              <button
+                onClick={handleWhatsApp}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-neutral-900 font-semibold hover:bg-violet-100 transition-all"
+              >
+                {translate("marketing.ctaInline", "Quiero mi estrategia")}
+                <FaRocket />
+              </button>
             </motion.div>
           </div>
 

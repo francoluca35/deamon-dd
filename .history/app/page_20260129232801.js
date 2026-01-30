@@ -13,7 +13,7 @@ const Equipo = lazy(() => import("./pages/Equipo"));
 const Branding = lazy(() => import("./pages/Branding"));
 
 const Desarrollo = lazy(() => import("./pages/Desarrollo"));
-const Marketing = lazy(() => import("./pages/Marketing"));
+// const Marketing = lazy(() => import("./pages/Marketing"));
 const Diseño = lazy(() => import("./pages/Diseño"));
 
 const Contacto = lazy(() => import("./pages/Contacto"));
@@ -100,9 +100,9 @@ export default function Home() {
         </div>
         
         <Suspense fallback={<LoadingSpinner />}>
-          <Marketing />
+          {/* <Marketing /> */}
         </Suspense>
-        <Suspense fallback={<LoadingSpinner />}>
+                <Suspense fallback={<LoadingSpinner />}>
           <Branding />
         </Suspense>
         <Suspense fallback={<LoadingSpinner />}>

@@ -23,11 +23,9 @@ const Marketing = () => {
     return Array.isArray(value) ? value : fallback;
   };
 
-  const handleWhatsApp = (selectedService) => {
+  const handleWhatsApp = () => {
     const phone = "+541131199882";
-    const fallbackService = translate(activeOffering.titleKey, activeOffering.fallbackTitle);
-    const serviceLabel = selectedService || fallbackService;
-    const message = `hola quisiera saber los servicios que ofrece Deamon Estudio. Me interesa: ${serviceLabel}.`;
+    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -282,7 +280,7 @@ const Marketing = () => {
 
               <div className="relative flex flex-wrap items-center gap-4">
                 <button
-                  onClick={() => handleWhatsApp()}
+                  onClick={handleWhatsApp}
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-neutral-900 font-semibold hover:bg-violet-100 transition-all"
                 >
                   {translate("marketing.ctaInline", "Quiero mi estrategia")}
