@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "../../lib/i18n";
-import { FaChartLine, FaHashtag, FaFacebookF, FaGoogle, FaRocket } from "react-icons/fa";
+import { FaBullhorn, FaChartLine, FaHashtag, FaFacebookF, FaGoogle, FaRocket } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 
 const Marketing = () => {
@@ -110,17 +109,8 @@ const Marketing = () => {
     }
   ];
 
-  const performanceByOffering = {
-    strategy: { channel: "Estrategia", impact: "+30% / +80%", speed: "2–4 semanas" },
-    social: { channel: "Redes orgánicas", impact: "+50% / +200%", speed: "7–21 días" },
-    meta: { channel: "Meta Ads", impact: "+150% / +400%", speed: "24–72 hs" },
-    tiktok: { channel: "TikTok Ads", impact: "+300% / +1000%", speed: "12–48 hs" },
-    google: { channel: "Google Ads", impact: "+100% / +320%", speed: "24–72 hs" }
-  };
-
   const activeOffering = offerings.find((item) => item.id === activeId) || offerings[0];
   const ActiveIcon = activeOffering.icon;
-  const activePerformance = performanceByOffering[activeOffering.id] || performanceByOffering.strategy;
 
   return (
     <section id="marketing" className="min-h-screen bg-neutral-950 text-white relative overflow-hidden">
@@ -138,14 +128,8 @@ const Marketing = () => {
           className="space-y-6"
         >
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg overflow-hidden hidden sm:block">
-              <Image
-                src="https://res.cloudinary.com/dhmswq45h/image/upload/v1761018642/deamon-dd/home/Logo-equipo-B.png"
-                alt="Logo Deamon DD"
-                width={48}
-                height={48}
-                className="object-cover"
-              />
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+              <FaBullhorn className="text-violet-300 text-xl" />
             </div>
             <h1 className="text-5xl font-extrabold">
               {translate("marketing.heroTitle", "Marketing Digital & Performance")}
@@ -289,11 +273,19 @@ const Marketing = () => {
                       </tr>
                     </thead>
                     <tbody className="text-white/80">
-                      <tr className="border-t border-white/10">
-                        <td className="px-4 py-3 font-semibold text-white">{activePerformance.channel}</td>
-                        <td className="px-4 py-3">{activePerformance.impact}</td>
-                        <td className="px-4 py-3">{activePerformance.speed}</td>
-                      </tr>
+                      {[
+                        { channel: "Estrategia", impact: "+30% / +80%", speed: "2–4 semanas" },
+                        { channel: "Redes orgánicas", impact: "+50% / +200%", speed: "7–21 días" },
+                        { channel: "Meta Ads", impact: "+150% / +400%", speed: "24–72 hs" },
+                        { channel: "TikTok Ads", impact: "+300% / +1000%", speed: "12–48 hs" },
+                        { channel: "Google Ads", impact: "+100% / +320%", speed: "24–72 hs" }
+                      ].map((row) => (
+                        <tr key={row.channel} className="border-t border-white/10">
+                          <td className="px-4 py-3 font-semibold text-white">{row.channel}</td>
+                          <td className="px-4 py-3">{row.impact}</td>
+                          <td className="px-4 py-3">{row.speed}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
