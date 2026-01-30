@@ -97,10 +97,10 @@ export default function RootLayout({ children }) {
         {/* CSS Crítico Ultra Optimizado - Agresivo */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            :root{--bg:#fff;--fg:#171717;--p:#673372;--hero-bg:url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg')}
+            :root{--bg:#0a0a0a;--fg:#ededed;--p:#673372;--hero-bg:url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg')}
             *{box-sizing:border-box;margin:0;padding:0}
-            html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-display:swap}
-            body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+            html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-display:swap;overflow-x:hidden}
+            body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden}
             .loading-spinner{display:flex;justify-content:center;align-items:center;height:100vh;background:#673372}
             .spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);border-top:4px solid #fff;border-radius:50%;animation:spin 1s linear infinite}
             @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
@@ -219,7 +219,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <ErrorBoundary>
           {children}

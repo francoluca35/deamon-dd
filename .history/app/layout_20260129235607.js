@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { initializePerformanceOptimizations } from "./lib/performance";
+import { initializeUltraOptimizations } from "./lib/ultra-optimization";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -93,16 +94,39 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* CSS Crítico Ultra Optimizado */}
+        {/* CSS Crítico Ultra Optimizado - Agresivo */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            :root{--bg:#fff;--fg:#171717;--p:#673372}
-            *{box-sizing:border-box}
-            html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-            body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+            :root{--bg:#0a0a0a;--fg:#ededed;--p:#673372;--hero-bg:url('https://res.cloudinary.com/dhmswq45h/image/upload/v1761018650/deamon-dd/home/fondoprincipal.jpg')}
+            *{box-sizing:border-box;margin:0;padding:0}
+            html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-display:swap;overflow-x:hidden}
+            body{margin:0;font-family:var(--font-geist-sans),system-ui,sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden}
             .loading-spinner{display:flex;justify-content:center;align-items:center;height:100vh;background:#673372}
             .spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);border-top:4px solid #fff;border-radius:50%;animation:spin 1s linear infinite}
             @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+            /* Hero section crítico inline */
+            .hero-critical{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background-image:var(--hero-bg);background-size:cover;background-position:center;background-repeat:no-repeat;contain:layout style paint}
+            .hero-title{font-size:clamp(1.875rem,4vw,3.75rem);font-weight:700;line-height:1.1;color:white;text-shadow:0 2px 4px rgba(0,0,0,0.6);contain:layout style paint;will-change:auto}
+            .hero-subtitle{font-size:clamp(1.125rem,2.5vw,1.5rem);line-height:1.6;color:white;text-shadow:0 1px 3px rgba(0,0,0,0.5);contain:layout style paint;will-change:auto}
+            
+            /* Optimizaciones de rendimiento */
+            .lcp-optimized{contain:layout style paint;will-change:auto;transform:translateZ(0)}
+            .reduce-layout-shift{contain:layout;min-height:1px}
+            .optimize-rendering{transform:translateZ(0);backface-visibility:hidden;perspective:1000px}
+            
+            /* Loading optimizado */
+            .loading-spinner{display:flex;justify-content:center;align-items:center;height:100vh;background:#673372;contain:layout style paint}
+            .spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);border-top:4px solid #fff;border-radius:50%;animation:spin 1s linear infinite;will-change:transform}
+            @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+            
+            /* Prevenir CLS */
+            img{max-width:100%;height:auto;contain-intrinsic-size:1px 1000px}
+            .aspect-ratio-fix{aspect-ratio:16/9;width:100%;height:auto;contain:layout}
+            
+            /* Optimizaciones para dispositivos lentos */
+            @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
+            @media (max-width:768px){.hero-title{font-size:1.875rem}.hero-subtitle{font-size:1.125rem}}
           `
         }} />
         
@@ -123,6 +147,14 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              // Inicializar optimizaciones de rendimiento
+              const initializePerformanceOptimizations = ${initializePerformanceOptimizations.toString()};
+              initializePerformanceOptimizations();
+              
+              // Inicializar optimizaciones ultra agresivas
+              const initializeUltraOptimizations = ${initializeUltraOptimizations.toString()};
+              initializeUltraOptimizations();
+              
               // Cargar Google Analytics de forma diferida
               function loadGA() {
                 const script = document.createElement('script');
@@ -187,7 +219,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <ErrorBoundary>
           {children}
