@@ -17,8 +17,9 @@ const Desarrollo = () => {
   }, [currentLang]);
 
   const handleWhatsApp = () => {
-    const message = "Hola! Me interesa conocer más sobre el desarrollo web. ¿Podemos agendar una llamada?";
-    const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(message)}`;
+    const phone = "+541131199882";
+    const message = "hola quisiera saber los servicios que ofrece Deamon Estudio.";
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -43,14 +44,14 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.maurelloTransportes",
       fallbackDescription: "Landing empresarial de maquinaria industrial",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761068998/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_evwsep.png",
-      url: "https://jcp-web-site.vercel.app",
+      url: "https://www.jcpamasadoras.com",
       type: "split",
       secondProject: {
-        title: "Caruso FC",
+        title: "Conesa Construcciones",
         descriptionKey: "development.projects.carusoFC",
-        fallbackDescription: "Pagina para reservar canchas de futbol",
-        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761018646/deamon-dd/proyectos/carusoweb1.jpg",
-        url: "https://caruso-app.vercel.app"
+        fallbackDescription: "Constructora en Merida, México",
+        image: "/Assets/3.png",
+        url: "https://www.constructoraconesa.com/"
       }
     },
     {
@@ -84,7 +85,7 @@ const Desarrollo = () => {
       url: "https://github.com/DeamonDesingDev/jla-app",
       type: "split",
       secondProject: {
-        title: "Maurello App",
+        title: "Reservas App",
         descriptionKey: "development.projects.maurelloApp",
         fallbackDescription: "App para reservar pasajes de transporte",
         image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1766243232/Cream_Minimalist_Laptop_Mockup_Promotion_Instagram_Post_efegxp.png",
@@ -106,7 +107,10 @@ const Desarrollo = () => {
 
   return (
     <div key={`${currentLang}-${forceRender}`} className="bg-neutral-950 text-white relative">
-
+ <div className="absolute inset-0">
+        <div className="absolute top-24  -left-24 w-72 h-72 bg-pink-600/20  blur-3xl rounded-full"></div>
+        <div className="absolute bottom-20 -right-20 w-80 h-80 bg-violet-700/20 blur-3xl rounded-full"></div>
+      </div>
       
       {/* Hero */}
       <div className="relative px-8 pt-24 pb-20 max-w-6xl mx-auto z-20">
@@ -132,7 +136,7 @@ const Desarrollo = () => {
             onClick={handleWhatsApp}
             className="bg-gradient-to-r from-violet-800 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-pink-500/20"
           >
-            {isLoaded ? t("development.scheduleCall") : "Agendá una llamada"}
+            {isLoaded ? t("development.scheduleCall") : "Envíanos un mensaje"}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>

@@ -44,14 +44,14 @@ const Desarrollo = () => {
       descriptionKey: "development.projects.maurelloTransportes",
       fallbackDescription: "Landing empresarial de maquinaria industrial",
       image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1761068998/Brown_and_White_Minimalist_Desktop_Mockup_Instagram_Post_evwsep.png",
-      url: "https://jcp-web-site.vercel.app",
+      url: "https://www.jcpamasadoras.com",
       type: "split",
       secondProject: {
-        title: "Futbol FC",
+        title: "Conesa Construcciones",
         descriptionKey: "development.projects.carusoFC",
-        fallbackDescription: "Pagina para reservar canchas de futbol",
-        image: "https://res.cloudinary.com/dhmswq45h/image/upload/v1769730380/Olive_Green_Website_Launch_Laptop_Promotion_Instagram_Post_1_fypdlq.png",
-        url: "https://futbolfc.vercel.app"
+        fallbackDescription: "Constructora en Merida, México",
+        image: "/Assets/3.png",
+        url: "https://www.constructoraconesa.com/"
       }
     },
     {
